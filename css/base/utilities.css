@@ -1,0 +1,104 @@
+.skip-link {
+  position: absolute;
+  top: -40px;
+  left: 0;
+  background: var(--cyan);
+  color: var(--bg-color);
+  padding: 8px 16px;
+  z-index: 9999;
+  transition: top 0.2s;
+  text-decoration: none;
+  font-weight: bold;
+}
+.skip-link:focus {
+  top: 0;
+}
+
+*,
+*::before,
+*::after {
+}
+
+.nav-link,
+.lang-btn-pill,
+.lang-dropdown-trigger,
+.lang-option,
+.btn-link,
+.btn-primary,
+.btn-secondary,
+.btn-main,
+.btn-edition,
+button {
+  font-family: "IBM Plex Mono", monospace !important;
+}
+
+.btn-primary,
+.btn-secondary,
+.btn-main,
+.btn-edition,
+.btn-link {
+  font-family: "IBM Plex Mono", monospace !important;
+  font-size: 12px !important;
+  text-transform: uppercase !important;
+  padding: 12px 28px !important;
+  letter-spacing: 0.1em !important;
+  transition: all 0.2s ease !important;
+  text-decoration: none !important;
+}
+
+.btn-primary {
+  background: var(--cyan) !important;
+  color: var(--bg-color) !important;
+  border: 1px solid var(--green) !important;
+}
+.btn-primary:hover {
+  filter: brightness(0.85) !important;
+  transform: translateY(-2px) !important;
+}
+
+.nav-link {
+  padding: 12px 20px 6px 20px !important;
+  height: auto !important;
+  line-height: 1 !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+}
+.nav-link span {
+  transform: translateY(1px) !important;
+  display: inline-block !important;
+  line-height: 1 !important;
+}
+
+.btn-secondary,
+.btn-outline,
+.btn-link {
+  background: var(--bg-color) !important;
+  border: 1px solid var(--green) !important;
+  color: var(--cyan) !important;
+}
+.btn-secondary:hover,
+.btn-outline:hover,
+.btn-link:hover {
+  background: var(--cyan) !important;
+  color: var(--bg-color) !important;
+  border: 1px solid var(--green) !important;
+  filter: brightness(0.85) !important;
+  transform: translateY(-2px) !important;
+}
+
+.features-grid {
+  display: grid !important;
+  grid-template-columns: repeat(3, 1fr) !important;
+  gap: 24px !important;
+}
+@media (max-width: 1024px) {
+  .features-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+}
+@media (max-width: 768px) {
+  .features-grid {
+    grid-template-columns: 1fr !important;
+  }
+}

@@ -1,0 +1,79 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--bg-color);
+  color: var(--foreground);
+  font-family: "IBM Plex Mono", monospace;
+  line-height: 1.6;
+  display: flex;
+  overflow: hidden;
+  height: 100vh;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-image: url("../../assets/logoascii.png");
+  background-repeat: no-repeat;
+  background-position: right 1% bottom 15%;
+  background-size: min(800px, 60vw);
+  opacity: 0.17;
+  z-index: -1;
+  pointer-events: none;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: "Bebas Neue", sans-serif;
+  font-weight: 700;
+  letter-spacing: -0.03em;
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: var(--current-line);
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--selection);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Bebas Neue", sans-serif !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.05em !important;
+}
+body {
+  font-family: "IBM Plex Mono", monospace !important;
+}
+.hero h1 {
+  font-family: "Bebas Neue", sans-serif !important;
+  font-size: clamp(56px, 8vw, 100px) !important;
+  line-height: 1 !important;
+  text-transform: uppercase;
+}
+@media (max-width: 768px) {
+  .hero h1 {
+  }
+}

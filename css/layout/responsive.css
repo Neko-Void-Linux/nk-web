@@ -1,0 +1,429 @@
+html,
+body {
+  overflow-x: hidden;
+  max-width: 100%;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+@media (max-width: 1024px) {
+  .navbar {
+    height: 70px !important;
+    padding: 0 24px !important;
+    flex-wrap: nowrap !important;
+  }
+
+  .container {
+    padding: 50px 24px !important;
+  }
+
+  .features-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 20px !important;
+  }
+
+  .about-section {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+
+  .team-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+
+  .hero-content {
+    height: auto !important;
+    position: relative !important;
+    top: auto !important;
+    left: auto !important;
+    padding: 80px 20px 40px !important;
+  }
+}
+
+@media (max-width: 768px) {
+  .navbar {
+    height: 60px !important;
+    padding: 0 16px !important;
+  }
+
+  .navbar-logo-img {
+    width: 34px !important;
+  }
+
+  .version-badge {
+    display: none !important;
+  }
+
+  .mobile-menu-toggle {
+    display: flex !important;
+    order: 3 !important;
+    margin-left: 8px !important;
+  }
+
+  .navbar-left {
+    order: 1 !important;
+    flex: 1 !important;
+  }
+
+  .navbar-right {
+    order: 2 !important;
+  }
+
+  .nav-links {
+    position: fixed !important;
+    top: 60px !important;
+    left: 0 !important;
+    right: 0 !important;
+    transform: none !important;
+    background: rgba(20, 25, 22, 0.98) !important;
+    backdrop-filter: blur(10px) !important;
+    flex-direction: column !important;
+    height: auto !important;
+    max-height: 0 !important;
+    overflow: hidden !important;
+    transition: max-height 0.35s cubic-bezier(0.4, 0, 0.2, 1) !important;
+    border-bottom: 1px solid var(--divider) !important;
+    z-index: 999 !important;
+    order: 3 !important;
+  }
+
+  .nav-links.active {
+    max-height: 500px !important;
+  }
+
+  .nav-link {
+    width: 100% !important;
+    padding: 16px 24px !important;
+    height: auto !important;
+    justify-content: flex-start !important;
+    border-bottom: 1px solid rgba(141, 163, 131, 0.08) !important;
+  }
+
+  .nav-link::after {
+    bottom: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+    height: 2px !important;
+  }
+
+  .lang-switch-mobile {
+    display: flex !important;
+    width: 100% !important;
+    padding: 16px 24px !important;
+    justify-content: center !important;
+    border-top: 1px solid var(--divider) !important;
+  }
+
+  .lang-dropdown {
+    display: none !important;
+  }
+
+  main {
+    margin-top: 60px !important;
+    min-height: calc(100vh - 60px) !important;
+  }
+
+  .container {
+    padding: 36px 16px !important;
+  }
+
+  .hero.active {
+    padding: 0 !important;
+    min-height: 100% !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: flex-start !important;
+  }
+
+  .hero-content {
+    position: relative !important;
+    top: auto !important;
+    left: auto !important;
+    height: auto !important;
+    width: 100% !important;
+    min-height: calc(100vh - 60px) !important;
+    padding: 40px 20px !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: flex-start !important;
+    gap: 0 !important;
+    margin: 0 !important;
+    transform: none !important;
+  }
+
+  .hero h1 {
+    font-size: clamp(2.8rem, 12vw, 4.5rem) !important;
+    margin-bottom: 16px !important;
+  }
+
+  #quote-box {
+    width: calc(100% - 32px) !important;
+    max-width: 100% !important;
+    margin-bottom: 28px !important;
+  }
+
+  #quote-measure,
+  #quote-display {
+    white-space: normal !important;
+    word-break: break-word !important;
+  }
+
+  .hero-content .project-links {
+    flex-direction: column !important;
+    width: 100% !important;
+    max-width: 340px !important;
+    gap: 10px !important;
+    margin: 20px auto !important;
+    padding: 0 !important;
+    border: none !important;
+  }
+
+  .hero-content .project-links a {
+    min-width: unset !important;
+    width: 100% !important;
+    flex: unset !important;
+  }
+
+  .tagline {
+    font-size: clamp(1.4rem, 6vw, 2.5rem) !important;
+  }
+
+  .features-grid {
+    grid-template-columns: 1fr !important;
+    gap: 16px !important;
+  }
+
+  .feature-card {
+    padding: 24px 18px !important;
+  }
+
+  .about-section {
+    grid-template-columns: 1fr !important;
+    gap: 16px !important;
+    margin-top: 30px !important;
+  }
+
+  .gallery-grid {
+    grid-template-columns: 1fr !important;
+    gap: 20px !important;
+  }
+
+  .gallery-item img {
+    height: 220px !important;
+    object-fit: cover !important;
+  }
+
+  .editions-list {
+    gap: 12px !important;
+  }
+
+  .edition-item {
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    gap: 16px !important;
+    padding: 20px 16px !important;
+  }
+
+  .edition-actions {
+    flex-direction: column !important;
+    align-items: stretch !important;
+    width: 100% !important;
+    min-width: auto !important;
+    gap: 10px !important;
+  }
+
+  .btn-edition {
+    width: 100% !important;
+    min-width: unset !important;
+  }
+
+  .hash-text-inline {
+    width: 100% !important;
+    max-width: none !important;
+    text-align: left !important;
+    word-break: break-all !important;
+  }
+
+  .team-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 16px !important;
+  }
+
+  .team-card {
+    padding: 24px 16px !important;
+  }
+
+  .credits-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+
+  summary {
+    padding: 16px 18px !important;
+    font-size: 0.9rem !important;
+  }
+
+  .details-content {
+    padding: 18px !important;
+    font-size: 0.85rem !important;
+  }
+
+  #detalles h2,
+  #galeria h2,
+  #descargas h2,
+  #equipo h2 {
+    font-size: clamp(1.8rem, 7vw, 2.5rem) !important;
+    margin-bottom: 28px !important;
+  }
+}
+
+@media (max-width: 600px) {
+  .hero h1 {
+    font-size: clamp(2.4rem, 13vw, 3.5rem) !important;
+  }
+
+  .tagline {
+    font-size: clamp(1.2rem, 7vw, 2rem) !important;
+  }
+
+  .team-grid {
+    grid-template-columns: 1fr !important;
+  }
+
+  .credits-grid {
+    grid-template-columns: 1fr !important;
+  }
+
+  .about-section {
+    grid-template-columns: 1fr !important;
+  }
+
+  .gallery-item img {
+    height: 200px !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .navbar {
+    height: 56px !important;
+    padding: 0 12px !important;
+  }
+
+  main {
+    margin-top: 56px !important;
+    min-height: calc(100vh - 56px) !important;
+  }
+
+  .nav-links {
+    top: 56px !important;
+  }
+
+  .hero-content {
+    min-height: calc(100vh - 56px) !important;
+    padding: 32px 16px !important;
+  }
+
+  .hero h1 {
+    font-size: clamp(2rem, 14vw, 3rem) !important;
+  }
+
+  .container {
+    padding: 28px 12px !important;
+  }
+
+  .feature-card,
+  .about-block,
+  .team-card {
+    padding: 20px 14px !important;
+  }
+
+  .btn-primary,
+  .btn-secondary,
+  .btn-edition,
+  .btn-main {
+    font-size: 11px !important;
+    padding: 10px 20px !important;
+  }
+
+  .hash-text,
+  .hash-text-inline {
+    font-size: 0.62rem !important;
+    padding: 8px 10px !important;
+  }
+
+  .gallery-item img {
+    height: 180px !important;
+  }
+
+  #quote-box {
+    padding: 6px 12px !important;
+  }
+
+  #quote-display,
+  #quote-measure {
+    font-size: 0.78rem !important;
+  }
+
+  .lang-btn-pill {
+    padding: 6px 10px !important;
+    font-size: 0.7rem !important;
+  }
+}
+
+@media (max-width: 768px) and (orientation: landscape) {
+  .hero-content {
+    min-height: calc(100vh - 60px) !important;
+    padding: 24px 32px !important;
+    justify-content: flex-start !important;
+    overflow-y: auto !important;
+  }
+
+  .hero h1 {
+    font-size: clamp(2rem, 8vw, 3rem) !important;
+    margin-bottom: 10px !important;
+  }
+
+  .tagline {
+    font-size: clamp(1rem, 4vw, 1.5rem) !important;
+  }
+
+  #quote-box {
+    margin-bottom: 16px !important;
+  }
+
+  .hero-content .project-links {
+    flex-direction: row !important;
+    flex-wrap: wrap !important;
+    max-width: 100% !important;
+    justify-content: center !important;
+  }
+
+  .hero-content .project-links a {
+    width: auto !important;
+    flex: 1 1 140px !important;
+  }
+
+  .gallery-item img {
+    height: 160px !important;
+  }
+}
+
+@media (hover: none) and (pointer: coarse) {
+  .btn-link,
+  .btn-main,
+  .btn-edition,
+  .btn-primary,
+  .btn-secondary,
+  .nav-link,
+  .tab-btn,
+  summary {
+    min-height: 44px;
+  }
+
+  .mobile-menu-toggle {
+    min-width: 44px;
+    min-height: 44px;
+  }
+}

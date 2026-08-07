@@ -1,0 +1,22 @@
+:root {
+  --bg-color: #1e2320;
+  --surface: #272e2a;
+  --current-line: #4a534d;
+  --selection: #8da383;
+  --foreground: #d3cdc3;
+  --comment: #7f9193;
+  --cyan: #7a998d;
+  --green: #8da383;
+  --orange: #cb9b7c;
+  --pink: #a48fa1;
+  --purple: #baa9b8;
+  --yellow: #dbb095;
+  --red: #c27979;
+  --sidebar-width: 280px;
+  --transition-fast: 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-smooth: 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  --glow-primary: 0 0 30px rgba(141, 163, 131, 0.25);
+  --glow-secondary: 0 0 30px rgba(122, 153, 141, 0.25);
+  --divider: #4a534d;
+  --divider-strong: #7f9193;
+}

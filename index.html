@@ -1,0 +1,1404 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Neko-Void | Void Linux But EASY!</title>
+    <link
+      rel="icon"
+      type="image/x-icon"
+      href="https://huggingface.co/arepaconcafe/neko-base/resolve/main/logo.ico"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=IBM+Plex+Mono:wght@400;500;600;700&family=IBM+Plex+Sans:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./css/styles.css" />
+  </head>
+  <body class="lang-en">
+    <div id="lightbox" class="lightbox">
+      <span class="lightbox-close">&times;</span>
+      <img class="lightbox-content" id="lightbox-img" alt="Lightbox Image" />
+    </div>
+
+    <header class="site-header">
+      <nav class="navbar">
+        <div class="navbar-left">
+          <a href="#inicio" class="navbar-brand">
+            <img
+              src="https://huggingface.co/arepaconcafe/neko-base/resolve/main/logo.png"
+              alt="Logo Neko-Void"
+              class="navbar-logo-img"
+            />
+          </a>
+        </div>
+
+        <button
+          class="mobile-menu-toggle"
+          onclick="toggleMobileMenu()"
+          aria-label="Toggle menu"
+          aria-expanded="false"
+        >
+          <svg
+            class="menu-icon"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <line x1="4" y1="6" x2="20" y2="6"></line>
+            <line x1="10" y1="12" x2="20" y2="12"></line>
+            <line x1="6" y1="18" x2="20" y2="18"></line>
+          </svg>
+          <svg
+            class="close-icon"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <line x1="18" y1="6" x2="6" y2="18"></line>
+            <line x1="6" y1="6" x2="18" y2="18"></line>
+          </svg>
+        </button>
+
+        <ul class="nav-links">
+          <li class="nav-item">
+            <a
+              href="#inicio"
+              class="nav-link active"
+              data-target="inicio"
+              onclick="closeMobileMenu()"
+            >
+              <span class="en">Home</span><span class="es">Inicio</span
+              ><span class="ja">ホーム</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a
+              href="#detalles"
+              class="nav-link"
+              data-target="detalles"
+              onclick="closeMobileMenu()"
+            >
+              <span class="en">Details</span><span class="es">Detalles</span
+              ><span class="ja">詳細</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a
+              href="#galeria"
+              class="nav-link"
+              data-target="galeria"
+              onclick="closeMobileMenu()"
+            >
+              <span class="en">Gallery</span><span class="es">Galería</span
+              ><span class="ja">ギャラリー</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a
+              href="#descargas"
+              class="nav-link"
+              data-target="descargas"
+              onclick="closeMobileMenu()"
+            >
+              <span class="en">Download</span><span class="es">Descargas</span
+              ><span class="ja">ダウンロード</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a
+              href="#equipo"
+              class="nav-link"
+              data-target="equipo"
+              onclick="closeMobileMenu()"
+            >
+              <span class="en">Team</span><span class="es">Equipo</span
+              ><span class="ja">チーム</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a
+              href="#donaciones"
+              class="nav-link"
+              data-target="donaciones"
+              onclick="closeMobileMenu()"
+            >
+              <span class="en">Donate</span><span class="es">Donar</span
+              ><span class="ja">寄付</span>
+            </a>
+          </li>
+
+          <li class="nav-item lang-switch-mobile">
+            <div class="lang-switch-inline">
+              <button
+                id="btn-en-mobile"
+                onclick="
+                  setLang('en');
+                  closeMobileMenu();
+                "
+                class="lang-btn-pill active"
+                data-lang="en"
+              >
+                EN
+              </button>
+              <button
+                id="btn-es-mobile"
+                onclick="
+                  setLang('es');
+                  closeMobileMenu();
+                "
+                class="lang-btn-pill"
+                data-lang="es"
+              >
+                ES
+              </button>
+              <button
+                id="btn-ja-mobile"
+                onclick="
+                  setLang('ja');
+                  closeMobileMenu();
+                "
+                class="lang-btn-pill"
+                data-lang="ja"
+              >
+                JA
+              </button>
+            </div>
+          </li>
+        </ul>
+
+        <div class="navbar-right">
+          <a
+            href="https://fluxer.gg/OlQ0bSc8"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="lang-dropdown-trigger"
+            style="text-decoration: none; padding: 8px; margin-right: 8px"
+            aria-label="Join our Fluxer"
+          >
+            <svg
+              viewBox="0 0 24 24"
+              width="18"
+              height="18"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              style="opacity: 0.8"
+            >
+              <path d="M4 10c2-2 4-2 6 0s4 2 6 0M4 14c2-2 4-2 6 0s4 2 6 0" />
+            </svg>
+          </a>
+
+          <a
+            href="https://discord.gg/EFFpSCDmcJ"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="lang-dropdown-trigger"
+            style="text-decoration: none; padding: 8px"
+            aria-label="Join our Discord"
+          >
+            <svg
+              viewBox="0 0 24 24"
+              width="18"
+              height="18"
+              fill="currentColor"
+              style="opacity: 0.8"
+            >
+              <path
+                d="M20.317 4.3698a19.7913 19.7913 0 00-4.8851-1.5152.0741.0741 0 00-.0785.0371c-.211.3753-.4447.8648-.6083 1.2495-1.8447-.2762-3.68-.2762-5.4868 0-.1636-.3933-.4058-.8742-.6177-1.2495a.077.077 0 00-.0785-.037 19.7363 19.7363 0 00-4.8852 1.515.0699.0699 0 00-.0321.0277C.5334 9.0458-.319 13.5799.0992 18.0578a.0824.0824 0 00.0312.0561c2.0528 1.5076 4.0413 2.4228 5.9929 3.0294a.0777.0777 0 00.0842-.0276c.4616-.6304.8731-1.2952 1.226-1.9942a.076.076 0 00-.0416-.1057c-.6528-.2476-1.2743-.5495-1.8722-.8923a.077.077 0 01-.0076-.1277c.1258-.0943.2517-.1923.3718-.2914a.0743.0743 0 01.0776-.0105c3.9278 1.7933 8.18 1.7933 12.0614 0a.0739.0739 0 01.0785.0095c.1202.099.246.1981.3728.2924a.077.077 0 01-.0066.1276 12.2986 12.2986 0 01-1.873.8914.0766.0766 0 00-.0407.1067c.3604.698.7719 1.3628 1.225 1.9932a.076.076 0 00.0842.0286c1.961-.6067 3.9495-1.5219 6.0023-3.0294a.077.077 0 00.0313-.0552c.5004-5.177-.8382-9.6739-3.5485-13.6604a.061.061 0 00-.0312-.0286zM8.02 15.3312c-1.1825 0-2.1569-1.0857-2.1569-2.419 0-1.3332.9555-2.4189 2.157-2.4189 1.2108 0 2.1757 1.0952 2.1568 2.419 0 1.3332-.9555 2.4189-2.1569 2.4189zm7.9748 0c-1.1825 0-2.1569-1.0857-2.1569-2.419 0-1.3332.9554-2.4189 2.1569-2.4189 1.2108 0 2.1757 1.0952 2.1568 2.419 0 1.3332-.946 2.4189-2.1568 2.4189Z"
+              />
+            </svg>
+          </a>
+
+          <div class="lang-dropdown" id="lang-dropdown">
+            <button
+              class="lang-dropdown-trigger"
+              id="lang-trigger"
+              onclick="toggleLangDropdown()"
+              aria-label="Change language"
+              aria-expanded="false"
+            >
+              <svg
+                class="lang-globe-icon"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.5"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <circle cx="12" cy="12" r="10" />
+                <path d="M2 12h20" />
+                <path
+                  d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"
+                />
+              </svg>
+              <span class="lang-current" id="lang-current-label">EN</span>
+              <svg
+                class="lang-chevron"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <polyline points="6 9 12 15 18 9" />
+              </svg>
+            </button>
+            <div class="lang-dropdown-menu" id="lang-menu">
+              <button
+                class="lang-option active"
+                id="btn-en"
+                onclick="setLang('en')"
+                data-lang="en"
+              >
+                <span class="lang-name">English</span>
+                <span class="lang-code">EN</span>
+                <span class="lang-check">
+                  <svg
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2.5"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <polyline points="20 6 9 17 4 12" />
+                  </svg>
+                </span>
+              </button>
+              <button
+                class="lang-option"
+                id="btn-es"
+                onclick="setLang('es')"
+                data-lang="es"
+              >
+                <span class="lang-name">Español</span>
+                <span class="lang-code">ES</span>
+                <span class="lang-check">
+                  <svg
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2.5"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <polyline points="20 6 9 17 4 12" />
+                  </svg>
+                </span>
+              </button>
+              <button
+                class="lang-option"
+                id="btn-ja"
+                onclick="setLang('ja')"
+                data-lang="ja"
+              >
+                <span class="lang-name">日本語</span>
+                <span class="lang-code">JA</span>
+                <span class="lang-check">
+                  <svg
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2.5"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <polyline points="20 6 9 17 4 12" />
+                  </svg>
+                </span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main id="main-content">
+      <section id="inicio" class="hero app-section active">
+        <div class="hero-content">
+          <h1>NEKO VOID</h1>
+          <span class="tagline"
+            >&gt;_<span
+              id="typewriter-text"
+              style="font-size: inherit; display: inline; color: inherit"
+            ></span
+            ><span class="cursor">_</span></span
+          >
+
+          <div id="quote-box">
+            <p id="quote-measure">
+              <span class="prompt-prefix">&gt;_</span
+              ><i class="en">"Simplicity is prerequisite for reliability"</i
+              ><i class="es"
+                >"La simplicidad es un requisito previo para la fiabilidad"</i
+              ><i class="ja">「シンプルさは信頼性の前提条件である」</i
+              ><span class="cursor" style="display: inline !important">_</span>
+            </p>
+
+            <p id="quote-display">
+              <span class="prompt-prefix">&gt;_</span
+              ><span
+                id="quote-typewriter"
+                style="display: inline !important; color: inherit"
+              ></span
+              ><span
+                class="cursor"
+                style="
+                  color: var(--orange) !important;
+                  display: inline !important;
+                "
+                >_</span
+              >
+            </p>
+          </div>
+          <div class="project-links">
+            <a
+              href="https://sourceforge.net/projects/neko-void/"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="btn-primary"
+              title="Download Neko-Void from SourceForge"
+              >SourceForge</a
+            >
+            <a
+              href="https://codeberg.org/Neko-Void"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="btn-secondary"
+              title="View Neko-Void source code on Codeberg"
+              >Codeberg</a
+            >
+            <a
+              href="https://distrowatch.com/table.php?distribution=nekovoid"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="btn-secondary"
+              title="View Neko-Void on DistroWatch"
+              >DistroWatch</a
+            >
+            <a
+              href="https://codeberg.org/javiercplus/Kasha-Installer"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="btn-secondary"
+              >Kasha Installer</a
+            >
+            <a
+              href="https://github.com/Neko-Void-Linux"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="btn-secondary"
+              title="Github organization of neko void"
+              >GITHUB</a
+            >
+            <a
+              href="https://nekovoid-wiki.vercel.app/es/"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="btn-secondary"
+              title="Neko-Void Documentation Wiki"
+              >Wiki</a
+            >
+          </div>
+        </div>
+      </section>
+
+      <section id="detalles" class="app-section">
+        <div class="container">
+          <h2
+            style="
+              color: var(--green);
+              margin-bottom: 40px;
+              text-align: center;
+              font-size: 2.5rem;
+            "
+          >
+            <span class="en">Specifications</span
+            ><span class="es">Especificaciones</span
+            ><span class="ja">仕様</span>
+          </h2>
+
+          <div class="features-grid">
+            <div class="feature-card">
+              <h3 style="color: var(--green); margin-bottom: 15px">
+                <span class="en">Core Architecture</span
+                ><span class="es">Arquitectura Base</span
+                ><span class="ja">コアアーキテクチャ</span>
+              </h3>
+              <p class="en">
+                Built on <strong>Void Linux</strong> with
+                <strong>runit</strong> for lightning-fast boot times. Features
+                the <strong>MATE</strong> desktop environment with essential
+                tools pre-installed.
+              </p>
+              <p class="es">
+                Basado en <strong>Void Linux</strong> con
+                <strong>runit</strong> para tiempos de arranque ultrarrápidos.
+                Incluye el entorno de escritorio <strong>MATE</strong>
+                con herramientas esenciales preinstaladas.
+              </p>
+              <p class="ja">
+                <strong>Void Linux</strong>をベースに、<strong>runit</strong>で
+                超高速ブートを実現。<strong>MATE</strong>デスクトップ環境と
+                必須ツールを事前インストール済み。
+              </p>
+              <ul class="feature-list">
+                <li>
+                  <strong>Flatpak</strong> -
+                  <span class="en">Universal packages</span
+                  ><span class="es">Paquetes universales</span
+                  ><span class="ja">ユニバーサルパッケージ</span>
+                </li>
+                <li>
+                  <strong>Kore</strong> -
+                  <span class="en">Tarball & AppImage manager</span
+                  ><span class="es">Gestor de Tarballs y AppImage</span
+                  ><span class="ja">TarballとAppImageマネージャー</span>
+                </li>
+                <li>
+                  <strong>Tinyfetch</strong> -
+                  <span class="en">System info</span
+                  ><span class="es">Información del sistema</span
+                  ><span class="ja">システム情報</span>
+                </li>
+                <li>
+                  <strong>btop</strong> -
+                  <span class="en">Resource monitor</span
+                  ><span class="es">Monitor de recursos</span
+                  ><span class="ja">リソースモニター</span>
+                </li>
+                <li>
+                  <strong>Octoxbps</strong> -
+                  <span class="en">GUI package manager</span
+                  ><span class="es">Gestor de paquetes GUI</span
+                  ><span class="ja">GUI パッケージマネージャー</span>
+                </li>
+              </ul>
+            </div>
+
+            <div class="feature-card">
+              <h3 style="color: var(--green); margin-bottom: 15px">
+                <span class="en">Gaming Ready</span
+                ><span class="es">Listo para Gaming</span
+                ><span class="ja">ゲーミング対応</span>
+              </h3>
+              <p class="en">
+                Optimized for maximum performance with full
+                <strong>Vulkan</strong> support and preconfigured non-free
+                Intel/AMD drivers for seamless gaming from day one.
+              </p>
+              <p class="es">
+                Optimizado para máximo rendimiento con soporte completo
+                <strong>Vulkan</strong> y drivers non-free de Intel/AMD
+                preconfigurados para gaming sin problemas desde el primer día.
+              </p>
+              <p class="ja">
+                完全な<strong>Vulkan</strong>サポートと、事前設定された
+                Intel/AMD 用 non-free ドライバーで、初日からシームレスな
+                ゲーミング体験を提供。
+              </p>
+              <ul class="feature-list">
+                <li>
+                  <span class="en">Full Vulkan API support</span
+                  ><span class="es">Soporte completo API Vulkan</span
+                  ><span class="ja">完全なVulkan APIサポート</span>
+                </li>
+                <li>
+                  <span class="en">Pre-configured GPU drivers</span
+                  ><span class="es">Drivers de GPU preconfigurados</span
+                  ><span class="ja">事前設定されたGPUドライバー</span>
+                </li>
+                <li>
+                  <span class="en">Optimized performance settings</span
+                  ><span class="es">Ajustes de rendimiento optimizados</span
+                  ><span class="ja">最適化されたパフォーマンス設定</span>
+                </li>
+                <li>
+                  <span class="en">Ready for Steam & Lutris</span
+                  ><span class="es">Listo para Steam y Lutris</span
+                  ><span class="ja">SteamとLutris対応</span>
+                </li>
+              </ul>
+            </div>
+
+            <div class="feature-card">
+              <h3 style="color: var(--green); margin-bottom: 15px">
+                <span class="en">Kasha Installer</span
+                ><span class="es">Instalador Kasha</span
+                ><span class="ja">Kasha インストーラー</span>
+              </h3>
+              <p class="en">
+                Custom installer that simplifies Void Linux setup. Includes a
+                powerful <strong>post-install assistant</strong>
+                for one-click configuration of specialized workflows.
+              </p>
+              <p class="es">
+                Instalador personalizado que simplifica la configuración de Void
+                Linux. Incluye un potente
+                <strong>asistente post-instalación</strong> para configuración
+                con un clic de flujos especializados.
+              </p>
+              <p class="ja">
+                Void Linux のセットアップを簡素化するカスタムインストーラー。
+                専門的なワークフローのワンクリック設定に対応した強力な
+                <strong>ポストインストールアシスタント</strong>を搭載。
+              </p>
+              <ul class="feature-list">
+                <li>
+                  <span class="en">Easy user & network setup</span
+                  ><span class="es">Configuración fácil de usuario y red</span
+                  ><span class="ja">簡単なユーザーとネットワークの設定</span>
+                </li>
+                <li>
+                  <span class="en">Automatic partitioning</span
+                  ><span class="es">Particionado automático</span
+                  ><span class="ja">自動パーティショニング</span>
+                </li>
+                <li>
+                  <span class="en">One-click app categories</span
+                  ><span class="es">Categorías de apps en un clic</span
+                  ><span class="ja">ワンクリックのアプリカテゴリ</span>
+                </li>
+                <li>
+                  <span class="en">Video, Music, Design, Gaming & more</span
+                  ><span class="es">Video, Música, Diseño, Gaming y más</span
+                  ><span class="ja">ビデオ、音楽、デザイン、ゲームなど</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <h2
+            style="
+              color: var(--green);
+              margin-top: 80px;
+              margin-bottom: 40px;
+              text-align: center;
+              font-size: 2.5rem;
+            "
+          >
+            <span class="en">Philosophy</span><span class="es">Filosofía</span
+            ><span class="ja">哲学</span>
+          </h2>
+
+          <div class="about-section">
+            <div class="about-block">
+              <h4 style="color: var(--green); margin-bottom: 15px">
+                <span class="en">Why it was created</span
+                ><span class="es">Por qué se creó</span
+                ><span class="ja">作成理由</span>
+              </h4>
+              <p class="en">
+                The project originally started as a personal hobby. Over time,
+                it evolved into a structured project aimed at offering an
+                easy-to-install and user-friendly Void Linux version for the end
+                user.
+              </p>
+              <p class="es">
+                El proyecto se originó inicialmente como un hobby personal. Con
+                el tiempo, evolucionó hasta convertirse en un proyecto
+                estructurado con el objetivo de ofrecer una versión de Void
+                Linux fácil de instalar y utilizar para el usuario final.
+              </p>
+              <p class="ja">
+                このプロジェクトは元々個人的な趣味として始まりました。
+                時を経て、エンドユーザー向けに簡単にインストールできて
+                使いやすい Void Linux バージョンを提供することを目的とした
+                構造化されたプロジェクトへと進化しました。
+              </p>
+            </div>
+            <div class="about-block">
+              <h4 style="color: var(--green); margin-bottom: 15px">
+                <span class="en">Target Audience</span
+                ><span class="es">Público dirigido</span
+                ><span class="ja">対象ユーザー</span>
+              </h4>
+              <p class="en">
+                This distribution is aimed at users who want a lightweight and
+                robust operating system, easily customizable for their specific
+                workflow without the usual complications of a manual setup from
+                scratch.
+              </p>
+              <p class="es">
+                Esta distribución está dirigida a usuarios que desean un sistema
+                operativo ligero y robusto, fácilmente adaptable a su flujo de
+                trabajo específico sin las complicaciones habituales de una
+                configuración manual desde cero.
+              </p>
+              <p class="ja">
+                このディストリビューションは、軽量で堅牢なオペレーティングシステムを求め、
+                一から手動でセットアップする際の一般的な複雑さなしに、
+                特定のワークフローに簡単にカスタマイズしたいユーザーを対象としています。
+              </p>
+            </div>
+
+            <div class="about-block">
+              <h4 style="color: var(--green); margin-bottom: 15px">
+                <span class="en">Simplicity over Complexity</span>
+                <span class="es">Simplicidad sobre Complejidad</span>
+                <span class="ja">複雑さよりもシンプルさ</span>
+              </h4>
+              <p class="en">
+                Centralizing too much power in a single suite like systemd goes
+                against the UNIX idea of small, separate tools. We believe that
+                doing one thing well is the key to a stable system.
+              </p>
+              <p class="es">
+                Centralizar demasiado poder en una sola suite como systemd choca
+                con la idea UNIX de herramientas pequeñas y separadas. Creemos
+                que hacer una sola cosa bien es la clave para un sistema
+                estable.
+              </p>
+              <p class="ja">
+                systemd
+                のように一つのスイートに権限を集中させすぎることは、小さく独立したツールという
+                UNIX
+                の理念に反します。私たちは、一つのことをうまくやることが安定したシステムの鍵であると信じています。
+              </p>
+            </div>
+            <div class="about-block">
+              <h4 style="color: var(--green); margin-bottom: 15px">
+                <span class="en">Transparency & Control</span>
+                <span class="es">Transparencia y Control</span>
+                <span class="ja">透明性と制御</span>
+              </h4>
+              <p class="en">
+                A monolithic suite increases the attack surface and adds
+                unnecessary abstraction. We prefer plain-text logs for
+                simplicity and portability. If something fails, reading text
+                files with standard tools like <code>cat</code>,
+                <code>less</code>, or <code>grep</code> is far more direct than
+                relying on binary logs.
+              </p>
+              <p class="es">
+                Una suite monolítica aumenta la superficie de ataque y añade
+                abstracción innecesaria. Preferimos registros (logs) de texto
+                plano por simplicidad y portabilidad. Si algo falla, leer
+                archivos de texto con herramientas estándar como
+                <code>cat</code>, <code>less</code> o <code>grep</code> resulta
+                mucho más directo que depender de logs binarios.
+              </p>
+              <p class="ja">
+                モノリシックなスイートは攻撃面を増やし、不必要な抽象化を追加します。シンプルさと移植性のためにプレーンテキストのログを推奨します。何か問題が発生した場合、<code>cat</code>、<code>less</code>、<code
+                  >grep</code
+                >
+                などの標準ツールでテキストファイルを読み取る方が、バイナリログに依存するよりもはるかに直接的です。
+              </p>
+            </div>
+            <div class="about-block" style="border-color: var(--orange)">
+              <h4 style="color: var(--orange); margin-bottom: 15px">
+                <span class="en">100% Systemd-Free</span>
+                <span class="es">100% Libre de Systemd</span>
+                <span class="ja">100% Systemdフリー</span>
+              </h4>
+              <p class="en">
+                We are proudly compatible with the
+                <a
+                  href="https://systemdfree.com/"
+                  target="_blank"
+                  style="color: var(--orange); text-decoration: underline"
+                  >systemdfree.com</a
+                >
+                initiative. By using <strong>runit</strong>, we ensure that your
+                system remains modular, transparent, and free from monolithic
+                dependencies.
+              </p>
+              <p class="es">
+                Somos orgullosamente compatibles con la iniciativa
+                <a
+                  href="https://systemdfree.com/"
+                  target="_blank"
+                  style="color: var(--orange); text-decoration: underline"
+                  >systemdfree.com</a
+                >. Al usar <strong>runit</strong>, aseguramos que tu sistema se
+                mantenga modular, transparente y libre de dependencias
+                monolíticas.
+              </p>
+              <p class="ja">
+                私たちは誇りを持って
+                <a
+                  href="https://systemdfree.com/"
+                  target="_blank"
+                  style="color: var(--orange); text-decoration: underline"
+                  >systemdfree.com</a
+                >
+                イニシアチブと互換性があります。<strong>runit</strong>を使用することで、システムがモジュール化され、透明性を保ち、モノリシックな依存関係から解放されることを保証します。
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="galeria" class="app-section">
+        <div class="container">
+          <h2
+            style="color: var(--green); text-align: center; margin-bottom: 40px"
+          >
+            <span class="en">Gallery</span><span class="es">Capturas</span
+            ><span class="ja">ギャラリー</span>
+          </h2>
+          <div class="gallery-grid">
+            <div class="gallery-item">
+              <img
+                src="https://huggingface.co/arepaconcafe/neko-base/resolve/main/1.png"
+                alt="Desktop View"
+              />
+            </div>
+            <div class="gallery-item">
+              <img
+                src="https://huggingface.co/arepaconcafe/neko-base/resolve/main/2.png"
+                alt="Terminal View"
+              />
+            </div>
+            <div class="gallery-item">
+              <img
+                src="https://huggingface.co/arepaconcafe/neko-base/resolve/main/3.png"
+                alt="Menu View"
+              />
+            </div>
+            <div class="gallery-item">
+              <img
+                src="https://huggingface.co/arepaconcafe/neko-base/resolve/main/4.png"
+                alt="Gaming View"
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="descargas" class="app-section">
+        <div class="container">
+          <h2
+            style="
+              color: var(--green);
+              margin-bottom: 40px;
+              text-align: center;
+              font-size: 2.5rem;
+            "
+          >
+            <span class="en">Editions</span><span class="es">Ediciones</span
+            ><span class="ja">エディション</span>
+          </h2>
+          <p
+            style="
+              color: var(--comment);
+              margin-bottom: 50px;
+              text-align: center;
+              max-width: 700px;
+              margin-left: auto;
+              margin-right: auto;
+            "
+          >
+            <span class="en"
+              >All Neko-Void editions with different desktop environments. If a
+              button is gray, it means it is currently in development.</span
+            >
+            <span class="es"
+              >Todas las ediciones de Neko-Void con diferentes entornos de
+              escritorio. Si un botón está en gris, significa que actualmente
+              está en desarrollo.</span
+            >
+            <span class="ja"
+              >さまざまなデスクトップ環境を備えた Neko-Void
+              の全エディション。ボタンが灰色の場合は、現在開発中であることを意味します。</span
+            >
+          </p>
+
+          <div class="editions-list">
+            <div class="edition-item">
+              <div class="edition-info">
+                <h3>MATE - Xorg</h3>
+                <span class="edition-badge-main">Main Edition</span>
+              </div>
+              <div class="edition-actions">
+                <button
+                  id="link-xorg"
+                  class="btn-edition btn-primary"
+                  style="cursor: pointer; font-family: inherit"
+                >
+                  <span class="en">Download</span>
+                  <span class="es">Descargar</span>
+                  <span class="ja">ダウンロード</span>
+                </button>
+                <span
+                  id="hash-xorg"
+                  class="hash-text-inline"
+                  title="Click to copy"
+                  style="cursor: pointer"
+                  >SHA256: Loading...</span
+                >
+              </div>
+            </div>
+
+            <div class="edition-item">
+              <div class="edition-info">
+                <h3>MATE - XLibre</h3>
+                <span class="edition-badge-main">Main Edition</span>
+              </div>
+              <div class="edition-actions">
+                <button
+                  id="link-xlibre"
+                  class="btn-edition btn-primary"
+                  style="cursor: pointer; font-family: inherit"
+                >
+                  <span class="en">Download</span>
+                  <span class="es">Descargar</span>
+                  <span class="ja">ダウンロード</span>
+                </button>
+                <span
+                  id="hash-xlibre"
+                  class="hash-text-inline"
+                  title="Click to copy"
+                  style="cursor: pointer"
+                  >SHA256: Loading...</span
+                >
+              </div>
+            </div>
+
+            <div class="edition-item">
+              <div class="edition-info">
+                <h3>XFCE</h3>
+                <span class="edition-badge-flavor">Flavor</span>
+              </div>
+              <div class="edition-actions">
+                <button
+                  id="flavor-xfce"
+                  class="btn-edition btn-disabled"
+                  disabled
+                  style="font-family: inherit"
+                >
+                  <span class="en">Coming Soon</span
+                  ><span class="es">En desarrollo</span
+                  ><span class="ja">開発中</span>
+                </button>
+              </div>
+            </div>
+
+            <div class="edition-item">
+              <div class="edition-info">
+                <h3>KDE</h3>
+                <span class="edition-badge-flavor">Flavor</span>
+              </div>
+              <div class="edition-actions">
+                <button
+                  id="flavor-kde"
+                  class="btn-edition btn-disabled"
+                  disabled
+                  style="font-family: inherit"
+                >
+                  <span class="en">Coming Soon</span
+                  ><span class="es">En desarrollo</span
+                  ><span class="ja">開発中</span>
+                </button>
+              </div>
+            </div>
+
+            <div class="edition-item">
+              <div class="edition-info">
+                <h3>SWAY &amp; I3</h3>
+                <span class="edition-badge-flavor">Flavor</span>
+              </div>
+              <div class="edition-actions">
+                <button
+                  id="flavor-sway-i3"
+                  class="btn-edition btn-disabled"
+                  disabled
+                  style="font-family: inherit"
+                >
+                  <span class="en">Coming Soon</span
+                  ><span class="es">En desarrollo</span
+                  ><span class="ja">開発中</span>
+                </button>
+              </div>
+            </div>
+
+            <div class="edition-item">
+              <div class="edition-info">
+                <h3>OPENBOX</h3>
+                <span class="edition-badge-flavor">Flavor</span>
+              </div>
+              <div class="edition-actions">
+                <button
+                  id="flavor-openbox"
+                  class="btn-edition btn-disabled"
+                  disabled
+                  style="font-family: inherit"
+                >
+                  <span class="en">Coming Soon</span
+                  ><span class="es">En desarrollo</span
+                  ><span class="ja">開発中</span>
+                </button>
+              </div>
+            </div>
+
+            <div class="edition-item">
+              <div class="edition-info">
+                <h3>LXQT</h3>
+                <span class="edition-badge-flavor">Flavor</span>
+              </div>
+              <div class="edition-actions">
+                <button
+                  id="flavor-lxqt"
+                  class="btn-edition btn-disabled"
+                  disabled
+                  style="font-family: inherit"
+                >
+                  <span class="en">Coming Soon</span
+                  ><span class="es">En desarrollo</span
+                  ><span class="ja">開発中</span>
+                </button>
+              </div>
+            </div>
+
+            <div class="edition-item">
+              <div class="edition-info">
+                <h3>LABWC</h3>
+                <span class="edition-badge-flavor">Flavor</span>
+              </div>
+              <div class="edition-actions">
+                <button
+                  id="flavor-labwc"
+                  class="btn-edition btn-disabled"
+                  disabled
+                  style="font-family: inherit"
+                >
+                  <span class="en">Coming Soon</span
+                  ><span class="es">En desarrollo</span
+                  ><span class="ja">開発中</span>
+                </button>
+              </div>
+            </div>
+
+            <div class="edition-item">
+              <div class="edition-info">
+                <h3>NIRI</h3>
+                <span class="edition-badge-flavor">Flavor</span>
+              </div>
+              <div class="edition-actions">
+                <button
+                  id="flavor-niri"
+                  class="btn-edition btn-disabled"
+                  disabled
+                  style="font-family: inherit"
+                >
+                  <span class="en">Coming Soon</span
+                  ><span class="es">En desarrollo</span
+                  ><span class="ja">開発中</span>
+                </button>
+              </div>
+            </div>
+
+            <div class="edition-item">
+              <div class="edition-info">
+                <h3>ICEWM &amp; JWM</h3>
+                <span class="edition-badge-flavor">Flavor</span>
+              </div>
+              <div class="edition-actions">
+                <button
+                  id="flavor-icewm-jwm"
+                  class="btn-edition btn-disabled"
+                  disabled
+                  style="font-family: inherit"
+                >
+                  <span class="en">Coming Soon</span
+                  ><span class="es">En desarrollo</span
+                  ><span class="ja">開発中</span>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="equipo" class="app-section">
+        <div class="container">
+          <h2
+            style="
+              color: var(--green);
+              margin-bottom: 40px;
+              text-align: center;
+              font-size: 2.5rem;
+            "
+          >
+            <span class="en">Core Team & Contributors</span>
+            <span class="es">Equipo y Colaboradores</span>
+            <span class="ja">チームと貢献者</span>
+          </h2>
+          <div class="team-grid">
+            <div class="team-card">
+              <img
+                src="https://github.com/javiercplus.png"
+                alt="javiercplus"
+                class="team-avatar"
+              />
+              <h3>javiercplus</h3>
+              <p class="team-title">
+                <span class="en">Creator & Core Developer</span>
+                <span class="es">Creador y Desarrollador Core</span>
+                <span class="ja">クリエイター & コア開発者</span>
+              </p>
+              <p class="team-desc">
+                <span class="en"
+                  >Creator and lead developer of the Neko Void distribution and
+                  Kasha installer.</span
+                >
+                <span class="es"
+                  >Creador y desarrollador principal de la distribución Neko
+                  Void y del instalador Kasha.</span
+                >
+                <span class="ja"
+                  >Neko
+                  VoidディストリビューションとKashaインストーラの作成者およびリード開発者。</span
+                >
+              </p>
+              <a
+                href="https://github.com/javiercplus"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="btn-link"
+                style="margin-top: auto"
+                >GitHub</a
+              >
+            </div>
+            <div class="team-card">
+              <img
+                src="https://github.com/CrowRei34.png"
+                alt="Crow"
+                class="team-avatar"
+              />
+              <h3>Crow</h3>
+              <p class="team-title">
+                <span class="en">Tester & Web Designer</span>
+                <span class="es">Tester y Diseñador Web</span>
+                <span class="ja">テスター & ウェブデザイナー</span>
+              </p>
+              <p class="team-desc">
+                <span class="en"
+                  >In charge of web design and distribution testing.</span
+                >
+                <span class="es"
+                  >Encargado del diseño de la página web y de realizar pruebas
+                  (testing) de la distribución.</span
+                >
+                <span class="ja"
+                  >ウェブデザインとディストリビューションのテストを担当。</span
+                >
+              </p>
+              <a
+                href="https://github.com/CrowRei34"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="btn-link"
+                style="margin-top: auto"
+                >GitHub</a
+              >
+            </div>
+            <div class="team-card">
+              <img
+                src="https://github.com/0rt4.png"
+                alt="Orta"
+                class="team-avatar"
+              />
+              <h3>Orta</h3>
+              <p class="team-title">
+                <span class="en">Supervisor & Tester</span>
+                <span class="es">Supervisor y Tester</span>
+                <span class="ja">スーパーバイザー & テスター</span>
+              </p>
+              <p class="team-desc">
+                <span class="en"
+                  >General project supervisor and responsible for testing to
+                  ensure stability.</span
+                >
+                <span class="es"
+                  >Supervisor general del proyecto y responsable de realizar
+                  pruebas para asegurar la estabilidad.</span
+                >
+                <span class="ja"
+                  >プロジェクト全体のスーパーバイザーであり、安定性を確保するためのテストを担当。</span
+                >
+              </p>
+              <a
+                href="https://github.com/0rt4"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="btn-link"
+                style="margin-top: auto"
+                >GitHub</a
+              >
+            </div>
+            <div class="team-card">
+              <img
+                src="https://github.com/ezequielgk.png"
+                alt="Ezequiel"
+                class="team-avatar"
+              />
+              <h3>Ezequiel</h3>
+              <p class="team-title">
+                <span class="en">Kore Package Manager</span>
+                <span class="es">Kore Package Manager</span>
+                <span class="ja">Kore Package Manager</span>
+              </p>
+              <p class="team-desc">
+                <span class="en"
+                  >Developer of Kore Package Manager (Kepo), a GUI for
+                  installing tarballs and AppImages in Neko Void.</span
+                >
+                <span class="es"
+                  >Desarrollador de Kore Package Manager (Kepo), una GUI para
+                  instalar tarballs y AppImages en Neko Void.</span
+                >
+                <span class="ja"
+                  >Neko VoidでtarballやAppImageをインストールするためのGUI、Kore
+                  Package Manager (Kepo)の開発者。</span
+                >
+              </p>
+              <a
+                href="https://github.com/ezequielgk/Kore-Package-Manager"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="btn-link"
+                style="margin-top: auto"
+                >GitHub</a
+              >
+            </div>
+            <div class="team-card">
+              <img
+                src="https://github.com/Derszi65g.png"
+                alt="Becker"
+                class="team-avatar"
+              />
+              <h3>Becker</h3>
+              <p class="team-title">
+                <span class="en">I3dots Designer</span>
+                <span class="es">Diseñador de I3dots</span>
+                <span class="ja">I3dots デザイナー</span>
+              </p>
+              <p class="team-desc">
+                <span class="en"
+                  >Designer and responsible for customizing the i3 dotfiles
+                  (I3dots) for Neko Void.</span
+                >
+                <span class="es"
+                  >Diseñador y responsable de la personalización de las dotfiles
+                  de i3 (I3dots) para Neko Void.</span
+                >
+                <span class="ja"
+                  >Neko Void向けのi3
+                  dotfiles（I3dots）のカスタマイズとデザインを担当。</span
+                >
+              </p>
+              <a
+                href="https://github.com/Derszi65g"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="btn-link"
+                style="margin-top: auto"
+                >GitHub</a
+              >
+            </div>
+            <div class="team-card">
+              <img
+                src="https://github.com/ANOMALI0x00.png"
+                alt="ANOMALI.0x00"
+                class="team-avatar"
+              />
+              <h3>ANOMALI.0x00</h3>
+              <p class="team-title">
+                <span class="en">Kernel Manager Developer</span>
+                <span class="es">Desarrollador de Kernel Manager</span>
+                <span class="ja">Kernel Manager 開発者</span>
+              </p>
+              <p class="team-desc">
+                <span class="en"
+                  >Developer responsible for the creation and maintenance of
+                  Neko Kernel Manager.</span
+                >
+                <span class="es"
+                  >Desarrollador responsable de la creación y mantenimiento del
+                  Neko Kernel Manager.</span
+                >
+                <span class="ja"
+                  >Neko Kernel Managerの作成と保守を担当する開発者。</span
+                >
+              </p>
+              <a
+                href="https://github.com/ANOMALI0x00"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="btn-link"
+                style="margin-top: auto"
+                >GitHub</a
+              >
+            </div>
+            <div class="team-card">
+              <img
+                src="https://github.com/KevinRunforrestt.png"
+                alt="KevinRunforrestt"
+                class="team-avatar"
+              />
+              <h3>KevinRunforrestt</h3>
+              <p class="team-title">
+                <span class="en">Documentation & Tester</span>
+                <span class="es">Documentación y Tester</span>
+                <span class="ja">ドキュメンテーション & テスター</span>
+              </p>
+              <p class="team-desc">
+                <span class="en"
+                  >In charge of writing official documentation and performing
+                  tests.</span
+                >
+                <span class="es"
+                  >Encargado de la redacción de la documentación oficial y de
+                  realizar pruebas (testing).</span
+                >
+                <span class="ja">公式ドキュメントの執筆とテストを担当。</span>
+              </p>
+              <a
+                href="https://github.com/KevinRunforrestt"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="btn-link"
+                style="margin-top: auto"
+                >GitHub</a
+              >
+            </div>
+            <div class="team-card">
+              <img
+                src="https://github.com/Mashalack.png"
+                alt="Mashalack"
+                class="team-avatar"
+              />
+              <h3>Mashalack</h3>
+              <p class="team-title">
+                <span class="en">Musl Edition Creator & Supervisor</span>
+                <span class="es">Creador y Supervisor de la versión Musl</span>
+                <span class="ja">Musl版クリエイター & スーパーバイザー</span>
+              </p>
+              <p class="team-desc">
+                <span class="en"
+                  >Creator and supervisor of the musl version of Neko
+                  Void.</span
+                >
+                <span class="es"
+                  >Creador y supervisor de la versión musl de Neko Void.</span
+                >
+                <span class="ja"
+                  >Neko Voidのmusl版の作成者およびスーパーバイザー。</span
+                >
+              </p>
+              <a
+                href="https://github.com/Mashalack"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="btn-link"
+                style="margin-top: auto"
+                >GitHub</a
+              >
+            </div>
+            <div class="team-card">
+              <img
+                src="https://github.com/rockman6554.png"
+                alt="rockman6554"
+                class="team-avatar"
+              />
+              <h3>rockman6554</h3>
+              <p class="team-title">
+                <span class="en">Tester</span>
+                <span class="es">Tester</span>
+                <span class="ja">テスター</span>
+              </p>
+              <p class="team-desc">
+                <span class="en"
+                  >Responsible for testing the distribution to ensure
+                  stability.</span
+                >
+                <span class="es"
+                  >Encargado de realizar pruebas (testing) de la
+                  distribución.</span
+                >
+                <span class="ja"
+                  >安定性を確保するためのディストリビューションのテストを担当。</span
+                >
+              </p>
+              <a
+                href="https://github.com/rockman6554"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="btn-link"
+                style="margin-top: auto"
+                >GitHub</a
+              >
+            </div>
+          </div>
+        </div>
+      </section>
+      <section id="donaciones" class="app-section">
+        <div class="container" style="text-align: center">
+          <h2
+            style="color: var(--green); margin-bottom: 30px; text-align: center"
+          >
+            <span class="en">Support the Project</span
+            ><span class="es">Apoya el Proyecto</span
+            ><span class="ja">プロジェクトを支援する</span>
+          </h2>
+          <p
+            style="
+              margin-bottom: 30px;
+              color: var(--foreground);
+              font-size: 1.1rem;
+            "
+          >
+            <span class="en"
+              >If you enjoy Neko-Void and want to help keep the servers running,
+              consider buying us a coffee!</span
+            >
+            <span class="es"
+              >Si disfrutas de Neko-Void y quieres ayudar a mantener los
+              servidores, ¡considera invitarnos un café!</span
+            >
+            <span class="ja"
+              >Neko-Voidを楽しんでいて、サーバーの維持を支援したい場合は、コーヒーをおごることをご検討ください！</span
+            >
+          </p>
+          <div
+            style="
+              display: flex;
+              gap: 20px;
+              justify-content: center;
+              flex-wrap: wrap;
+            "
+          >
+            <a
+              href="https://linktr.ee/javiercplusx"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="btn-primary"
+            >
+              <span class="en">Buy Me a Coffee</span>
+              <span class="es">Invítame un Café</span>
+              <span class="ja">コーヒーをおごる</span>
+            </a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer"></footer>
+
+    <script type="module" src="./js/app.js"></script>
+  </body>
+</html>

@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Nekovoid ISO Router</title>
+    <script>
+      window.onload = function () {
+        const comando = window.location.hash;
+        const baseUrl =
+          "https://huggingface.co/datasets/arepaconcafe/untested-neko/resolve/main/";
+
+        switch (comando) {
+          case "#icejwm":
+            window.location.replace(
+              baseUrl + "nekovoid-lts-icejwm-20260805.iso",
+            );
+            break;
+          case "#kde":
+            window.location.replace(baseUrl + "nekovoid-kde-20260805.iso");
+            break;
+          case "#lxqt":
+            window.location.replace(baseUrl + "nekovoid-lxqt-20260805.iso");
+            break;
+          case "#xorg":
+            window.location.replace(
+             "https://huggingface.co/arepaconcafe/neko-base/resolve/main/nekovoid-rolling-xorg-20260807.iso",
+            );
+            break;
+          case "#xlibre":
+            window.location.replace(
+              "https://huggingface.co/arepaconcafe/neko-base/resolve/main/nekovoid-rolling-xlibre-20260807.iso",
+            );
+            break;
+          case "#niri":
+            window.location.replace(baseUrl + "nekovoid-niri-20260805.iso");
+            break;
+          case "#xfce":
+            window.location.replace(baseUrl + "nekovoid-xfce-20260805.iso");
+            break;
+          case "#labwc":
+            window.location.replace(baseUrl + "nekovoid-labwc-20260805.iso");
+            break;
+          default:
+            document.body.innerHTML =
+              "Error: Comando no reconocido o ausente. Usa un identificador válido (ej. #kde, #xfce).";
+            break;
+        }
+      };
+    </script>
+  </head>
+  <body></body>
+</html>
