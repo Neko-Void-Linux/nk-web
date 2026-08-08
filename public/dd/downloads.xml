@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <neko_project>
     <release version="rolling-b">
-        <iso id="link-xorg" sha256="8b56f47a5dc756c3e94385e31a80d2b972285486596aedef21e933013102558a">https://nekovoid.vercel.app/dd#xorg</iso>
+        <iso id="link-xorg" sha256="8078bd8b9244ba9907841d859c4371d70eae528356fc6483ac258f786b4cf0f0">https://nekovoid.vercel.app/dd#xorg</iso>
         <iso id="link-xlibre" sha256="8b56f47a5dc756c3e94385e31a80d2b972285486596aedef21e933013102558a">https://nekovoid.vercel.app/dd#xlibre</iso>
     </release>
 </neko_project>
