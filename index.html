@@ -4,7 +4,22 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <script>
-      document.documentElement.classList.replace("no-js", "js");
+      // Mejora progresiva mínima: solo se activa el modo app (`js`)
+      // si el navegador puede ejecutar la aplicación (ES modules) y no
+      // es un navegador de terminal. En cualquier otro caso se mantiene
+      // el modo estático (`no-js`) y la web funciona sin JavaScript.
+      (function () {
+        var isTerminalBrowser = /lynx|w3m|links|elinks|edbrowse|dillo|retawq/i.test(
+          navigator.userAgent
+        );
+        var supportsModules = "noModule" in document.createElement("script");
+        if (supportsModules && !isTerminalBrowser) {
+          document.documentElement.className = document.documentElement.className.replace(
+            /\bno-js\b/,
+            "js"
+          );
+        }
+      })();
     </script>
     <title>Neko Void Linux </title>
     <link
@@ -21,11 +36,6 @@
     <link rel="stylesheet" href="./css/styles.css" />
   </head>
   <body class="lang-en">
-    <div id="lightbox" class="lightbox">
-      <span class="lightbox-close">&times;</span>
-      <img class="lightbox-content" id="lightbox-img" alt="Lightbox Image" />
-    </div>
-
     <header class="site-header">
       <nav class="navbar">
         <div class="navbar-left">
@@ -37,39 +47,6 @@
             />
           </a>
         </div>
-
-        <button
-          class="mobile-menu-toggle"
-          onclick="toggleMobileMenu()"
-          aria-label="Toggle menu"
-          aria-expanded="false"
-        >
-          <svg
-            class="menu-icon"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="2"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-          >
-            <line x1="4" y1="6" x2="20" y2="6"></line>
-            <line x1="10" y1="12" x2="20" y2="12"></line>
-            <line x1="6" y1="18" x2="20" y2="18"></line>
-          </svg>
-          <svg
-            class="close-icon"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="2"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-          >
-            <line x1="18" y1="6" x2="6" y2="18"></line>
-            <line x1="6" y1="6" x2="18" y2="18"></line>
-          </svg>
-        </button>
 
         <ul class="nav-links">
           <li class="nav-item">
@@ -139,43 +116,6 @@
             </a>
           </li>
 
-          <li class="nav-item lang-switch-mobile">
-            <div class="lang-switch-inline">
-              <button
-                id="btn-en-mobile"
-                onclick="
-                  setLang('en');
-                  closeMobileMenu();
-                "
-                class="lang-btn-pill active"
-                data-lang="en"
-              >
-                EN
-              </button>
-              <button
-                id="btn-es-mobile"
-                onclick="
-                  setLang('es');
-                  closeMobileMenu();
-                "
-                class="lang-btn-pill"
-                data-lang="es"
-              >
-                ES
-              </button>
-              <button
-                id="btn-ja-mobile"
-                onclick="
-                  setLang('ja');
-                  closeMobileMenu();
-                "
-                class="lang-btn-pill"
-                data-lang="ja"
-              >
-                JA
-              </button>
-            </div>
-          </li>
         </ul>
 
         <div class="navbar-right">
@@ -222,109 +162,6 @@
               />
             </svg>
           </a>
-
-          <div class="lang-dropdown" id="lang-dropdown">
-            <button
-              class="lang-dropdown-trigger"
-              id="lang-trigger"
-              onclick="toggleLangDropdown()"
-              aria-label="Change language"
-              aria-expanded="false"
-            >
-              <svg
-                class="lang-globe-icon"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="1.5"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-              >
-                <circle cx="12" cy="12" r="10" />
-                <path d="M2 12h20" />
-                <path
-                  d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"
-                />
-              </svg>
-              <span class="lang-current" id="lang-current-label">EN</span>
-              <svg
-                class="lang-chevron"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-              >
-                <polyline points="6 9 12 15 18 9" />
-              </svg>
-            </button>
-            <div class="lang-dropdown-menu" id="lang-menu">
-              <button
-                class="lang-option active"
-                id="btn-en"
-                onclick="setLang('en')"
-                data-lang="en"
-              >
-                <span class="lang-name">English</span>
-                <span class="lang-code">EN</span>
-                <span class="lang-check">
-                  <svg
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    stroke-width="2.5"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                  >
-                    <polyline points="20 6 9 17 4 12" />
-                  </svg>
-                </span>
-              </button>
-              <button
-                class="lang-option"
-                id="btn-es"
-                onclick="setLang('es')"
-                data-lang="es"
-              >
-                <span class="lang-name">Español</span>
-                <span class="lang-code">ES</span>
-                <span class="lang-check">
-                  <svg
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    stroke-width="2.5"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                  >
-                    <polyline points="20 6 9 17 4 12" />
-                  </svg>
-                </span>
-              </button>
-              <button
-                class="lang-option"
-                id="btn-ja"
-                onclick="setLang('ja')"
-                data-lang="ja"
-              >
-                <span class="lang-name">日本語</span>
-                <span class="lang-code">JA</span>
-                <span class="lang-check">
-                  <svg
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    stroke-width="2.5"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                  >
-                    <polyline points="20 6 9 17 4 12" />
-                  </svg>
-                </span>
-              </button>
-            </div>
-          </div>
         </div>
       </nav>
     </header>
@@ -344,14 +181,7 @@
           >
 
           <div id="quote-box">
-            <p id="quote-measure">
-              <span class="prompt-prefix">&gt;_</span
-              ><i class="en">"Simplicity is prerequisite for reliability"</i
-              ><i class="es"
-                >"La simplicidad es un requisito previo para la fiabilidad"</i
-              ><i class="ja">「シンプルさは信頼性の前提条件である」</i
-              ><span class="cursor" style="display: inline !important">_</span>
-            </p>
+            <p id="quote-measure"></p>
 
             <p id="quote-display">
               <span class="prompt-prefix">&gt;_</span
@@ -825,30 +655,24 @@
                 <span class="edition-badge-main">Main Edition</span>
               </div>
               <div class="edition-actions">
-                <button
+                <!-- Mantener actualizado con downloads.xml -->
+                <a
                   id="link-xorg"
-                  class="btn-edition btn-primary js-download"
-                  style="cursor: pointer; font-family: inherit"
+                  class="btn-edition btn-primary"
+                  href="https://nekovoid.vercel.app/dd#xorg"
+                  target="_blank"
+                  rel="noopener noreferrer"
                 >
                   <span class="en">Download</span>
                   <span class="es">Descargar</span>
                   <span class="ja">ダウンロード</span>
-                </button>
-                <!-- Fallback sin JS: mantener actualizado con downloads.xml -->
-                <a
-                  class="no-js-link btn-edition btn-primary"
-                  href="https://nekovoid.vercel.app/dd#xorg"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  >Download</a
-                >
+                </a>
                 <span
                   id="hash-xorg"
                   class="hash-text-inline"
-                  title="SHA-256 checksum"
+                  title="Click to copy"
                   style="cursor: pointer"
-                  >SHA256: 0cd2d46b2633fa1d187760518aa6432f9d4ed2a082ceb15a35875fa24dc49118</span
-                >
+                ></span>
               </div>
             </div>
 
@@ -858,30 +682,24 @@
                 <span class="edition-badge-main">Main Edition</span>
               </div>
               <div class="edition-actions">
-                <button
+                <!-- Mantener actualizado con downloads.xml -->
+                <a
                   id="link-xlibre"
-                  class="btn-edition btn-primary js-download"
-                  style="cursor: pointer; font-family: inherit"
+                  class="btn-edition btn-primary"
+                  href="https://nekovoid.vercel.app/dd#xlibre"
+                  target="_blank"
+                  rel="noopener noreferrer"
                 >
                   <span class="en">Download</span>
                   <span class="es">Descargar</span>
                   <span class="ja">ダウンロード</span>
-                </button>
-                <!-- Fallback sin JS: mantener actualizado con downloads.xml -->
-                <a
-                  class="no-js-link btn-edition btn-primary"
-                  href="https://nekovoid.vercel.app/dd#xlibre"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  >Download</a
-                >
+                </a>
                 <span
                   id="hash-xlibre"
                   class="hash-text-inline"
-                  title="SHA-256 checksum"
+                  title="Click to copy"
                   style="cursor: pointer"
-                  >SHA256: 2605782524c6feb4b6f69950059d4e28f533dc4fb539613f1c88d2ca40ff0690</span
-                >
+                ></span>
               </div>
             </div>
 
@@ -891,31 +709,18 @@
                 <span class="edition-badge-flavor">Flavor</span>
               </div>
               <div class="edition-actions">
-                <button
-                  id="flavor-xfce"
-                  class="btn-edition btn-disabled js-download"
-                  disabled
-                  style="font-family: inherit"
-                >
-                  <span class="en">Coming Soon</span
-                  ><span class="es">En desarrollo</span
-                  ><span class="ja">開発中</span>
-                </button>
-                <!-- Fallback sin JS: mantener actualizado con flavors.xml -->
+                <!-- Mantener actualizado con flavors.xml -->
                 <a
-                  class="no-js-link btn-edition btn-primary"
+                  id="flavor-xfce"
+                  class="btn-edition btn-primary"
                   href="https://nekovoid.vercel.app/dd#xfce"
                   target="_blank"
                   rel="noopener noreferrer"
-                  >Download</a
                 >
-                <span
-                  id="hash-xfce"
-                  class="hash-text-inline"
-                  title="SHA-256 checksum"
-                  style="cursor: pointer"
-                  >SHA256: 7d0a4254a2cd0edeb0a0bb86a7e7a8bc5051d8e08345ef058d9fb44b7a39ce8e</span
-                >
+                  <span class="en">Download</span>
+                  <span class="es">Descargar</span>
+                  <span class="ja">ダウンロード</span>
+                </a>
               </div>
             </div>
 
@@ -925,31 +730,18 @@
                 <span class="edition-badge-flavor">Flavor</span>
               </div>
               <div class="edition-actions">
-                <button
-                  id="flavor-kde"
-                  class="btn-edition btn-disabled js-download"
-                  disabled
-                  style="font-family: inherit"
-                >
-                  <span class="en">Coming Soon</span
-                  ><span class="es">En desarrollo</span
-                  ><span class="ja">開発中</span>
-                </button>
-                <!-- Fallback sin JS: mantener actualizado con flavors.xml -->
+                <!-- Mantener actualizado con flavors.xml -->
                 <a
-                  class="no-js-link btn-edition btn-primary"
+                  id="flavor-kde"
+                  class="btn-edition btn-primary"
                   href="https://nekovoid.vercel.app/dd#kde"
                   target="_blank"
                   rel="noopener noreferrer"
-                  >Download</a
                 >
-                <span
-                  id="hash-kde"
-                  class="hash-text-inline"
-                  title="SHA-256 checksum"
-                  style="cursor: pointer"
-                  >SHA256: 35bc973447ae1cf025f7e4b6a4af47de34c6a37b3774d29f0e29277a4ff69693</span
-                >
+                  <span class="en">Download</span>
+                  <span class="es">Descargar</span>
+                  <span class="ja">ダウンロード</span>
+                </a>
               </div>
             </div>
 
@@ -959,16 +751,11 @@
                 <span class="edition-badge-flavor">Flavor</span>
               </div>
               <div class="edition-actions">
-                <button
-                  id="flavor-sway-i3"
-                  class="btn-edition btn-disabled"
-                  disabled
-                  style="font-family: inherit"
-                >
+                <span class="btn-edition btn-disabled">
                   <span class="en">Coming Soon</span
                   ><span class="es">En desarrollo</span
                   ><span class="ja">開発中</span>
-                </button>
+                </span>
               </div>
             </div>
 
@@ -978,16 +765,11 @@
                 <span class="edition-badge-flavor">Flavor</span>
               </div>
               <div class="edition-actions">
-                <button
-                  id="flavor-openbox"
-                  class="btn-edition btn-disabled"
-                  disabled
-                  style="font-family: inherit"
-                >
+                <span class="btn-edition btn-disabled">
                   <span class="en">Coming Soon</span
                   ><span class="es">En desarrollo</span
                   ><span class="ja">開発中</span>
-                </button>
+                </span>
               </div>
             </div>
 
@@ -997,31 +779,18 @@
                 <span class="edition-badge-flavor">Flavor</span>
               </div>
               <div class="edition-actions">
-                <button
-                  id="flavor-lxqt"
-                  class="btn-edition btn-disabled js-download"
-                  disabled
-                  style="font-family: inherit"
-                >
-                  <span class="en">Coming Soon</span
-                  ><span class="es">En desarrollo</span
-                  ><span class="ja">開発中</span>
-                </button>
-                <!-- Fallback sin JS: mantener actualizado con flavors.xml -->
+                <!-- Mantener actualizado con flavors.xml -->
                 <a
-                  class="no-js-link btn-edition btn-primary"
+                  id="flavor-lxqt"
+                  class="btn-edition btn-primary"
                   href="https://nekovoid.vercel.app/dd#lxqt"
                   target="_blank"
                   rel="noopener noreferrer"
-                  >Download</a
                 >
-                <span
-                  id="hash-lxqt"
-                  class="hash-text-inline"
-                  title="SHA-256 checksum"
-                  style="cursor: pointer"
-                  >SHA256: 07c6a8a96a3c4f0a3d282ec938f3cdd02501c38e44fd3b6202f643b4b64e91f5</span
-                >
+                  <span class="en">Download</span>
+                  <span class="es">Descargar</span>
+                  <span class="ja">ダウンロード</span>
+                </a>
               </div>
             </div>
 
@@ -1031,31 +800,18 @@
                 <span class="edition-badge-flavor">Flavor</span>
               </div>
               <div class="edition-actions">
-                <button
-                  id="flavor-labwc"
-                  class="btn-edition btn-disabled js-download"
-                  disabled
-                  style="font-family: inherit"
-                >
-                  <span class="en">Coming Soon</span
-                  ><span class="es">En desarrollo</span
-                  ><span class="ja">開発中</span>
-                </button>
-                <!-- Fallback sin JS: mantener actualizado con flavors.xml -->
+                <!-- Mantener actualizado con flavors.xml -->
                 <a
-                  class="no-js-link btn-edition btn-primary"
+                  id="flavor-labwc"
+                  class="btn-edition btn-primary"
                   href="https://nekovoid.vercel.app/dd#labwc"
                   target="_blank"
                   rel="noopener noreferrer"
-                  >Download</a
                 >
-                <span
-                  id="hash-labwc"
-                  class="hash-text-inline"
-                  title="SHA-256 checksum"
-                  style="cursor: pointer"
-                  >SHA256: 8fa5bf930ef64490850c0b514e97d89538655a7ce0fed433875200b928284970</span
-                >
+                  <span class="en">Download</span>
+                  <span class="es">Descargar</span>
+                  <span class="ja">ダウンロード</span>
+                </a>
               </div>
             </div>
 
@@ -1065,31 +821,18 @@
                 <span class="edition-badge-flavor">Flavor</span>
               </div>
               <div class="edition-actions">
-                <button
-                  id="flavor-niri"
-                  class="btn-edition btn-disabled js-download"
-                  disabled
-                  style="font-family: inherit"
-                >
-                  <span class="en">Coming Soon</span
-                  ><span class="es">En desarrollo</span
-                  ><span class="ja">開発中</span>
-                </button>
-                <!-- Fallback sin JS: mantener actualizado con flavors.xml -->
+                <!-- Mantener actualizado con flavors.xml -->
                 <a
-                  class="no-js-link btn-edition btn-primary"
+                  id="flavor-niri"
+                  class="btn-edition btn-primary"
                   href="https://nekovoid.vercel.app/dd#niri"
                   target="_blank"
                   rel="noopener noreferrer"
-                  >Download</a
                 >
-                <span
-                  id="hash-niri"
-                  class="hash-text-inline"
-                  title="SHA-256 checksum"
-                  style="cursor: pointer"
-                  >SHA256: e17a644678f79849292a6f5a4ac25a56dbf3c4556640c85ea8fa0ff3a36bc77c</span
-                >
+                  <span class="en">Download</span>
+                  <span class="es">Descargar</span>
+                  <span class="ja">ダウンロード</span>
+                </a>
               </div>
             </div>
 
@@ -1099,31 +842,18 @@
                 <span class="edition-badge-flavor">Flavor</span>
               </div>
               <div class="edition-actions">
-                <button
-                  id="flavor-icewm-jwm"
-                  class="btn-edition btn-disabled js-download"
-                  disabled
-                  style="font-family: inherit"
-                >
-                  <span class="en">Coming Soon</span
-                  ><span class="es">En desarrollo</span
-                  ><span class="ja">開発中</span>
-                </button>
-                <!-- Fallback sin JS: mantener actualizado con flavors.xml -->
+                <!-- Mantener actualizado con flavors.xml -->
                 <a
-                  class="no-js-link btn-edition btn-primary"
+                  id="flavor-icewm-jwm"
+                  class="btn-edition btn-primary"
                   href="https://nekovoid.vercel.app/dd#icejwm"
                   target="_blank"
                   rel="noopener noreferrer"
-                  >Download</a
                 >
-                <span
-                  id="hash-icewm-jwm"
-                  class="hash-text-inline"
-                  title="SHA-256 checksum"
-                  style="cursor: pointer"
-                  >SHA256: 837afed42784d02bab23968ceab6840df6346437c23eaad079a575df6606774b</span
-                >
+                  <span class="en">Download</span>
+                  <span class="es">Descargar</span>
+                  <span class="ja">ダウンロード</span>
+                </a>
               </div>
             </div>
           </div>

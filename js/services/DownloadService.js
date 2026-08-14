@@ -80,83 +80,50 @@ export async function loadDownloadLinks() {
   const downloadsData = await fetchDownloadsData();
   const flavorsData = await fetchFlavorsData();
 
+  const bindHashCopy = (hashSpan, sha256) => {
+    hashSpan.textContent = `SHA256: ${sha256}`;
+    hashSpan.onclick = () => {
+      navigator.clipboard
+        .writeText(sha256)
+        .then(() => {
+          const originalText = hashSpan.textContent;
+          hashSpan.textContent = "SHA256: Copied!";
+          setTimeout(() => {
+            hashSpan.textContent = originalText;
+          }, 2000);
+        })
+        .catch((err) => {
+          console.error("Failed to copy SHA256:", err);
+        });
+    };
+  };
+
   for (const [id, data] of Object.entries(downloadsData)) {
-    const button = document.getElementById(id);
+    // El enlace es el mismo en todos los modos: con JS se actualiza su
+    // href desde el XML; sin JS usa el href estático del HTML.
+    const link = document.getElementById(id);
+    if (link && data.url) link.href = data.url;
+
     const hashSpan = document.getElementById(`hash-${id.replace("link-", "")}`);
-
-    if (button) {
-      button.classList.remove("btn-disabled");
-      button.disabled = false;
-      button.onclick = () => {
-        window.open(data.url, "_blank", "noopener noreferrer");
-      };
-    }
-
-    if (hashSpan) {
-      hashSpan.textContent = `SHA256: ${data.sha256}`;
-      hashSpan.onclick = () => {
-        navigator.clipboard
-          .writeText(data.sha256)
-          .then(() => {
-            const originalText = hashSpan.textContent;
-            hashSpan.textContent = "SHA256: Copied!";
-            setTimeout(() => {
-              hashSpan.textContent = originalText;
-            }, 2000);
-          })
-          .catch((err) => {
-            console.error("Failed to copy SHA256:", err);
-          });
-      };
-    }
+    if (hashSpan) bindHashCopy(hashSpan, data.sha256 || "N/A");
   }
 
   for (const [id, data] of Object.entries(flavorsData)) {
-    const button = document.getElementById(`flavor-${id}`);
+    const link = document.getElementById(`flavor-${id}`);
+    if (link && data.url) link.href = data.url;
 
-    if (button) {
-      if (data.available && data.url) {
-        button.classList.remove("btn-disabled");
-        button.classList.add("btn-primary");
-        button.disabled = false;
-        button.innerHTML = `
-                    <span class="en">Download</span>
-                    <span class="es">Descargar</span>
-                    <span class="ja">ダウンロード</span>
-                `;
-        button.onclick = () => {
-          window.open(data.url, "_blank", "noopener noreferrer");
-        };
-
-        let hashSpan = document.getElementById(`hash-${id}`);
-        if (!hashSpan) {
-          const actionsDiv = button.parentElement;
-          hashSpan = document.createElement("span");
-          hashSpan.id = `hash-${id}`;
-          hashSpan.className = "hash-text-inline";
-          hashSpan.title = "Click to copy";
-          hashSpan.style.cursor = "pointer";
-          actionsDiv.appendChild(hashSpan);
-        }
-        hashSpan.textContent = `SHA256: ${data.sha256}`;
-        hashSpan.onclick = () => {
-          navigator.clipboard
-            .writeText(data.sha256)
-            .then(() => {
-              const originalText = hashSpan.textContent;
-              hashSpan.textContent = "SHA256: Copied!";
-              setTimeout(() => {
-                hashSpan.textContent = originalText;
-              }, 2000);
-            })
-            .catch((err) => {
-              console.error("Failed to copy SHA256:", err);
-            });
-        };
-      } else {
-        button.classList.add("btn-disabled");
-        button.disabled = true;
+    if (data.available && data.url) {
+      let hashSpan = document.getElementById(`hash-${id}`);
+      if (!hashSpan) {
+        if (!link) continue;
+        hashSpan = document.createElement("span");
+        hashSpan.id = `hash-${id}`;
+        hashSpan.className = "hash-text-inline";
+        hashSpan.title = "Click to copy";
+        hashSpan.style.cursor = "pointer";
+        link.parentElement.appendChild(hashSpan);
       }
+      bindHashCopy(hashSpan, data.sha256 || "N/A");
     }
   }
 }

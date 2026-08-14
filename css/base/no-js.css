@@ -85,22 +85,10 @@ html.no-js .lang-switch-mobile {
   display: none !important;
 }
 
-/* --- Descargas: enlaces estáticos en lugar de botones JS --- */
-html.js .no-js-link {
-  display: none !important;
-}
-
-html.no-js .no-js-link {
-  display: inline-flex !important;
-}
-
-html.no-js .btn-edition.js-download {
-  display: none !important;
-}
-
-/* Sin JS no hay copiado al portapapeles ni lightbox */
+/* --- Descargas: los enlaces funcionan en todos los modos; los
+   hashes SHA-256 son dinámicos (JS) y se ocultan sin JS --- */
 html.no-js .hash-text-inline {
-  cursor: default !important;
+  display: none !important;
 }
 
 html.no-js #quote-box,

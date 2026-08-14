@@ -26,6 +26,20 @@ export function initQuoteHover(uiManager) {
   const quoteTypewriter = document.getElementById("quote-typewriter");
   if (!quoteBox || !quoteTypewriter) return;
 
+  // El contenido medidor se inyecta con JS para conservar el tamaño de la
+  // caja mientras se escribe; así no queda nada duplicado sin JS.
+  const quoteMeasure = document.getElementById("quote-measure");
+  if (quoteMeasure) {
+    quoteMeasure.innerHTML = `
+      <span class="prompt-prefix">&gt;_</span
+      ><i class="en">"Simplicity is prerequisite for reliability"</i
+      ><i class="es"
+        >"La simplicidad es un requisito previo para la fiabilidad"</i
+      ><i class="ja">「シンプルさは信頼性の前提条件である」</i
+      ><span class="cursor" style="display: inline !important">_</span>
+    `;
+  }
+
   quoteBox.addEventListener("mouseenter", () => {
     if (
       quoteBox.dataset.typing === "true" ||
