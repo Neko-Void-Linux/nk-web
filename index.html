@@ -1,8 +1,11 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" class="no-js">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script>
+      document.documentElement.classList.replace("no-js", "js");
+    </script>
     <title>Neko Void Linux </title>
     <link
       rel="icon"
@@ -334,7 +337,9 @@
             >&gt;_<span
               id="typewriter-text"
               style="font-size: inherit; display: inline; color: inherit"
-            ></span
+              ><noscript
+                >Into the void</noscript
+              ></span
             ><span class="cursor">_</span></span
           >
 
@@ -353,7 +358,9 @@
               ><span
                 id="quote-typewriter"
                 style="display: inline !important; color: inherit"
-              ></span
+                ><noscript
+                  >"Simplicity is prerequisite for reliability"</noscript
+                ></span
               ><span
                 class="cursor"
                 style="
@@ -820,19 +827,27 @@
               <div class="edition-actions">
                 <button
                   id="link-xorg"
-                  class="btn-edition btn-primary"
+                  class="btn-edition btn-primary js-download"
                   style="cursor: pointer; font-family: inherit"
                 >
                   <span class="en">Download</span>
                   <span class="es">Descargar</span>
                   <span class="ja">ダウンロード</span>
                 </button>
+                <!-- Fallback sin JS: mantener actualizado con downloads.xml -->
+                <a
+                  class="no-js-link btn-edition btn-primary"
+                  href="https://nekovoid.vercel.app/dd#xorg"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  >Download</a
+                >
                 <span
                   id="hash-xorg"
                   class="hash-text-inline"
-                  title="Click to copy"
+                  title="SHA-256 checksum"
                   style="cursor: pointer"
-                  >SHA256: Loading...</span
+                  >SHA256: 0cd2d46b2633fa1d187760518aa6432f9d4ed2a082ceb15a35875fa24dc49118</span
                 >
               </div>
             </div>
@@ -845,19 +860,27 @@
               <div class="edition-actions">
                 <button
                   id="link-xlibre"
-                  class="btn-edition btn-primary"
+                  class="btn-edition btn-primary js-download"
                   style="cursor: pointer; font-family: inherit"
                 >
                   <span class="en">Download</span>
                   <span class="es">Descargar</span>
                   <span class="ja">ダウンロード</span>
                 </button>
+                <!-- Fallback sin JS: mantener actualizado con downloads.xml -->
+                <a
+                  class="no-js-link btn-edition btn-primary"
+                  href="https://nekovoid.vercel.app/dd#xlibre"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  >Download</a
+                >
                 <span
                   id="hash-xlibre"
                   class="hash-text-inline"
-                  title="Click to copy"
+                  title="SHA-256 checksum"
                   style="cursor: pointer"
-                  >SHA256: Loading...</span
+                  >SHA256: 2605782524c6feb4b6f69950059d4e28f533dc4fb539613f1c88d2ca40ff0690</span
                 >
               </div>
             </div>
@@ -870,7 +893,7 @@
               <div class="edition-actions">
                 <button
                   id="flavor-xfce"
-                  class="btn-edition btn-disabled"
+                  class="btn-edition btn-disabled js-download"
                   disabled
                   style="font-family: inherit"
                 >
@@ -878,6 +901,21 @@
                   ><span class="es">En desarrollo</span
                   ><span class="ja">開発中</span>
                 </button>
+                <!-- Fallback sin JS: mantener actualizado con flavors.xml -->
+                <a
+                  class="no-js-link btn-edition btn-primary"
+                  href="https://nekovoid.vercel.app/dd#xfce"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  >Download</a
+                >
+                <span
+                  id="hash-xfce"
+                  class="hash-text-inline"
+                  title="SHA-256 checksum"
+                  style="cursor: pointer"
+                  >SHA256: 7d0a4254a2cd0edeb0a0bb86a7e7a8bc5051d8e08345ef058d9fb44b7a39ce8e</span
+                >
               </div>
             </div>
 
@@ -889,7 +927,7 @@
               <div class="edition-actions">
                 <button
                   id="flavor-kde"
-                  class="btn-edition btn-disabled"
+                  class="btn-edition btn-disabled js-download"
                   disabled
                   style="font-family: inherit"
                 >
@@ -897,6 +935,21 @@
                   ><span class="es">En desarrollo</span
                   ><span class="ja">開発中</span>
                 </button>
+                <!-- Fallback sin JS: mantener actualizado con flavors.xml -->
+                <a
+                  class="no-js-link btn-edition btn-primary"
+                  href="https://nekovoid.vercel.app/dd#kde"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  >Download</a
+                >
+                <span
+                  id="hash-kde"
+                  class="hash-text-inline"
+                  title="SHA-256 checksum"
+                  style="cursor: pointer"
+                  >SHA256: 35bc973447ae1cf025f7e4b6a4af47de34c6a37b3774d29f0e29277a4ff69693</span
+                >
               </div>
             </div>
 
@@ -946,7 +999,7 @@
               <div class="edition-actions">
                 <button
                   id="flavor-lxqt"
-                  class="btn-edition btn-disabled"
+                  class="btn-edition btn-disabled js-download"
                   disabled
                   style="font-family: inherit"
                 >
@@ -954,6 +1007,21 @@
                   ><span class="es">En desarrollo</span
                   ><span class="ja">開発中</span>
                 </button>
+                <!-- Fallback sin JS: mantener actualizado con flavors.xml -->
+                <a
+                  class="no-js-link btn-edition btn-primary"
+                  href="https://nekovoid.vercel.app/dd#lxqt"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  >Download</a
+                >
+                <span
+                  id="hash-lxqt"
+                  class="hash-text-inline"
+                  title="SHA-256 checksum"
+                  style="cursor: pointer"
+                  >SHA256: 07c6a8a96a3c4f0a3d282ec938f3cdd02501c38e44fd3b6202f643b4b64e91f5</span
+                >
               </div>
             </div>
 
@@ -965,7 +1033,7 @@
               <div class="edition-actions">
                 <button
                   id="flavor-labwc"
-                  class="btn-edition btn-disabled"
+                  class="btn-edition btn-disabled js-download"
                   disabled
                   style="font-family: inherit"
                 >
@@ -973,6 +1041,21 @@
                   ><span class="es">En desarrollo</span
                   ><span class="ja">開発中</span>
                 </button>
+                <!-- Fallback sin JS: mantener actualizado con flavors.xml -->
+                <a
+                  class="no-js-link btn-edition btn-primary"
+                  href="https://nekovoid.vercel.app/dd#labwc"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  >Download</a
+                >
+                <span
+                  id="hash-labwc"
+                  class="hash-text-inline"
+                  title="SHA-256 checksum"
+                  style="cursor: pointer"
+                  >SHA256: 8fa5bf930ef64490850c0b514e97d89538655a7ce0fed433875200b928284970</span
+                >
               </div>
             </div>
 
@@ -984,7 +1067,7 @@
               <div class="edition-actions">
                 <button
                   id="flavor-niri"
-                  class="btn-edition btn-disabled"
+                  class="btn-edition btn-disabled js-download"
                   disabled
                   style="font-family: inherit"
                 >
@@ -992,6 +1075,21 @@
                   ><span class="es">En desarrollo</span
                   ><span class="ja">開発中</span>
                 </button>
+                <!-- Fallback sin JS: mantener actualizado con flavors.xml -->
+                <a
+                  class="no-js-link btn-edition btn-primary"
+                  href="https://nekovoid.vercel.app/dd#niri"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  >Download</a
+                >
+                <span
+                  id="hash-niri"
+                  class="hash-text-inline"
+                  title="SHA-256 checksum"
+                  style="cursor: pointer"
+                  >SHA256: e17a644678f79849292a6f5a4ac25a56dbf3c4556640c85ea8fa0ff3a36bc77c</span
+                >
               </div>
             </div>
 
@@ -1003,7 +1101,7 @@
               <div class="edition-actions">
                 <button
                   id="flavor-icewm-jwm"
-                  class="btn-edition btn-disabled"
+                  class="btn-edition btn-disabled js-download"
                   disabled
                   style="font-family: inherit"
                 >
@@ -1011,6 +1109,21 @@
                   ><span class="es">En desarrollo</span
                   ><span class="ja">開発中</span>
                 </button>
+                <!-- Fallback sin JS: mantener actualizado con flavors.xml -->
+                <a
+                  class="no-js-link btn-edition btn-primary"
+                  href="https://nekovoid.vercel.app/dd#icejwm"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  >Download</a
+                >
+                <span
+                  id="hash-icewm-jwm"
+                  class="hash-text-inline"
+                  title="SHA-256 checksum"
+                  style="cursor: pointer"
+                  >SHA256: 837afed42784d02bab23968ceab6840df6346437c23eaad079a575df6606774b</span
+                >
               </div>
             </div>
           </div>

@@ -1,0 +1,127 @@
+/* ============================================================
+   Fallback sin JavaScript (mejora progresiva)
+   ------------------------------------------------------------
+   `html.no-js` solo permanece cuando JavaScript está deshabilitado:
+   un script inline en <head> reemplaza la clase por `html.js`
+   al instante. Con JS activo estas reglas no aplican y el
+   comportamiento de "app" original se mantiene intacto.
+   ============================================================ */
+
+/* --- El documento debe poder hacer scroll --- */
+html.no-js body {
+  height: auto;
+  overflow: visible;
+}
+
+html.no-js main {
+  height: auto;
+  min-height: auto;
+  margin-top: 0;
+  overflow: visible;
+}
+
+/* --- Secciones apiladas en flujo normal --- */
+html.no-js .app-section {
+  display: block !important;
+  position: static !important;
+  width: 100% !important;
+  height: auto !important;
+  overflow: visible !important;
+  scroll-margin-top: 12px;
+}
+
+html.no-js #inicio.app-section.active {
+  display: flex !important;
+}
+
+/* El hero vuelve a ser parte del flujo */
+html.no-js .hero-content {
+  position: relative !important;
+  top: auto !important;
+  left: auto !important;
+  height: auto !important;
+  min-height: auto !important;
+  transform: none !important;
+  margin: 0 !important;
+  padding: 40px 20px 60px !important;
+}
+
+/* --- Navbar: estático, con todos los enlaces visibles --- */
+html.no-js .navbar {
+  position: relative !important;
+  height: auto !important;
+  flex-wrap: wrap !important;
+  padding: 12px 40px !important;
+}
+
+html.no-js .nav-links {
+  position: static !important;
+  left: auto !important;
+  right: auto !important;
+  top: auto !important;
+  transform: none !important;
+  width: 100% !important;
+  height: auto !important;
+  max-height: none !important;
+  overflow: visible !important;
+  flex-direction: row !important;
+  flex-wrap: wrap !important;
+  justify-content: center !important;
+  order: 10 !important;
+  padding: 8px 0 0 !important;
+  border-top: 1px solid var(--divider) !important;
+  background: transparent !important;
+}
+
+html.no-js .nav-link {
+  height: auto !important;
+  padding: 12px 20px !important;
+}
+
+/* --- UI que depende de JavaScript --- */
+html.no-js .mobile-menu-toggle,
+html.no-js .lang-dropdown,
+html.no-js .lang-switch-mobile {
+  display: none !important;
+}
+
+/* --- Descargas: enlaces estáticos en lugar de botones JS --- */
+html.js .no-js-link {
+  display: none !important;
+}
+
+html.no-js .no-js-link {
+  display: inline-flex !important;
+}
+
+html.no-js .btn-edition.js-download {
+  display: none !important;
+}
+
+/* Sin JS no hay copiado al portapapeles ni lightbox */
+html.no-js .hash-text-inline {
+  cursor: default !important;
+}
+
+html.no-js #quote-box,
+html.no-js .gallery-item img {
+  cursor: default;
+}
+
+/* --- Móvil: menú vertical siempre visible --- */
+@media (max-width: 768px) {
+  html.no-js .navbar {
+    padding: 12px 16px !important;
+  }
+
+  html.no-js .nav-links {
+    flex-direction: column !important;
+    align-items: stretch !important;
+    justify-content: flex-start !important;
+  }
+
+  html.no-js .nav-link {
+    justify-content: flex-start !important;
+    padding: 14px 8px !important;
+  }
+}
