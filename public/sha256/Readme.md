@@ -5,4 +5,5 @@ curl -sSL http://nekovoid.vercel.app/sha256/shafind.py | python - https://huggin
 dependencies:
 -python
 -requests
+
 pip install --break-system-packages requests
