@@ -22,11 +22,15 @@ def extraer_sha256(url):
         return f"Fail conexion: {error}"
 
 if __name__ == "__main__":
-    if len(sys.argv) != 2:
-        print("Uso correcto: python escaner.py <url>")
+    if len(sys.argv) == 2:
+        url_ingresada = sys.argv[1]
+    else:
+        url_ingresada = input("Ingresa o pega la URL: ").strip()
+        
+    if not url_ingresada:
+        print("Error: No se ingresó ninguna URL.")
         sys.exit(1)
         
-    url_ingresada = sys.argv[1]
     print(f"Scaning: {url_ingresada} ...")
     resultado = extraer_sha256(url_ingresada)
     print(f"\nEntry SHA256:\n{resultado}")
