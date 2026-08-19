@@ -25,8 +25,17 @@ if __name__ == "__main__":
     if len(sys.argv) == 2:
         url_ingresada = sys.argv[1]
     else:
-        url_ingresada = input("Ingresa o pega la URL: ").strip()
-        
+        try:
+            url_ingresada = input("Ingresa o pega la URL: ").strip()
+        except EOFError:
+            try:
+                with open('/dev/tty', 'r') as tty:
+                    print("Ingresa o pega la URL: ", end="", flush=True)
+                    url_ingresada = tty.readline().strip()
+            except Exception:
+                print("\nError: No se puede leer la terminal interactiva. Usa: python script.py <url>")
+                sys.exit(1)
+            
     if not url_ingresada:
         print("Error: No se ingresó ninguna URL.")
         sys.exit(1)
