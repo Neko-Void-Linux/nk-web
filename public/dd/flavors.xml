@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <flavors>
-    <flavor id="xfce" sha256="7d0a4254a2cd0edeb0a0bb86a7e7a8bc5051d8e08345ef058d9fb44b7a39ce8e">https://nekovoid.vercel.app/dd#xfce</flavor>
-    <flavor id="kde" sha256="35bc973447ae1cf025f7e4b6a4af47de34c6a37b3774d29f0e29277a4ff69693">https://nekovoid.vercel.app/dd#kde</flavor>
+    <flavor id="xfce" sha256="d66f80bb45d028e43d10ee14759acf7af87321d17fd8d47664d922c7b7ecd3b1">https://nekovoid.vercel.app/dd#xfce</flavor>
+    <flavor id="kde" sha256="4f6c80b39915c35ca9fa16c82f5c672860cdf837c38da9ae123d1f61ca6661d2">https://nekovoid.vercel.app/dd#kde</flavor>
     <flavor id="sway-i3" sha256=".."></flavor>
     <flavor id="openbox" sha256=".."></flavor>
-    <flavor id="lxqt" sha256="07c6a8a96a3c4f0a3d282ec938f3cdd02501c38e44fd3b6202f643b4b64e91f5">https://nekovoid.vercel.app/dd#lxqt</flavor>
+    <flavor id="lxqt" sha256="fd07158e19c2d10eaea6556320df6c6136c3acd0eac8a0c0f8818d1c9d2c4982">https://nekovoid.vercel.app/dd#lxqt</flavor>
     <flavor id="labwc" sha256="87d617ed772e4ff42fb8488501b8636134292beea218eaddf99e0ef252c34e7e">https://nekovoid.vercel.app/dd#labwc</flavor>
     <flavor id="niri" sha256="b65bbff7363f4668a764038825ba1ee3780be26fdf6dc405f0613b159baf8924">https://nekovoid.vercel.app/dd#niri</flavor>
-    <flavor id="icewm-jwm" sha256="837afed42784d02bab23968ceab6840df6346437c23eaad079a575df6606774b">https://nekovoid.vercel.app/dd#icejwm</flavor>
+    <flavor id="icewm-jwm" sha256="972d0fb33607a3898de40b78b960b0717317eb07f57b42772edfce35c5e12001">https://nekovoid.vercel.app/dd#icejwm</flavor>
 </flavors>
