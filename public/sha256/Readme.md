@@ -7,6 +7,11 @@ or:
 ```
 curl -sSL http://nekovoid.vercel.app/sha256/read | bash -s https://huggingface.co/arepaconcafe/neko-base/blob/main/nekovoid-lxqt-20260813.iso
 ```
+or 
+```
+curl -sSL http://nekovoid.vercel.app/sha256/shafind.py | python
+```
+
 dependencies:
 -python
 -requests
