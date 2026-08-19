@@ -6,6 +6,6 @@
     <flavor id="openbox" sha256=".."></flavor>
     <flavor id="lxqt" sha256="fd07158e19c2d10eaea6556320df6c6136c3acd0eac8a0c0f8818d1c9d2c4982">https://nekovoid.vercel.app/dd#lxqt</flavor>
     <flavor id="labwc" sha256="87d617ed772e4ff42fb8488501b8636134292beea218eaddf99e0ef252c34e7e">https://nekovoid.vercel.app/dd#labwc</flavor>
-    <flavor id="niri" sha256="b65bbff7363f4668a764038825ba1ee3780be26fdf6dc405f0613b159baf8924">https://nekovoid.vercel.app/dd#niri</flavor>
+    <flavor id="niri" sha256="4f80c00a1d6a67efa9cbbd2842dc005f0618d7fd3ad69b938368e392aaac11f6">https://nekovoid.vercel.app/dd#niri</flavor>
     <flavor id="icewm-jwm" sha256="972d0fb33607a3898de40b78b960b0717317eb07f57b42772edfce35c5e12001">https://nekovoid.vercel.app/dd#icejwm</flavor>
 </flavors>
