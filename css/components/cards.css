@@ -771,45 +771,13 @@ body {
 }
 
 .team-queen {
-  position: relative;
-  display: grid;
-  width: min(100%, 620px);
-  min-height: 320px;
-  place-items: end center;
+  width: min(100%, 280px);
   margin: 0 auto 32px;
-  overflow: hidden;
-  background:
-    linear-gradient(180deg, transparent 58%, rgba(14, 19, 16, 0.94) 100%),
-    var(--surface);
-  border: 1px solid var(--divider);
 }
 
-.team-queen::before {
-  position: absolute;
-  inset: 16px;
-  border: 1px solid color-mix(in srgb, var(--green) 28%, transparent);
-  content: "";
-  pointer-events: none;
-}
-
-.team-queen-image {
-  grid-area: 1 / 1;
-  width: auto;
-  height: clamp(270px, 38vw, 420px);
-  max-width: 92%;
-  object-fit: contain;
-  object-position: center bottom;
-}
-
-.team-queen h3 {
-  z-index: 1;
-  grid-area: 1 / 1;
-  margin: 0 0 18px;
-  color: var(--green);
-  font-family: "Bebas Neue", sans-serif;
-  font-size: clamp(1.8rem, 4vw, 2.5rem);
-  letter-spacing: 0.12em;
-  text-shadow: 0 2px 12px var(--bg-color);
+.team-queen .team-avatar {
+  object-fit: cover;
+  object-position: center 18%;
 }
 
 .team-card {

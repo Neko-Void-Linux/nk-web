@@ -459,14 +459,6 @@ img {
     grid-template-columns: 1fr !important;
   }
 
-  .team-queen {
-    min-height: 260px;
-  }
-
-  .team-queen-image {
-    height: min(92vw, 350px);
-  }
-
   .credits-grid {
     grid-template-columns: 1fr !important;
   }
