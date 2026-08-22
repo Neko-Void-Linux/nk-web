@@ -148,8 +148,33 @@ test("specifications expose Vouru and CNR as Neko Void tools", () => {
   }
   assert.match(
     compactIndex,
-    /Asistente de post-instalación y gestor de repositorios/i,
+    /Asistente para instalar aplicaciones y controladores desde el sistema/i,
   );
+});
+
+test("team credits include the NVIDIA tester", () => {
+  assert.match(
+    compactIndex,
+    /Nubyunix[\s\S]*Tester de la edición NVIDIA[\s\S]*https:\/\/github\.com\/Nubyunix/i,
+  );
+});
+
+test("Kyouko appears above the team without a role or description", () => {
+  const queenStart = index.indexOf('<div class="team-queen"');
+  const teamGridStart = index.indexOf('<div class="team-grid"');
+
+  assert.notEqual(queenStart, -1, "missing Kyouko feature");
+  assert.ok(
+    queenStart < teamGridStart,
+    "Kyouko must appear above the team grid",
+  );
+  assert.ok(existsSync(resolve(root, "public/assets/queen.png")));
+
+  const queenBlock = index.slice(queenStart, teamGridStart);
+  assert.match(queenBlock, /src="\.\/assets\/queen\.png"/i);
+  assert.match(queenBlock, />Kyouko</i);
+  assert.doesNotMatch(queenBlock, />Queen</i);
+  assert.doesNotMatch(queenBlock, /team-title|team-desc/i);
 });
 
 test("team credits preserve the requested project roles and buttons", () => {
