@@ -168,14 +168,19 @@ test("Kyouko appears above the team without a role or description", () => {
     queenStart < teamGridStart,
     "Kyouko must appear above the team grid",
   );
-  assert.ok(existsSync(resolve(root, "public/assets/queen.png")));
+  const kyoukoSvgPath = resolve(root, "public/assets/kyouko.svg");
+  assert.ok(existsSync(kyoukoSvgPath));
 
   const queenBlock = index.slice(queenStart, teamGridStart);
-  assert.match(queenBlock, /src="\.\/assets\/queen\.png"/i);
+  assert.match(queenBlock, /src="\.\/assets\/kyouko\.svg"/i);
   assert.match(queenBlock, /class="team-avatar team-queen-avatar"/i);
   assert.match(queenBlock, />Kyouko</i);
   assert.doesNotMatch(queenBlock, />Queen</i);
   assert.doesNotMatch(queenBlock, /team-title|team-desc/i);
+
+  const kyoukoSvg = readFileSync(kyoukoSvgPath, "utf8");
+  assert.match(kyoukoSvg, /<path\b/i);
+  assert.doesNotMatch(kyoukoSvg, /<image\b|data:image/i);
 });
 
 test("team credits preserve the requested project roles and buttons", () => {
