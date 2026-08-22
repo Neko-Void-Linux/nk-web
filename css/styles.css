@@ -5,6 +5,7 @@
 @import "./layout/nav.css";
 @import "./components/hero.css";
 @import "./components/cards.css";
+@import "./components/download-gate.css";
 @import "./components/gallery.css";
 @import "./components/terminal.css";
 @import "./layout/responsive.css";

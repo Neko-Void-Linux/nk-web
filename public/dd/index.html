@@ -2,51 +2,49 @@
 <html lang="es">
   <head>
     <meta charset="UTF-8" />
-    <title>Neko Void ISO HOST</title>
-    <script>
-      window.onload = function () {
-        const comando = window.location.hash;
-        const baseUrl =
-          "https://huggingface.co/arepaconcafe/neko-base/resolve/main/";
-
-        switch (comando) {
-          case "#icejwm":
-            window.location.replace(
-              baseUrl + "nekovoid-lts-icejwm-20260818.iso",
-            );
-            break;
-          case "#kde":
-            window.location.replace(baseUrl + "nekovoid-kde-20260818.iso");
-            break;
-          case "#lxqt":
-            window.location.replace(baseUrl + "nekovoid-lxqt-20260818.iso");
-            break;
-          case "#xorg":
-            window.location.replace(
-             "https://huggingface.co/arepaconcafe/neko-base/resolve/main/nekovoid-mate-20260818.iso",
-            );
-            break;
-          case "#xlibre":
-            window.location.replace(
-              "https://huggingface.co/arepaconcafe/neko-base/resolve/main/nekovoid-matelibre-20260818.iso",
-            );
-            break;
-          case "#niri":
-            window.location.replace(baseUrl + "nekovoid-niri-20260818.iso");
-            break;
-          case "#xfce":
-            window.location.replace(baseUrl + "nekovoid-xfce-20260818.iso");
-            break;
-          case "#labwc":
-            window.location.replace(baseUrl + "nekovoid-labwc-20260818.iso");
-            break;
-          default:
-            document.body.innerHTML =
-              "Error: Comando no reconocido o ausente. Usa un identificador válido (ej. #kde, #xfce).";
-            break;
-        }
-      };
-    </script>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Descarga Neko Void</title>
+    <style>
+      :root {
+        color-scheme: dark;
+        font-family: system-ui, sans-serif;
+      }
+      body {
+        margin: 0;
+        min-height: 100vh;
+        display: grid;
+        place-items: center;
+        background: #1e2320;
+        color: #d7e0d8;
+      }
+      main {
+        width: min(560px, calc(100% - 40px));
+        border: 1px solid #566358;
+        padding: 32px;
+        box-sizing: border-box;
+      }
+      h1 {
+        margin-top: 0;
+        color: #9fc39d;
+      }
+      a {
+        color: #a8d6e8;
+      }
+      [hidden] {
+        display: none;
+      }
+    </style>
   </head>
-  <body></body>
+  <body>
+    <main>
+      <p>NEKO VOID / DOWNLOAD</p>
+      <h1 id="status" aria-live="polite">Preparando descarga…</h1>
+      <p id="help">
+        Si la descarga no comienza automáticamente, usa la opción manual.
+      </p>
+      <p><a id="manual-download" hidden download>Descarga manual</a></p>
+      <p><a href="/">Volver al portal</a></p>
+    </main>
+    <script type="module" src="./download.js"></script>
+  </body>
 </html>
