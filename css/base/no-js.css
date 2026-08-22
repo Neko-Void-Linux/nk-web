@@ -85,12 +85,6 @@ html.no-js .lang-switch-mobile {
   display: none !important;
 }
 
-/* --- Descargas: los enlaces funcionan en todos los modos; los
-   hashes SHA-256 son dinámicos (JS) y se ocultan sin JS --- */
-html.no-js .hash-text-inline {
-  display: none !important;
-}
-
 html.no-js #quote-box,
 html.no-js .gallery-item img {
   cursor: default;

@@ -1,9 +1,9 @@
 .hero {
   min-height: 100%;
-  justify-content: center;
-  align-items: center;
+  justify-content: flex-start;
+  align-items: stretch;
   text-align: center;
-  padding: 60px 20px;
+  padding: 0;
   position: relative;
 }
 .main-logo {
@@ -26,7 +26,7 @@
 .hero h1 {
   font-size: clamp(3rem, 7vw, 5.5rem);
   font-weight: 800;
-  margin-bottom: 20px;
+  margin: 0 0 6px;
   color: rgb(96, 128, 104);
   letter-spacing: -0.04em;
   line-height: 1;
@@ -37,21 +37,391 @@
   -webkit-text-fill-color: transparent;
   background-clip: text;
 }
-.hero span {
-  font-family: "Fira Code", monospace;
-  color: var(--comment);
-  margin-bottom: 24px;
-  font-size: 1rem;
-  display: block;
-  letter-spacing: 0.02em;
-}
 .hero .tagline {
-  font-size: clamp(2rem, 5vw, 4rem);
+  display: block;
+  font-family: "Fira Code", monospace;
+  font-size: clamp(1.7rem, 4vw, 3.3rem);
   font-weight: 700;
   color: var(--green);
-  margin-top: -10px;
-  margin-bottom: 0px;
+  letter-spacing: 0.02em;
+  line-height: 1.1;
+  margin: 0;
   text-transform: uppercase;
+}
+
+.hero-kicker,
+.section-eyebrow {
+  color: var(--cyan);
+  font-family: "Fira Code", monospace;
+  font-size: 0.7rem;
+  letter-spacing: 0.16em;
+  margin: 0 0 14px;
+  text-transform: uppercase;
+}
+
+.hero-kicker span,
+.hero-proposition span,
+.hero-description span,
+.hero-actions span,
+.site-footer span {
+  color: inherit;
+  font: inherit;
+  letter-spacing: inherit;
+  margin: 0;
+}
+
+.hero-proposition {
+  color: var(--foreground);
+  font-family: "IBM Plex Mono", monospace;
+  font-size: clamp(1.15rem, 2vw, 1.45rem);
+  font-weight: 600;
+  line-height: 1.3;
+  margin: 24px 0 10px;
+}
+
+.hero-description {
+  color: var(--comment);
+  font-family: "IBM Plex Sans", sans-serif;
+  font-size: 0.98rem;
+  line-height: 1.65;
+  margin: 0;
+  max-width: 620px;
+}
+
+.hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 7px;
+  justify-content: center;
+  margin: 0;
+  max-width: 510px;
+  width: 100%;
+}
+
+.hero-actions .btn-primary,
+.hero-actions .btn-secondary {
+  align-items: center;
+  display: inline-flex;
+  flex: 1 1 0;
+  font-family: "IBM Plex Sans", sans-serif;
+  font-weight: 600;
+  justify-content: center;
+  max-width: none;
+  min-height: 32px;
+  min-width: 0;
+  font-size: 0.65rem !important;
+  letter-spacing: 0.07em !important;
+  padding: 4px 10px !important;
+  line-height: 1.2;
+  white-space: normal;
+  text-decoration: none;
+  transition: none !important;
+}
+
+.hero-actions .btn-secondary {
+  border: 1px solid var(--divider-strong);
+  color: var(--foreground);
+  white-space: nowrap;
+}
+
+.hero-actions .btn-secondary:hover {
+  border-color: var(--green);
+  color: var(--green);
+}
+
+.hero-actions .btn-primary:hover,
+.hero-actions .btn-secondary:hover {
+  animation: none !important;
+  background: inherit !important;
+  box-shadow: none !important;
+  filter: none !important;
+  transform: none !important;
+}
+
+.hero-actions .btn-primary:hover {
+  background: var(--cyan) !important;
+  border-color: var(--green) !important;
+  color: var(--bg-color) !important;
+}
+
+.hero-actions .btn-secondary:hover {
+  background: var(--bg-color) !important;
+  border-color: var(--green) !important;
+  color: var(--cyan) !important;
+}
+
+.trust-strip {
+  border-bottom: 1px solid var(--divider);
+  border-top: 1px solid var(--divider);
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  margin: 0;
+  max-width: 720px;
+  width: 100%;
+  text-align: center;
+}
+
+.trust-strip > span {
+  border-right: 1px solid var(--divider);
+  display: block;
+  margin: 0;
+  padding: 12px 14px;
+}
+
+.trust-strip > span:last-child {
+  border-right: 0;
+}
+
+.trust-strip strong,
+.trust-strip small {
+  display: block;
+}
+
+.trust-strip strong {
+  color: var(--green);
+  font-family: "Fira Code", monospace;
+  font-size: 0.72rem;
+  letter-spacing: 0.08em;
+  margin-bottom: 3px;
+}
+
+.trust-strip small {
+  color: var(--comment);
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 0.68rem;
+  line-height: 1.35;
+}
+
+.quick-start {
+  border: 1px solid var(--divider-strong);
+  display: grid;
+  gap: 24px;
+  grid-template-columns: 220px 1fr;
+  margin: 0 auto 32px;
+  max-width: 900px;
+  padding: 22px;
+  text-align: left;
+}
+
+.quick-start h3 {
+  color: var(--foreground);
+  font-size: 1.25rem;
+  margin: 0 0 12px;
+}
+
+.quick-start ol {
+  counter-reset: quick-step;
+  display: grid;
+  gap: 0;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.quick-start li {
+  border-left: 1px solid var(--divider);
+  counter-increment: quick-step;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  min-width: 0;
+  padding: 6px 12px;
+}
+
+.quick-start li::before {
+  color: var(--green);
+  content: counter(quick-step, decimal-leading-zero);
+  font-family: "Fira Code", monospace;
+}
+
+.quick-start li span {
+  color: var(--comment);
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 0.72rem;
+  line-height: 1.4;
+  margin: 0;
+}
+
+.quick-start .ventoy-link {
+  color: var(--green);
+  text-decoration: underline;
+  text-decoration-color: transparent;
+  text-underline-offset: 3px;
+  transition: var(--transition-fast);
+}
+
+.quick-start .ventoy-link:hover,
+.quick-start .ventoy-link:focus-visible {
+  color: var(--orange);
+  text-decoration-color: currentColor;
+}
+
+.quick-start li strong {
+  color: var(--foreground);
+}
+
+.text-link {
+  color: var(--cyan);
+  font-family: "Fira Code", monospace;
+  font-size: 0.78rem;
+  text-decoration: none;
+}
+
+.text-link:hover {
+  color: var(--foreground);
+  text-decoration: underline;
+}
+
+.installer-status {
+  align-items: center;
+  border: 1px solid var(--divider);
+  display: grid;
+  gap: 16px;
+  grid-template-columns: auto 1fr auto;
+  margin: 0 auto 24px;
+  max-width: 900px;
+  padding: 16px 20px;
+  text-align: left;
+}
+
+.installer-status > div {
+  align-items: center;
+  display: flex;
+  gap: 9px;
+  white-space: nowrap;
+}
+
+.installer-status strong {
+  color: var(--green);
+  font-family: "Fira Code", monospace;
+  font-size: 0.78rem;
+}
+
+.installer-status p {
+  color: var(--comment);
+  font-family: "IBM Plex Sans", sans-serif;
+  font-size: 0.88rem;
+  line-height: 1.4;
+  margin: 0;
+}
+
+.status-dot {
+  background: var(--green);
+  border-radius: 50%;
+  display: inline-block !important;
+  height: 8px;
+  margin: 0 !important;
+  width: 8px;
+}
+
+.edition-description {
+  color: var(--comment);
+  font-family: "IBM Plex Sans", sans-serif;
+  font-size: 0.86rem;
+  line-height: 1.35;
+  margin: 0;
+  max-width: 500px;
+}
+
+.sourceforge-awards {
+  border-block: 1px solid var(--divider);
+  margin: 0 auto 32px;
+  max-width: 900px;
+  padding: 18px 16px;
+  text-align: center;
+}
+
+.sourceforge-awards .section-eyebrow {
+  margin-bottom: 14px;
+}
+
+.sourceforge-badges {
+  align-items: center;
+  display: grid;
+  gap: 12px;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+}
+
+.sourceforge-badges .sf-root {
+  justify-self: center;
+  min-height: 40px;
+  width: 125px;
+}
+
+.site-footer {
+  border-top: 1px solid var(--divider-strong);
+  color: var(--comment);
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: center;
+  margin: 0;
+  padding: 22px max(24px, calc((100% - 1180px) / 2));
+  text-align: center;
+  width: 100%;
+}
+
+.site-footer-brand {
+  align-items: baseline;
+  color: var(--green);
+  display: flex;
+  gap: 14px;
+  font-family: "Fira Code", monospace;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+}
+
+.site-footer p {
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 0.68rem;
+  line-height: 1.5;
+  margin: 0;
+}
+
+.site-footer-links {
+  display: grid;
+  gap: 7px;
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+  justify-content: center;
+  margin: 0;
+  max-width: 900px;
+  width: 100%;
+}
+
+.site-footer-links a {
+  align-items: center;
+  border: 1px solid var(--divider-strong);
+  color: var(--comment);
+  display: flex;
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 0.78rem;
+  justify-content: center;
+  min-height: 42px;
+  padding: 6px 8px;
+  text-decoration: none;
+  text-transform: uppercase;
+  transition: var(--transition-fast);
+}
+
+.site-footer-links a:hover {
+  background: rgba(141, 163, 131, 0.08);
+  border-color: var(--green);
+  color: var(--green);
+}
+
+.hero-project-links {
+  display: grid;
+  gap: 6px;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  margin: 14px auto;
+  max-width: 760px;
+}
+
+.hero-project-links a {
+  min-height: 36px;
+  padding: 6px 13px;
 }
 
 .project-links {
@@ -455,17 +825,20 @@ details[open] summary {
 
 .hero-content {
   display: flex;
+  flex-shrink: 0;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   z-index: 2;
-  width: 100%;
-  height: calc(100vh - 120px) !important;
-  position: absolute !important;
-  top: 50px !important;
-  left: 0 !important;
+  width: min(100%, 1180px);
+  min-height: 100%;
+  height: auto !important;
+  position: relative !important;
+  top: auto !important;
+  left: auto !important;
   transform: none !important;
-  margin: 0 !important;
+  margin: 0 auto !important;
+  padding: clamp(42px, 6vh, 72px) 48px;
 }
 .hero-content .project-links {
   display: flex;
@@ -485,6 +858,22 @@ details[open] summary {
   justify-content: center;
   align-items: center;
 }
+
+@media (min-width: 901px) {
+  .hero h1 {
+    font-size: clamp(4rem, 9vw, 6rem) !important;
+  }
+
+  .hero .tagline {
+    font-size: clamp(2.2rem, 5vw, 3.5rem);
+  }
+
+  #quote-box {
+    margin-top: 18px;
+    margin-bottom: 24px;
+  }
+}
+
 .hero-character-img {
   max-width: 350px;
   object-fit: contain;
@@ -497,15 +886,15 @@ details[open] summary {
 }
 
 #quote-box {
-  margin: 0 auto 50px auto;
-  padding: 4px 14px;
+  margin: 22px auto 26px;
+  padding: 8px 16px;
   background: rgba(0, 0, 0, 0.9);
   border: 1px solid rgba(141, 163, 131, 0.3);
   border-radius: 4px;
   width: fit-content;
-  max-width: 90%;
+  max-width: min(720px, 100%);
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
-  cursor: pointer;
+  cursor: default;
   display: grid;
 }
 #quote-measure {
@@ -522,7 +911,7 @@ details[open] summary {
 }
 #quote-display {
   grid-area: 1/1;
-  text-align: left;
+  text-align: center;
   font-family: "IBM Plex Mono", monospace;
   font-size: 0.9rem;
   color: var(--orange);
@@ -531,7 +920,7 @@ details[open] summary {
   letter-spacing: 0.01em;
   line-height: 1.2;
   margin: 0;
-  white-space: nowrap;
+  white-space: normal;
 }
 .prompt-prefix {
   display: inline !important;

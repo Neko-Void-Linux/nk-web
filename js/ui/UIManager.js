@@ -16,6 +16,7 @@ export const UIManager = {
     initQuoteHover(this);
     initLightbox();
     this.initNavTabs();
+    this.restoreSectionFromHash();
     this.initLangDropdown();
     this.exposeGlobals();
   },
@@ -100,6 +101,7 @@ export const UIManager = {
   },
 
   updateLanguageUI(lang) {
+    document.documentElement.lang = lang;
     document.body.classList.remove("lang-en", "lang-es", "lang-ja");
     document.body.classList.add(`lang-${lang}`);
 
@@ -120,30 +122,60 @@ export const UIManager = {
   },
 
   initNavTabs() {
-    const navLinks = document.querySelectorAll(".nav-link");
-    const sections = document.querySelectorAll(".app-section");
+    const links = document.querySelectorAll(
+      ".nav-link, .section-link, .navbar-brand",
+    );
 
-    navLinks.forEach((link) => {
+    links.forEach((link) => {
       link.addEventListener("click", (e) => {
+        const targetId =
+          link.dataset.target || link.getAttribute("href")?.replace(/^#/, "");
+        if (!targetId || !document.getElementById(targetId)) return;
         e.preventDefault();
-        const targetId = link.getAttribute("data-target");
-
-        navLinks.forEach((l) => l.classList.remove("active"));
-        link.classList.add("active");
-
-        sections.forEach((sec) => {
-          sec.classList.remove("active");
-          sec.style.display = "none";
-        });
-
-        const targetSec = document.getElementById(targetId);
-        if (targetSec) {
-          targetSec.style.display = "block";
-
-          void targetSec.offsetWidth;
-          targetSec.classList.add("active");
-        }
+        this.showSection(targetId, { updateHistory: true });
+        this.closeMobileMenu();
       });
+    });
+  },
+
+  showSection(targetId, { updateHistory = false } = {}) {
+    const targetSec = document.getElementById(targetId);
+    if (!targetSec || !targetSec.classList.contains("app-section"))
+      return false;
+
+    document.querySelectorAll(".app-section").forEach((section) => {
+      section.classList.toggle("active", section === targetSec);
+      section.style.display = section === targetSec ? "block" : "none";
+    });
+
+    if (targetId === "inicio") targetSec.style.display = "flex";
+    targetSec.scrollTop = 0;
+
+    document.querySelectorAll(".nav-link").forEach((link) => {
+      link.classList.toggle("active", link.dataset.target === targetId);
+    });
+
+    if (updateHistory && window.location.hash !== `#${targetId}`) {
+      window.history.pushState({}, "", `#${targetId}`);
+    }
+
+    return true;
+  },
+
+  restoreSectionFromHash() {
+    const targetId = window.location.hash.replace(/^#/, "") || "inicio";
+    this.showSection(targetId) || this.showSection("inicio");
+    window.addEventListener(
+      "load",
+      () => {
+        const activeSection = document.querySelector(".app-section.active");
+        if (activeSection) activeSection.scrollTop = 0;
+      },
+      { once: true },
+    );
+    window.addEventListener("popstate", () => {
+      const nextTarget = window.location.hash.replace(/^#/, "") || "inicio";
+      this.showSection(nextTarget) || this.showSection("inicio");
     });
   },
 
