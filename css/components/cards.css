@@ -781,8 +781,8 @@ body {
 }
 
 .team-queen-avatar {
-  width: 208px;
-  height: 208px;
+  width: min(256px, calc(100vw - 64px));
+  height: min(256px, calc(100vw - 64px));
 }
 
 .team-card {
