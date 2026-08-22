@@ -117,8 +117,8 @@
       "version": "2026.08.18",
       "architecture": "x86_64",
       "installer": "Kasha",
-      "sha256": "87d617ed772e4ff42fb8488501b8636134292beea218eaddf99e0ef252c34e7e",
-      "url": "https://huggingface.co/arepaconcafe/neko-base/resolve/main/nekovoid-labwc-20260818.iso"
+      "sha256": "cca81d5ed736aa9e9dd5cf1e96f9a487ace54d85ac2ee5ac92342ec5eaf53b75",
+      "url": "https://huggingface.co/arepaconcafe/neko-base/resolve/main/nekovoid-labwc-20260822.iso"
     },
     {
       "id": "niri",
@@ -143,8 +143,8 @@
       "version": "2026.08.18",
       "architecture": "x86_64",
       "installer": "Kasha",
-      "sha256": "972d0fb33607a3898de40b78b960b0717317eb07f57b42772edfce35c5e12001",
-      "url": "https://huggingface.co/arepaconcafe/neko-base/resolve/main/nekovoid-lts-icejwm-20260818.iso"
+      "sha256": "3c1fda45e5eb968e76852254d07fae050f9861daa6f728339e4c60f1b69a1287",
+      "url": "https://huggingface.co/arepaconcafe/neko-base/resolve/main/nekovoid-lts-icejwm-20260822.iso"
     }
   ]
 }
