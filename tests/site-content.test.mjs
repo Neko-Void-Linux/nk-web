@@ -172,7 +172,7 @@ test("Kyouko appears above the team without a role or description", () => {
 
   const queenBlock = index.slice(queenStart, teamGridStart);
   assert.match(queenBlock, /src="\.\/assets\/queen\.png"/i);
-  assert.match(queenBlock, /class="team-avatar"/i);
+  assert.match(queenBlock, /class="team-avatar team-queen-avatar"/i);
   assert.match(queenBlock, />Kyouko</i);
   assert.doesNotMatch(queenBlock, />Queen</i);
   assert.doesNotMatch(queenBlock, /team-title|team-desc/i);
