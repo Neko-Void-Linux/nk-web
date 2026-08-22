@@ -159,20 +159,21 @@ test("team credits include the NVIDIA tester", () => {
   );
 });
 
-test("Queen appears above the team without a role or description", () => {
+test("Kyouko appears above the team without a role or description", () => {
   const queenStart = index.indexOf('<div class="team-queen"');
   const teamGridStart = index.indexOf('<div class="team-grid"');
 
-  assert.notEqual(queenStart, -1, "missing Queen feature");
+  assert.notEqual(queenStart, -1, "missing Kyouko feature");
   assert.ok(
     queenStart < teamGridStart,
-    "Queen must appear above the team grid",
+    "Kyouko must appear above the team grid",
   );
   assert.ok(existsSync(resolve(root, "public/assets/queen.png")));
 
   const queenBlock = index.slice(queenStart, teamGridStart);
   assert.match(queenBlock, /src="\.\/assets\/queen\.png"/i);
-  assert.match(queenBlock, />Queen</i);
+  assert.match(queenBlock, />Kyouko</i);
+  assert.doesNotMatch(queenBlock, />Queen</i);
   assert.doesNotMatch(queenBlock, /team-title|team-desc/i);
 });
 
