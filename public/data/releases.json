@@ -104,8 +104,8 @@
       "version": "2026.08.18",
       "architecture": "x86_64",
       "installer": "Kasha",
-      "sha256": "fd07158e19c2d10eaea6556320df6c6136c3acd0eac8a0c0f8818d1c9d2c4982",
-      "url": "https://huggingface.co/arepaconcafe/neko-base/resolve/main/nekovoid-lxqt-20260818.iso"
+      "sha256": "c1244941892faa2665ef1c5a1754efae5d54f412164de414963c306c424a6852",
+      "url": "https://huggingface.co/arepaconcafe/neko-base/resolve/main/nekovoid-lxqt-20260823.iso"
     },
     {
       "id": "labwc",
@@ -117,8 +117,8 @@
       "version": "2026.08.18",
       "architecture": "x86_64",
       "installer": "Kasha",
-      "sha256": "cca81d5ed736aa9e9dd5cf1e96f9a487ace54d85ac2ee5ac92342ec5eaf53b75",
-      "url": "https://huggingface.co/arepaconcafe/neko-base/resolve/main/nekovoid-labwc-20260822.iso"
+      "sha256": "d725a0d9b9f18eab90e9df648202e936f94d256073ea01cdfd197989ed036213",
+      "url": "https://huggingface.co/arepaconcafe/neko-base/resolve/main/nekovoid-labwc-20260823.iso"
     },
     {
       "id": "niri",
