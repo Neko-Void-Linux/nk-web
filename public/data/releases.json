@@ -117,7 +117,7 @@
       "version": "2026.08.18",
       "architecture": "x86_64",
       "installer": "Kasha",
-      "sha256": "d725a0d9b9f18eab90e9df648202e936f94d256073ea01cdfd197989ed036213",
+      "sha256": "619553f0009b6d9a147ea7399ccb24d60a12e56d6a064af84a8fdeed04f073e2",
       "url": "https://huggingface.co/arepaconcafe/neko-base/resolve/main/nekovoid-labwc-20260823.iso"
     },
     {
