@@ -114,11 +114,11 @@
       "status": "stable",
       "recommended": false,
       "description": "Un compositor Wayland ligero para quienes quieren experimentar.",
-      "version": "2026.08.18",
+      "version": "2026.08.26",
       "architecture": "x86_64",
       "installer": "Kasha",
-      "sha256": null,
-      "url": null
+      "sha256": "4efee72ff82e9d9c5c57ef936d9a42f0d8793939058f900102f7a623a28c6d2a",
+      "url": "https://huggingface.co/arepaconcafe/neko-base/resolve/main/nekovoid-labwc-20260826.iso"
     },
     {
       "id": "niri",
@@ -127,11 +127,11 @@
       "status": "stable",
       "recommended": false,
       "description": "Un flujo Wayland moderno para usuarios avanzados.",
-      "version": "2026.08.18",
+      "version": "2026.08.26",
       "architecture": "x86_64",
       "installer": "Kasha",
-      "sha256": "4f80c00a1d6a67efa9cbbd2842dc005f0618d7fd3ad69b938368e392aaac11f6",
-      "url": "https://huggingface.co/arepaconcafe/neko-base/resolve/main/nekovoid-niri-20260818.iso"
+      "sha256": "78008ac609b45d17f57a95c79233317ad137ae6a091ae63070ab124f71085560",
+      "url": "https://huggingface.co/arepaconcafe/neko-base/resolve/main/nekovoid-niri-20260826.iso"
     },
     {
       "id": "icewm-jwm",
