@@ -70,7 +70,7 @@
     },
     {
       "id": "i3",
-      "name": "i3",
+      "name": "I3",
       "kind": "flavor",
       "status": "stable",
       "recommended": false,
