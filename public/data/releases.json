@@ -72,14 +72,14 @@
       "id": "i3",
       "name": "i3",
       "kind": "flavor",
-      "status": "development",
+      "status": "stable",
       "recommended": false,
       "description": "Una edición orientada a flujos de trabajo con tiling.",
-      "version": "2026.08.18",
+      "version": "2026.08.30",
       "architecture": "x86_64",
       "installer": "Kasha",
       "sha256": "04f19f44da243d2ac17a6d9f857ae90e92f9fe94c680f8132aa9178d53215ec2",
-      "url": "https://huggingface.co/arepaconcafe/neko-base/resolve/main/nekovoid-i3-20260830.iso?download=true"
+      "url": "https://huggingface.co/arepaconcafe/neko-base/resolve/main/nekovoid-i3-20260830.iso"
     },
     {
       "id": "openbox",
