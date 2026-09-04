@@ -117,8 +117,8 @@
       "version": "2026.08.26",
       "architecture": "x86_64",
       "installer": "Kasha",
-      "sha256": "df76787d148143a8edd89719fe697f6235ddb74e69f116aca1e763937838798a",
-      "url": "https://archive.org/download/Neko-Void/nekovoid-labwc-20260904.iso"
+      "sha256": "",
+      "url": ""
     },
     {
       "id": "niri",
