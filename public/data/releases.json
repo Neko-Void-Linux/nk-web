@@ -53,7 +53,7 @@
       "architecture": "x86_64",
       "installer": "Kasha",
       "sha256": "d66f80bb45d028e43d10ee14759acf7af87321d17fd8d47664d922c7b7ecd3b1",
-      "url": "https://huggingface.co/arepaconcafe/neko-base/resolve/main/nekovoid-xfce-20260818.iso"
+      "url": "https://archive.org/download/Neko-Void/nekovoid-xfce-20260818.iso"
     },
     {
       "id": "kde",
@@ -66,7 +66,7 @@
       "architecture": "x86_64",
       "installer": "Kasha",
       "sha256": "4f6c80b39915c35ca9fa16c82f5c672860cdf837c38da9ae123d1f61ca6661d2",
-      "url": "https://huggingface.co/arepaconcafe/neko-base/resolve/main/nekovoid-kde-20260818.iso"
+      "url": "https://archive.org/download/Neko-Void/nekovoid-kde-20260818.iso"
     },
     {
       "id": "i3",
@@ -117,8 +117,8 @@
       "version": "2026.08.26",
       "architecture": "x86_64",
       "installer": "Kasha",
-      "sha256": "4efee72ff82e9d9c5c57ef936d9a42f0d8793939058f900102f7a623a28c6d2a",
-      "url": "https://huggingface.co/arepaconcafe/neko-base/resolve/main/nekovoid-labwc-20260826.iso"
+      "sha256": "df76787d148143a8edd89719fe697f6235ddb74e69f116aca1e763937838798a",
+      "url": "https://archive.org/download/Neko-Void/nekovoid-labwc-20260904.iso"
     },
     {
       "id": "niri",
