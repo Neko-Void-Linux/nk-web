@@ -130,8 +130,8 @@
       "version": "2026.08.26",
       "architecture": "x86_64",
       "installer": "Kasha",
-      "sha256": "78008ac609b45d17f57a95c79233317ad137ae6a091ae63070ab124f71085560",
-      "url": "https://huggingface.co/arepaconcafe/neko-base/resolve/main/nekovoid-niri-20260826.iso"
+      "sha256": "",
+      "url": ""
     },
     {
       "id": "icewm-jwm",
