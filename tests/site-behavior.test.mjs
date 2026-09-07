@@ -80,14 +80,17 @@ test("download gate keeps the selected ISO free while offering the project's sup
     pathToFileURL(downloadGatePath)
   );
   const dialog = {
-    dataset: {},
+    dataset: { supportUrl: "https://linktr.ee/nekovoidlinux" },
     opened: false,
     showModal() {
       this.opened = true;
     },
   };
   const freeDownload = { href: "" };
-  const supportLink = { href: "" };
+  const supportLink = {
+    href: "",
+    getAttribute: () => "https://linktr.ee/nekovoidlinux",
+  };
   const controller = createDownloadGateController({
     dialog,
     freeDownload,
@@ -97,6 +100,10 @@ test("download gate keeps the selected ISO free while offering the project's sup
   controller.open("https://downloads.example/neko.iso");
 
   assert.equal(freeDownload.href, "https://downloads.example/neko.iso");
-  assert.equal(supportLink.href, "https://linktr.ee/javiercplusx");
+  assert.equal(supportLink.href, "https://linktr.ee/nekovoidlinux");
   assert.equal(dialog.opened, true);
+
+  dialog.dataset = {};
+  controller.open("https://downloads.example/second.iso");
+  assert.equal(supportLink.href, "https://linktr.ee/nekovoidlinux");
 });

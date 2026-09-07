@@ -1,0 +1,48 @@
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script>
+      // Mejora progresiva mínima: solo se activa el modo app (`js`)
+      // si el navegador puede ejecutar la aplicación (ES modules) y no
+      // es un navegador de terminal. En cualquier otro caso se mantiene
+      // el modo estático (`no-js`) y la web funciona sin JavaScript.
+      (function () {
+        var isTerminalBrowser =
+          /lynx|w3m|links|elinks|edbrowse|dillo|retawq/i.test(
+            navigator.userAgent,
+          );
+        var supportsModules = "noModule" in document.createElement("script");
+        if (supportsModules && !isTerminalBrowser) {
+          document.documentElement.className =
+            document.documentElement.className.replace(/\bno-js\b/, "js");
+        }
+      })();
+    </script>
+    <title>Neko Void Linux — Void Linux listo para usar</title>
+    <meta
+      name="description"
+      content="Neko-Void es una experiencia Void Linux ligera, rolling y sin systemd, con instalación guiada, escritorios preconfigurados y herramientas para gaming."
+    />
+    <link rel="canonical" href="https://www.neko-void-linux.online/" />
+    <meta
+      property="og:title"
+      content="Neko Void Linux — Void Linux listo para usar"
+    />
+    <meta
+      property="og:description"
+      content="Void Linux con instalación guiada, escritorios preconfigurados y un ecosistema pensado para usar el sistema desde el primer arranque."
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://www.neko-void-linux.online/" />
+    <meta
+      property="og:image"
+      content="https://huggingface.co/arepaconcafe/neko-base/resolve/main/logo.png"
+    />
+    <meta name="theme-color" content="#1e2320" />
+    <link rel="icon" type="image/png" href="/favicon.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=IBM+Plex+Mono:wght@400;500;600;700&family=IBM+Plex+Sans:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./css/styles.css" />
