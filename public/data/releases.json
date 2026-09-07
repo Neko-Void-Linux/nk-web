@@ -65,8 +65,8 @@
       "version": "2026.08.18",
       "architecture": "x86_64",
       "installer": "Kasha",
-      "sha256": "4f6c80b39915c35ca9fa16c82f5c672860cdf837c38da9ae123d1f61ca6661d2",
-      "url": "https://archive.org/download/Neko-Void/nekovoid-kde-20260818.iso"
+      "sha256": "7c2d15dafd2d9f232af6d4b3ee2166204991a612d8aacfdcfe4bc7bdb1f8899d",
+      "url": "https://archive.org/download/Neko-Void/nekovoid-kde-20260905.iso"
     },
     {
       "id": "i3",
