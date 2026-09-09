@@ -41,6 +41,7 @@ the cards at runtime as a safety net (e.g. copy-to-clipboard on the checksum).
 | `nvidia`      | `[data-edition-id="nvidia"]`      | `beta`     | no  |
 | `xfce`        | `[data-edition-id="xfce"]`        | `stable`   | yes |
 | `kde`         | `[data-edition-id="kde"]`         | `stable`   | yes |
+| `i3`          | `[data-edition-id="i3"]`          | `development` | no |
 | `openbox`     | `[data-edition-id="openbox"]`     | `development` | no |
 | `lxqt`        | `[data-edition-id="lxqt"]`        | `stable`   | yes |
 | `labwc`       | `[data-edition-id="labwc"]`       | `stable`   | yes |

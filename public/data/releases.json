@@ -69,6 +69,19 @@
       "url": "https://archive.org/download/Neko-Void/nekovoid-kde-20260905.iso"
     },
     {
+      "id": "i3",
+      "name": "I3",
+      "kind": "flavor",
+      "status": "development",
+      "recommended": false,
+      "description": "Una edición orientada a flujos de trabajo con tiling.",
+      "version": "2026.08.30",
+      "architecture": "x86_64",
+      "installer": "Kasha",
+      "sha256": null,
+      "url": null
+    },
+    {
       "id": "openbox",
       "name": "Openbox",
       "kind": "flavor",
