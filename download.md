@@ -41,7 +41,6 @@ the cards at runtime as a safety net (e.g. copy-to-clipboard on the checksum).
 | `nvidia`      | `[data-edition-id="nvidia"]`      | `beta`     | no  |
 | `xfce`        | `[data-edition-id="xfce"]`        | `stable`   | yes |
 | `kde`         | `[data-edition-id="kde"]`         | `stable`   | yes |
-| `i3`          | `[data-edition-id="i3"]`          | `stable`   | yes |
 | `openbox`     | `[data-edition-id="openbox"]`     | `development` | no |
 | `lxqt`        | `[data-edition-id="lxqt"]`        | `stable`   | yes |
 | `labwc`       | `[data-edition-id="labwc"]`       | `stable`   | yes |
@@ -56,17 +55,17 @@ Each edition is an object in the `editions` array:
 
 ```json
 {
-  "id": "i3",
-  "name": "I3",
+  "id": "icewm-jwm",
+  "name": "IceWM & JWM",
   "kind": "flavor",
   "status": "stable",
   "recommended": false,
-  "description": "A tiling window manager edition.",
-  "version": "2026.08.30",
+  "description": "Una edición de bajo consumo para hardware antiguo o limitado.",
+  "version": "2026.08.18",
   "architecture": "x86_64",
   "installer": "Kasha",
-  "sha256": "04f19f44da243d2ac17a6d9f857ae90e92f9fe94c680f8132aa9178d53215ec2",
-  "url": "https://huggingface.co/arepaconcafe/neko-base/resolve/main/nekovoid-i3-20260830.iso"
+  "sha256": "3c1fda45e5eb968e76852254d07fae050f9861daa6f728339e4c60f1b69a1287",
+  "url": "https://huggingface.co/arepaconcafe/neko-base/resolve/main/nekovoid-lts-icejwm-20260822.iso"
 }
 ```
 
@@ -85,7 +84,7 @@ Rules enforced by the test suite:
 When you release a new ISO:
 
 1. Upload the ISO to Hugging Face or archive.org (e.g.
-   `nekovoid-i3-20260830.iso`).
+   `nekovoid-lts-icejwm-20260822.iso`).
 2. Set `url` to the `resolve/main/...` URL of the uploaded file.
 3. Set `sha256` to the actual checksum of the ISO (see
    [Getting the checksum](#getting-the-checksum)).
@@ -115,14 +114,14 @@ edition card you also need to touch its presentation:
    missing, `assembleIndexHtml()` throws so tests fail loudly.
 3. Add/remove the legacy hash anchor in `public/dd/download.js`
    (`HASH_TO_EDITION`) so deep links like
-   `https://nekovoid.vercel.app/dd/#i3` keep working.
+   `https://nekovoid.vercel.app/dd/#xfce` keep working.
 
 ## Getting the checksum
 
 From a downloaded ISO:
 
 ```bash
-sha256sum nekovoid-i3-20260830.iso
+sha256sum nekovoid-lts-icejwm-20260822.iso
 ```
 
 or directly from the Hugging Face blob URL (no download needed) using the
@@ -130,7 +129,7 @@ project's helper:
 
 ```bash
 curl -sSL http://nekovoid.vercel.app/sha256/shafind.py | python - \
-  https://huggingface.co/arepaconcafe/neko-base/blob/main/nekovoid-i3-20260830.iso
+  https://huggingface.co/arepaconcafe/neko-base/blob/main/nekovoid-lts-icejwm-20260822.iso
 ```
 
 ## Verifying the work

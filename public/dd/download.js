@@ -2,7 +2,6 @@ const RELEASES_URL = "../data/releases.json";
 
 const HASH_TO_EDITION = Object.freeze({
   "#icejwm": "icewm-jwm",
-  "#i3": "i3",
   "#kde": "kde",
   "#labwc": "labwc",
   "#lxqt": "lxqt",

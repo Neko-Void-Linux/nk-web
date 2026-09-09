@@ -69,19 +69,6 @@
       "url": "https://archive.org/download/Neko-Void/nekovoid-kde-20260905.iso"
     },
     {
-      "id": "i3",
-      "name": "I3",
-      "kind": "flavor",
-      "status": "stable",
-      "recommended": false,
-      "description": "Una edición orientada a flujos de trabajo con tiling.",
-      "version": "2026.08.30",
-      "architecture": "x86_64",
-      "installer": "Kasha",
-      "sha256": "04f19f44da243d2ac17a6d9f857ae90e92f9fe94c680f8132aa9178d53215ec2",
-      "url": "https://archive.org/download/Neko-Void/nekovoid-i3-20260830.iso"
-    },
-    {
       "id": "openbox",
       "name": "Openbox",
       "kind": "flavor",
