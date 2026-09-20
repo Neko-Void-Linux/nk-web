@@ -240,18 +240,18 @@ test("the gallery is backed by the Neko Void screenshots repository", () => {
   assert.match(gallery, /github\.com\/Neko-Void-Linux\/screenshots/i);
   assert.doesNotMatch(gallery, /huggingface\.co/i);
 
-  for (const desktop of [
-    "Labwc",
-    "Niri",
-    "Mate",
-    "KDE",
-    "Lxqt",
-    "Icewm",
-    "xfce",
+  for (const screenshot of [
+    "NekoVoid-Labwc.png",
+    "NekoVoid-Niri.png",
+    "NekoVoid-Mate.png",
+    "NekoVoid-KDE.png",
+    "NekoVoid-Lxqt.png",
+    "NekoVoid-Icewm-v2.png",
+    "NekoVoid-xfce.png",
   ]) {
     assert.ok(
-      gallery.includes(`${screenshotBase}NekoVoid-${desktop}.png`),
-      `missing ${desktop} screenshot`,
+      gallery.includes(`${screenshotBase}${screenshot}`),
+      `missing ${screenshot}`,
     );
   }
 
