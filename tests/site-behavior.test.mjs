@@ -83,6 +83,7 @@ test("the gallery lightbox supports keyboard navigation and restores focus", () 
   assert.match(lightbox, /event\.key === "ArrowRight"/);
   assert.match(lightbox, /returnFocus\?\.focus\(\)/);
   assert.match(lightbox, /event\.preventDefault\(\)/);
+  assert.doesNotMatch(lightbox, /lightbox-close/);
 });
 
 test("download gate keeps the selected ISO free while offering the project's support link", async () => {

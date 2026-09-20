@@ -1,15 +1,13 @@
 const LIGHTBOX_LABELS = Object.freeze({
   en: {
-    close: "Close image",
     previous: "Previous image",
     next: "Next image",
   },
   es: {
-    close: "Cerrar imagen",
     previous: "Imagen anterior",
     next: "Imagen siguiente",
   },
-  ja: { close: "画像を閉じる", previous: "前の画像", next: "次の画像" },
+  ja: { previous: "前の画像", next: "次の画像" },
 });
 
 export function initLightbox() {
@@ -25,8 +23,7 @@ export function initLightbox() {
   lightbox.setAttribute("aria-hidden", "true");
   lightbox.setAttribute("aria-labelledby", "lightbox-caption");
   lightbox.innerHTML = `
-    <div class="lightbox-dialog">
-      <button class="lightbox-close" type="button">&times;</button>
+    <div class="lightbox-dialog" tabindex="-1">
       <button class="lightbox-nav lightbox-prev" type="button">&#8249;</button>
       <figure class="lightbox-figure">
         <img class="lightbox-content" id="lightbox-img" alt="" />
@@ -39,7 +36,7 @@ export function initLightbox() {
 
   const lightboxImg = lightbox.querySelector("#lightbox-img");
   const caption = lightbox.querySelector("#lightbox-caption");
-  const closeBtn = lightbox.querySelector(".lightbox-close");
+  const dialog = lightbox.querySelector(".lightbox-dialog");
   const previousBtn = lightbox.querySelector(".lightbox-prev");
   const nextBtn = lightbox.querySelector(".lightbox-next");
   let currentIndex = 0;
@@ -52,7 +49,6 @@ export function initLightbox() {
 
   const updateLabels = () => {
     const labels = LIGHTBOX_LABELS[getLanguage()];
-    closeBtn.setAttribute("aria-label", labels.close);
     previousBtn.setAttribute("aria-label", labels.previous);
     nextBtn.setAttribute("aria-label", labels.next);
   };
@@ -79,7 +75,7 @@ export function initLightbox() {
     renderImage(index);
     lightbox.classList.add("is-open");
     lightbox.setAttribute("aria-hidden", "false");
-    closeBtn.focus();
+    dialog.focus();
   };
 
   const close = () => {
@@ -96,7 +92,6 @@ export function initLightbox() {
     });
   });
 
-  closeBtn.addEventListener("click", close);
   previousBtn.addEventListener("click", () => renderImage(currentIndex - 1));
   nextBtn.addEventListener("click", () => renderImage(currentIndex + 1));
 
