@@ -264,19 +264,30 @@
   display: none;
   align-items: center;
   justify-content: center;
-  padding: 72px 76px 40px;
-  background: rgba(14, 19, 16, 0.94);
-  backdrop-filter: blur(10px);
+  padding: 24px;
+  background: rgba(14, 19, 16, 0.88);
+  backdrop-filter: blur(6px);
 }
 
 .lightbox.is-open {
   display: flex;
 }
 
+.lightbox-dialog {
+  position: relative;
+  display: flex;
+  width: fit-content;
+  max-width: min(860px, calc(100vw - 48px));
+  overflow: hidden;
+  background: var(--surface);
+  border: 1px solid color-mix(in srgb, var(--foreground) 30%, transparent);
+  box-shadow: 0 18px 54px rgba(0, 0, 0, 0.4);
+}
+
 .lightbox-figure {
   display: flex;
-  max-width: min(1280px, 88vw);
-  max-height: calc(100vh - 112px);
+  width: fit-content;
+  max-width: 100%;
   flex-direction: column;
   margin: 0;
 }
@@ -286,73 +297,82 @@
   width: auto;
   max-width: 100%;
   height: auto;
-  max-height: calc(100vh - 168px);
+  max-height: min(68vh, 620px);
   object-fit: contain;
-  border: 1px solid var(--divider-strong);
-  box-shadow: 0 20px 70px rgba(0, 0, 0, 0.45);
   animation: galleryZoomIn 0.28s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .lightbox-caption {
-  min-height: 42px;
-  padding: 12px 14px;
-  background: var(--surface);
-  border: 1px solid var(--divider-strong);
-  border-top: 0;
-  color: var(--foreground);
-  font-size: 0.76rem;
+  min-height: 34px;
+  padding: 8px 12px;
+  border-top: 1px solid color-mix(in srgb, var(--foreground) 20%, transparent);
+  color: var(--comment);
+  font-size: 0.68rem;
+  letter-spacing: 0.03em;
+  line-height: 1.3;
   text-align: center;
 }
 
 .lightbox-close,
 .lightbox-nav {
+  position: absolute;
+  z-index: 2;
   display: grid;
   place-items: center;
-  background: color-mix(in srgb, var(--bg-color) 82%, transparent);
-  border: 1px solid var(--divider-strong);
+  background: rgba(14, 19, 16, 0.76);
+  border: 1px solid color-mix(in srgb, var(--foreground) 28%, transparent);
   color: var(--foreground);
   cursor: pointer;
+  opacity: 0.78;
   transition:
+    opacity var(--transition-fast),
     color var(--transition-fast),
     border-color var(--transition-fast),
     background var(--transition-fast);
 }
 
 .lightbox-close {
-  position: absolute;
-  top: 24px;
-  right: 28px;
-  width: 44px;
-  height: 44px;
-  font-size: 1.7rem;
+  top: 8px;
+  right: 8px;
+  width: 30px;
+  height: 30px;
+  font-size: 1.15rem;
   line-height: 1;
 }
 
 .lightbox-nav {
-  position: absolute;
-  top: 50%;
-  width: 46px;
-  height: 62px;
-  font-size: 1.45rem;
+  top: calc(50% - 17px);
+  width: 32px;
+  height: 44px;
+  font-size: 1.2rem;
   transform: translateY(-50%);
 }
 
 .lightbox-prev {
-  left: 20px;
+  left: 8px;
 }
 
 .lightbox-next {
-  right: 20px;
+  right: 8px;
 }
 
 .lightbox-close:hover,
-.lightbox-close:focus-visible,
-.lightbox-nav:hover,
-.lightbox-nav:focus-visible {
+.lightbox-nav:hover {
   background: var(--cyan);
   border-color: var(--cyan);
   color: var(--bg-color);
+  opacity: 1;
   outline: none;
+}
+
+.lightbox-close:focus-visible,
+.lightbox-nav:focus-visible {
+  background: rgba(14, 19, 16, 0.84);
+  border-color: var(--cyan);
+  color: var(--cyan);
+  opacity: 1;
+  outline: 1px solid var(--cyan);
+  outline-offset: 2px;
 }
 
 @keyframes galleryZoomIn {
@@ -381,37 +401,45 @@
   }
 
   .lightbox {
-    padding: 64px 14px 82px;
+    padding: 12px;
+  }
+
+  .lightbox-dialog {
+    max-width: calc(100vw - 24px);
   }
 
   .lightbox-figure {
     max-width: 100%;
-    max-height: calc(100vh - 146px);
   }
 
   .lightbox-content {
-    max-height: calc(100vh - 190px);
+    max-height: 68vh;
   }
 
   .lightbox-close {
-    top: 12px;
-    right: 14px;
+    top: 6px;
+    right: 6px;
   }
 
   .lightbox-nav {
-    top: auto;
-    bottom: 16px;
-    width: 54px;
-    height: 46px;
-    transform: none;
+    top: calc(50% - 17px);
+    width: 30px;
+    height: 42px;
+    transform: translateY(-50%);
   }
 
   .lightbox-prev {
-    left: calc(50% - 62px);
+    left: 6px;
   }
 
   .lightbox-next {
-    right: calc(50% - 62px);
+    right: 6px;
+  }
+
+  .lightbox-caption {
+    min-height: 32px;
+    padding: 7px 10px;
+    font-size: 0.64rem;
   }
 }
 

@@ -25,13 +25,15 @@ export function initLightbox() {
   lightbox.setAttribute("aria-hidden", "true");
   lightbox.setAttribute("aria-labelledby", "lightbox-caption");
   lightbox.innerHTML = `
-    <button class="lightbox-close" type="button">&times;</button>
-    <button class="lightbox-nav lightbox-prev" type="button">&#8249;</button>
-    <figure class="lightbox-figure">
-      <img class="lightbox-content" id="lightbox-img" alt="" />
-      <figcaption class="lightbox-caption" id="lightbox-caption" aria-live="polite"></figcaption>
-    </figure>
-    <button class="lightbox-nav lightbox-next" type="button">&#8250;</button>
+    <div class="lightbox-dialog">
+      <button class="lightbox-close" type="button">&times;</button>
+      <button class="lightbox-nav lightbox-prev" type="button">&#8249;</button>
+      <figure class="lightbox-figure">
+        <img class="lightbox-content" id="lightbox-img" alt="" />
+        <figcaption class="lightbox-caption" id="lightbox-caption" aria-live="polite"></figcaption>
+      </figure>
+      <button class="lightbox-nav lightbox-next" type="button">&#8250;</button>
+    </div>
   `;
   document.body.appendChild(lightbox);
 
@@ -65,13 +67,10 @@ export function initLightbox() {
     const session = card
       ?.querySelector(".gallery-session")
       ?.textContent?.trim();
-    const note = card
-      ?.querySelector(`.gallery-note .${getLanguage()}`)
-      ?.textContent?.trim();
 
     lightboxImg.src = trigger.href;
     lightboxImg.alt = image?.alt || name;
-    caption.textContent = [name, session, note].filter(Boolean).join(" · ");
+    caption.textContent = [name, session].filter(Boolean).join(" · ");
   };
 
   const open = (index, trigger) => {
