@@ -1,36 +1,232 @@
-      <section id="galeria" class="app-section">
-        <div class="container">
-          <h2
-            style="color: var(--green); text-align: center; margin-bottom: 40px"
-          >
-            <span class="en">Gallery</span><span class="es">Capturas</span
-            ><span class="ja">ギャラリー</span>
-          </h2>
-          <div class="gallery-grid">
-            <div class="gallery-item">
-              <img
-                src="https://huggingface.co/arepaconcafe/neko-base/resolve/main/1.png"
-                alt="Desktop View"
-              />
-            </div>
-            <div class="gallery-item">
-              <img
-                src="https://huggingface.co/arepaconcafe/neko-base/resolve/main/2.png"
-                alt="Terminal View"
-              />
-            </div>
-            <div class="gallery-item">
-              <img
-                src="https://huggingface.co/arepaconcafe/neko-base/resolve/main/3.png"
-                alt="Menu View"
-              />
-            </div>
-            <div class="gallery-item">
-              <img
-                src="https://huggingface.co/arepaconcafe/neko-base/resolve/main/4.png"
-                alt="Gaming View"
-              />
-            </div>
-          </div>
-        </div>
-      </section>
+<section id="galeria" class="app-section">
+  <div class="container gallery-container">
+    <header class="gallery-header">
+      <span class="gallery-kicker" aria-hidden="true">// desktop.sessions</span>
+      <h2>
+        <span class="en">Gallery</span><span class="es">Capturas</span
+        ><span class="ja">ギャラリー</span>
+      </h2>
+      <p class="gallery-intro">
+        <span class="en"
+          >Seven desktops, one Neko Void identity. Explore each session in
+          detail.</span
+        ><span class="es"
+          >Siete escritorios, una sola identidad Neko Void. Explora cada sesión
+          al detalle.</span
+        ><span class="ja"
+          >7つのデスクトップ、ひとつのNeko
+          Void。各セッションを詳しく見てみよう。</span
+        >
+      </p>
+      <a
+        class="gallery-source-link"
+        href="https://github.com/Neko-Void-Linux/screenshots"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        <span class="en">View source gallery</span
+        ><span class="es">Ver galería fuente</span
+        ><span class="ja">ソースギャラリーを見る</span>
+        <span aria-hidden="true">↗</span>
+      </a>
+    </header>
+
+    <div class="gallery-grid">
+      <figure class="gallery-item" data-window-title="neko-void://labwc">
+        <a
+          class="gallery-trigger"
+          href="https://raw.githubusercontent.com/Neko-Void-Linux/screenshots/refs/heads/main/NekoVoid-Labwc.png"
+        >
+          <img
+            src="https://raw.githubusercontent.com/Neko-Void-Linux/screenshots/refs/heads/main/NekoVoid-Labwc.png"
+            alt="Neko Void desktop running Labwc with a terminal and the Noctalia control center"
+            width="1679"
+            height="1049"
+            loading="lazy"
+            decoding="async"
+          />
+          <span class="gallery-open-indicator" aria-hidden="true">↗</span>
+        </a>
+        <figcaption>
+          <span class="gallery-copy">
+            <strong class="gallery-name">Labwc</strong>
+            <span class="gallery-note">
+              <span class="en">Minimal Wayland compositor</span
+              ><span class="es">Compositor Wayland minimalista</span
+              ><span class="ja">軽量なWaylandコンポジター</span>
+            </span>
+          </span>
+          <span class="gallery-session">Wayland</span>
+        </figcaption>
+      </figure>
+
+      <figure class="gallery-item" data-window-title="neko-void://niri">
+        <a
+          class="gallery-trigger"
+          href="https://raw.githubusercontent.com/Neko-Void-Linux/screenshots/refs/heads/main/NekoVoid-Niri.png"
+        >
+          <img
+            src="https://raw.githubusercontent.com/Neko-Void-Linux/screenshots/refs/heads/main/NekoVoid-Niri.png"
+            alt="Neko Void desktop running Niri with Foot and Btop windows"
+            width="1680"
+            height="1050"
+            loading="lazy"
+            decoding="async"
+          />
+          <span class="gallery-open-indicator" aria-hidden="true">↗</span>
+        </a>
+        <figcaption>
+          <span class="gallery-copy">
+            <strong class="gallery-name">Niri</strong>
+            <span class="gallery-note">
+              <span class="en">Scrollable tiling on Wayland</span
+              ><span class="es">Mosaico desplazable en Wayland</span
+              ><span class="ja">スクロール式Waylandタイル</span>
+            </span>
+          </span>
+          <span class="gallery-session">Wayland</span>
+        </figcaption>
+      </figure>
+
+      <figure class="gallery-item" data-window-title="neko-void://mate">
+        <a
+          class="gallery-trigger"
+          href="https://raw.githubusercontent.com/Neko-Void-Linux/screenshots/refs/heads/main/NekoVoid-Mate.png"
+        >
+          <img
+            src="https://raw.githubusercontent.com/Neko-Void-Linux/screenshots/refs/heads/main/NekoVoid-Mate.png"
+            alt="Neko Void desktop running MATE"
+            width="1680"
+            height="1050"
+            loading="lazy"
+            decoding="async"
+          />
+          <span class="gallery-open-indicator" aria-hidden="true">↗</span>
+        </a>
+        <figcaption>
+          <span class="gallery-copy">
+            <strong class="gallery-name">MATE</strong>
+            <span class="gallery-note">
+              <span class="en">Classic and familiar desktop</span
+              ><span class="es">Escritorio clásico y familiar</span
+              ><span class="ja">クラシックで親しみやすい環境</span>
+            </span>
+          </span>
+          <span class="gallery-session">X11</span>
+        </figcaption>
+      </figure>
+
+      <figure class="gallery-item" data-window-title="neko-void://kde">
+        <a
+          class="gallery-trigger"
+          href="https://raw.githubusercontent.com/Neko-Void-Linux/screenshots/refs/heads/main/NekoVoid-KDE.png"
+        >
+          <img
+            src="https://raw.githubusercontent.com/Neko-Void-Linux/screenshots/refs/heads/main/NekoVoid-KDE.png"
+            alt="Neko Void desktop running KDE Plasma with Konsole"
+            width="1280"
+            height="800"
+            loading="lazy"
+            decoding="async"
+          />
+          <span class="gallery-open-indicator" aria-hidden="true">↗</span>
+        </a>
+        <figcaption>
+          <span class="gallery-copy">
+            <strong class="gallery-name">KDE Plasma</strong>
+            <span class="gallery-note">
+              <span class="en">Complete and polished desktop</span
+              ><span class="es">Escritorio completo y pulido</span
+              ><span class="ja">多機能で洗練された環境</span>
+            </span>
+          </span>
+          <span class="gallery-session">Wayland</span>
+        </figcaption>
+      </figure>
+
+      <figure class="gallery-item" data-window-title="neko-void://lxqt">
+        <a
+          class="gallery-trigger"
+          href="https://raw.githubusercontent.com/Neko-Void-Linux/screenshots/refs/heads/main/NekoVoid-Lxqt.png"
+        >
+          <img
+            src="https://raw.githubusercontent.com/Neko-Void-Linux/screenshots/refs/heads/main/NekoVoid-Lxqt.png"
+            alt="Neko Void desktop running LXQt and Neko Kernel Manager"
+            width="1680"
+            height="1050"
+            loading="lazy"
+            decoding="async"
+          />
+          <span class="gallery-open-indicator" aria-hidden="true">↗</span>
+        </a>
+        <figcaption>
+          <span class="gallery-copy">
+            <strong class="gallery-name">LXQt</strong>
+            <span class="gallery-note">
+              <span class="en">Lightweight Qt desktop</span
+              ><span class="es">Escritorio Qt ligero</span
+              ><span class="ja">軽量なQtデスクトップ</span>
+            </span>
+          </span>
+          <span class="gallery-session">X11</span>
+        </figcaption>
+      </figure>
+
+      <figure class="gallery-item" data-window-title="neko-void://icewm">
+        <a
+          class="gallery-trigger"
+          href="https://raw.githubusercontent.com/Neko-Void-Linux/screenshots/refs/heads/main/NekoVoid-Icewm.png"
+        >
+          <img
+            src="https://raw.githubusercontent.com/Neko-Void-Linux/screenshots/refs/heads/main/NekoVoid-Icewm.png"
+            alt="Neko Void desktop running IceWM"
+            width="1680"
+            height="1050"
+            loading="lazy"
+            decoding="async"
+          />
+          <span class="gallery-open-indicator" aria-hidden="true">↗</span>
+        </a>
+        <figcaption>
+          <span class="gallery-copy">
+            <strong class="gallery-name">IceWM</strong>
+            <span class="gallery-note">
+              <span class="en">Ultra-light and direct</span
+              ><span class="es">Ultraligero y directo</span
+              ><span class="ja">超軽量でシンプル</span>
+            </span>
+          </span>
+          <span class="gallery-session">X11</span>
+        </figcaption>
+      </figure>
+
+      <figure class="gallery-item" data-window-title="neko-void://xfce">
+        <a
+          class="gallery-trigger"
+          href="https://raw.githubusercontent.com/Neko-Void-Linux/screenshots/refs/heads/main/NekoVoid-xfce.png"
+        >
+          <img
+            src="https://raw.githubusercontent.com/Neko-Void-Linux/screenshots/refs/heads/main/NekoVoid-xfce.png"
+            alt="Neko Void desktop running Xfce with a terminal"
+            width="1680"
+            height="1050"
+            loading="lazy"
+            decoding="async"
+          />
+          <span class="gallery-open-indicator" aria-hidden="true">↗</span>
+        </a>
+        <figcaption>
+          <span class="gallery-copy">
+            <strong class="gallery-name">Xfce</strong>
+            <span class="gallery-note">
+              <span class="en">Balanced and efficient desktop</span
+              ><span class="es">Escritorio equilibrado y eficiente</span
+              ><span class="ja">バランスの良い効率的な環境</span>
+            </span>
+          </span>
+          <span class="gallery-session">X11</span>
+        </figcaption>
+      </figure>
+    </div>
+  </div>
+</section>

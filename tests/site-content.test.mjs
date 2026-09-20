@@ -113,10 +113,7 @@ test("the hero recommended download follows the manifest", () => {
     index.indexOf("hero-project-links"),
   );
   assert.match(heroBlock, new RegExp(`href="${recommended.url}"`));
-  assert.match(
-    heroBlock,
-    new RegExp(`data-edition-id="${recommended.id}"`),
-  );
+  assert.match(heroBlock, new RegExp(`data-edition-id="${recommended.id}"`));
 });
 
 test("the hero preserves the project identity and exposes the recommended path", () => {
@@ -229,6 +226,37 @@ test("Kyouko appears above the team without a role or description", () => {
   assert.match(queenBlock, />Kyouko</i);
   assert.doesNotMatch(queenBlock, />Queen</i);
   assert.doesNotMatch(queenBlock, /team-title|team-desc/i);
+});
+
+test("the gallery is backed by the Neko Void screenshots repository", () => {
+  const galleryStart = index.indexOf('<section id="galeria"');
+  const downloadsStart = index.indexOf('<section id="descargas"');
+  const gallery = index.slice(galleryStart, downloadsStart);
+  const screenshotBase =
+    "https://raw.githubusercontent.com/Neko-Void-Linux/screenshots/refs/heads/main/";
+
+  assert.notEqual(galleryStart, -1, "missing gallery section");
+  assert.ok(downloadsStart > galleryStart, "gallery section is malformed");
+  assert.match(gallery, /github\.com\/Neko-Void-Linux\/screenshots/i);
+  assert.doesNotMatch(gallery, /huggingface\.co/i);
+
+  for (const desktop of [
+    "Labwc",
+    "Niri",
+    "Mate",
+    "KDE",
+    "Lxqt",
+    "Icewm",
+    "xfce",
+  ]) {
+    assert.ok(
+      gallery.includes(`${screenshotBase}NekoVoid-${desktop}.png`),
+      `missing ${desktop} screenshot`,
+    );
+  }
+
+  assert.equal((gallery.match(/loading="lazy"/g) || []).length, 7);
+  assert.equal((gallery.match(/class="gallery-item"/g) || []).length, 7);
 });
 
 test("team credits preserve the requested project roles and buttons", () => {

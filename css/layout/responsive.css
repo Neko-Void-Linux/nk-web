@@ -276,7 +276,7 @@ img {
   }
 
   .gallery-item img {
-    height: 220px !important;
+    height: 100% !important;
     object-fit: cover !important;
   }
 
@@ -476,7 +476,7 @@ img {
   }
 
   .gallery-item img {
-    height: 200px !important;
+    height: 100% !important;
   }
 }
 
@@ -529,7 +529,7 @@ img {
   }
 
   .gallery-item img {
-    height: 180px !important;
+    height: 100% !important;
   }
 
   #quote-box {
@@ -652,7 +652,7 @@ img {
   }
 
   .gallery-item img {
-    height: 160px !important;
+    height: 100% !important;
   }
 }
 

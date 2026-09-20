@@ -15,6 +15,7 @@ const fallback = readFileSync(resolve(root, "public/dd/index.html"), "utf8");
 const downloadGatePath = resolve(root, "js/components/DownloadGate.js");
 const fallbackModulePath = resolve(root, "public/dd/download.js");
 const typewriterPath = resolve(root, "js/components/Typewriter.js");
+const lightboxPath = resolve(root, "js/components/Lightbox.js");
 
 test("download service uses the single release manifest and edition hooks", () => {
   assert.match(service, /data\/releases\.json/);
@@ -72,6 +73,16 @@ test("the reliability quote can be activated without a mouse", async () => {
   }
   listeners.get("focus")();
   assert.equal(activations, 1);
+});
+
+test("the gallery lightbox supports keyboard navigation and restores focus", () => {
+  const lightbox = readFileSync(lightboxPath, "utf8");
+
+  assert.match(lightbox, /event\.key === "Escape"/);
+  assert.match(lightbox, /event\.key === "ArrowLeft"/);
+  assert.match(lightbox, /event\.key === "ArrowRight"/);
+  assert.match(lightbox, /returnFocus\?\.focus\(\)/);
+  assert.match(lightbox, /event\.preventDefault\(\)/);
 });
 
 test("download gate keeps the selected ISO free while offering the project's support link", async () => {
