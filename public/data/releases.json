@@ -13,8 +13,8 @@
       "version": "2026.08.18",
       "architecture": "x86_64",
       "installer": "Kasha",
-      "sha256": "7feb6eb989cf0028f3efc09b4daacd5d2cfa84e074ef7c514abd1352429a6fb1",
-      "url": "https://archive.org/download/Neko-Void/nekovoid-mate-20260905.iso"
+      "sha256": "a419de07dc98b3ca9555d06ce3bca8c0c7cee67d7ef075701be08dcbc6216dc7",
+      "url": "https://huggingface.co/arepaconcafe/neko-base/resolve/main/nekovoid-mate-20260921.iso"
     },
     {
       "id": "mate-xlibre",
@@ -26,8 +26,8 @@
       "version": "2026.08.18",
       "architecture": "x86_64",
       "installer": "Kasha",
-      "sha256": "8a2806829de403cddcc5e177ea62a5a51bd9c6aae3c9b34c70d18511e5182ffd",
-      "url": "https://archive.org/download/Neko-Void/nekovoid-matelibre-20260905.iso"
+      "sha256": "c0585b8b2349dc101e95a627b1c13099183a987fa54c74e12167a9d8b3e999db",
+      "url": "https://huggingface.co/arepaconcafe/neko-base/resolve/main/nekovoid-matelibre-20260921.iso"
     },
     {
       "id": "nvidia",
@@ -52,8 +52,8 @@
       "version": "2026.08.18",
       "architecture": "x86_64",
       "installer": "Kasha",
-      "sha256": "c0b084ec6658839507b03a738af00d20b6c607641fc9ceaff727acc21cba5fa3",
-      "url": "https://archive.org/download/Neko-Void/nekovoid-xfce-20260905.iso"
+      "sha256": "1896c5641583f368373afdc8ecfb04685499ae30c53363ce0beb4acd143d98bd",
+      "url": "https://huggingface.co/arepaconcafe/neko-base/resolve/main/nekovoid-xfce-20260921.iso"
     },
     {
       "id": "kde",
@@ -65,8 +65,8 @@
       "version": "2026.08.18",
       "architecture": "x86_64",
       "installer": "Kasha",
-      "sha256": "7c2d15dafd2d9f232af6d4b3ee2166204991a612d8aacfdcfe4bc7bdb1f8899d",
-      "url": "https://archive.org/download/Neko-Void/nekovoid-kde-20260905.iso"
+      "sha256": "e68eb5658730ed6f44eb8587770b5dcee091bcd070235c9b8ab54f19f9a45564",
+      "url": "https://huggingface.co/arepaconcafe/neko-base/resolve/main/nekovoid-kde-20260921.iso"
     },
     {
       "id": "i3",
@@ -78,8 +78,8 @@
       "version": "2026.08.30",
       "architecture": "x86_64",
       "installer": "Kasha",
-      "sha256": "04f19f44da243d2ac17a6d9f857ae90e92f9fe94c680f8132aa9178d53215ec2",
-      "url": "https://archive.org/download/Neko-Void/nekovoid-i3-20260830.iso"
+      "sha256": "4f304045e96ef3a0bc9c76f3db3a553ee1e9047ebf19b504ae0cf608c6086edb",
+      "url": "https://huggingface.co/arepaconcafe/neko-base/resolve/main/nekovoid-i3-20260830.iso"
     },
     {
       "id": "openbox",
@@ -104,8 +104,8 @@
       "version": "2026.08.18",
       "architecture": "x86_64",
       "installer": "Kasha",
-      "sha256": "5f8ca9478134a961521a0b1b88d55773a10468022b5cce9bf3f00c94f718ad9a",
-      "url": "https://archive.org/download/Neko-Void/nekovoid-lxqt-20260905.iso"
+      "sha256": "7ab983d85531482731a76b5f760ef76f5e1b336bf3f1dbfc767fbed4753dd55c",
+      "url": "https://huggingface.co/arepaconcafe/neko-base/resolve/main/nekovoid-lxqt-20260921.iso"
     },
     {
       "id": "labwc",
@@ -117,8 +117,8 @@
       "version": "2026.08.26",
       "architecture": "x86_64",
       "installer": "Kasha",
-      "sha256": "063133486497715241e11aab30556149ad5a6695ea14acad02d20f59f3911fae",
-      "url": "https://archive.org/download/Neko-Void/nekovoid-labwc-20260905.iso"
+      "sha256": "c07643e1daf1521b9f995a8a65d105d6dd01031d5f422cd26c73d318b7e453ff",
+      "url": "https://huggingface.co/arepaconcafe/neko-base/resolve/main/nekovoid-labwc-20260921.iso"
     },
     {
       "id": "niri",
@@ -130,8 +130,8 @@
       "version": "2026.08.26",
       "architecture": "x86_64",
       "installer": "Kasha",
-      "sha256": "a96955d36790b9d5e4ca4f008ede37b7b25bd5e582ec80ea1ac70181afbe885f",
-      "url": "https://archive.org/download/Neko-Void/nekovoid-niri-20260905.iso"
+      "sha256": "0b5f22138c9d533c73c6d809c1d997cb2b0583db5c6edd3e3cf1a0873268f632",
+      "url": "https://huggingface.co/arepaconcafe/neko-base/resolve/main/nekovoid-niri-20260921.iso"
     },
     {
       "id": "icewm-jwm",
@@ -143,8 +143,8 @@
       "version": "2026.08.18",
       "architecture": "x86_64",
       "installer": "Kasha",
-      "sha256": "3c1fda45e5eb968e76852254d07fae050f9861daa6f728339e4c60f1b69a1287",
-      "url": "https://huggingface.co/arepaconcafe/neko-base/resolve/main/nekovoid-lts-icejwm-20260822.iso"
+      "sha256": "7b6c15131c43d70e972c2e676a5409ebbd40225ab14c6cb6a6c00eaab9155200",
+      "url": "https://huggingface.co/arepaconcafe/neko-base/resolve/main/nekovoid-lts-icewm-20260921.iso"
     }
   ]
 }
