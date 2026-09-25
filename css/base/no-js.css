@@ -30,7 +30,7 @@ html.no-js .app-section {
   scroll-margin-top: 12px;
 }
 
-html.no-js #inicio.app-section.active {
+html.no-js #home.app-section.active {
   display: flex !important;
 }
 

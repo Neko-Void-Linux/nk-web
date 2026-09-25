@@ -229,8 +229,8 @@ test("Kyouko appears above the team without a role or description", () => {
 });
 
 test("the gallery is backed by the Neko Void screenshots repository", () => {
-  const galleryStart = index.indexOf('<section id="galeria"');
-  const downloadsStart = index.indexOf('<section id="descargas"');
+  const galleryStart = index.indexOf('<section id="gallery"');
+  const downloadsStart = index.indexOf('<section id="downloads"');
   const gallery = index.slice(galleryStart, downloadsStart);
   const screenshotBase =
     "https://raw.githubusercontent.com/Neko-Void-Linux/screenshots/refs/heads/main/";

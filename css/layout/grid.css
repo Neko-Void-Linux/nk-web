@@ -21,7 +21,7 @@ main {
   display: block !important;
   animation: fadeIn 0.4s ease-out forwards;
 }
-#inicio.app-section.active {
+#home.app-section.active {
   display: flex !important;
   flex-direction: column;
 }

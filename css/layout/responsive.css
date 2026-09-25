@@ -334,10 +334,10 @@ img {
     font-size: 0.85rem !important;
   }
 
-  #detalles h2,
-  #galeria h2,
-  #descargas h2,
-  #equipo h2 {
+  #details h2,
+  #gallery h2,
+  #downloads h2,
+  #team h2 {
     font-size: clamp(1.8rem, 7vw, 2.5rem) !important;
     margin-bottom: 28px !important;
   }
