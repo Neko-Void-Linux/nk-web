@@ -117,8 +117,8 @@
       "version": "2026.08.26",
       "architecture": "x86_64",
       "installer": "Kasha",
-      "sha256": "c07643e1daf1521b9f995a8a65d105d6dd01031d5f422cd26c73d318b7e453ff",
-      "url": "https://huggingface.co/buckets/arepaconcafe/neko-base-bucket/resolve/nekovoid-labwc-20260921.iso"
+      "sha256": "063133486497715241e11aab30556149ad5a6695ea14acad02d20f59f3911fae",
+      "url": "https://huggingface.co/buckets/arepaconcafe/neko-base-bucket/resolve/nekovoid-labwc-20260905.iso?download=true"
     },
     {
       "id": "niri",
