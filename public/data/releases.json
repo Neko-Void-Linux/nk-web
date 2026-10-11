@@ -117,8 +117,8 @@
       "version": "2026.08.26",
       "architecture": "x86_64",
       "installer": "Kasha",
-      "sha256": "063133486497715241e11aab30556149ad5a6695ea14acad02d20f59f3911fae",
-      "url": "https://huggingface.co/buckets/arepaconcafe/neko-base-bucket/resolve/nekovoid-labwc-20260905.iso?download=true"
+      "sha256": "7abbb6ef3b84c552c491c6e744210bdedcdd29ed84d225e9a14a4b44ad946515",
+      "url": "https://huggingface.co/buckets/arepaconcafe/neko-base-bucket/resolve/nekovoid-labwc-20261011.iso?download=true"
     },
     {
       "id": "niri",
@@ -130,8 +130,8 @@
       "version": "2026.08.26",
       "architecture": "x86_64",
       "installer": "Kasha",
-      "sha256": "0b5f22138c9d533c73c6d809c1d997cb2b0583db5c6edd3e3cf1a0873268f632",
-      "url": "https://huggingface.co/buckets/arepaconcafe/neko-base-bucket/resolve/nekovoid-niri-20260921.iso"
+      "sha256": "e5863fcea94a15dac78d4eea232d90656f3e43dec5ce4a4f05132ffdf5fba229",
+      "url": "https://huggingface.co/buckets/arepaconcafe/neko-base-bucket/resolve/nekovoid-niri-20261011.iso"
     },
     {
       "id": "icewm-jwm",
