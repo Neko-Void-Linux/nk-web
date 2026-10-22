@@ -13,8 +13,8 @@
       "version": "2026.08.18",
       "architecture": "x86_64",
       "installer": "Kasha",
-      "sha256": "a419de07dc98b3ca9555d06ce3bca8c0c7cee67d7ef075701be08dcbc6216dc7",
-      "url": "https://huggingface.co/buckets/arepaconcafe/neko-base-bucket/resolve/nekovoid-mate-20260921.iso"
+      "sha256": "9f98e7f7945f7794143049aa846926f706637ec1dc8cb46cd13850c1d9a30474",
+      "url": "https://huggingface.co/arepaconcafe/neko-base/resolve/main/nekovoid-mate-20261016.iso"
     },
     {
       "id": "mate-xlibre",
@@ -26,8 +26,8 @@
       "version": "2026.08.18",
       "architecture": "x86_64",
       "installer": "Kasha",
-      "sha256": "c0585b8b2349dc101e95a627b1c13099183a987fa54c74e12167a9d8b3e999db",
-      "url": "https://huggingface.co/buckets/arepaconcafe/neko-base-bucket/resolve/nekovoid-matelibre-20260921.iso"
+      "sha256": "b5032f32d509aa573424e7d2474e1f8ebf43bdcc38a852c2975eb897a99c13e3",
+      "url": "https://huggingface.co/arepaconcafe/neko-base/resolve/main/nekovoid-matelibre-20261016.iso"
     },
     {
       "id": "nvidia",
