@@ -1,16 +1,22 @@
-const DEFAULT_SUPPORT_URL = "https://linktr.ee/javiercplusx";
-
 export function createDownloadGateController({
   dialog,
   freeDownload,
   supportLink,
 }) {
+  const getSupportUrl = () => {
+    const datasetUrl = dialog.dataset && dialog.dataset.supportUrl;
+    const staticHref = supportLink.getAttribute
+      ? supportLink.getAttribute("href")
+      : null;
+    return datasetUrl || staticHref || "";
+  };
+
   return {
     open(downloadUrl) {
       if (!downloadUrl) return false;
 
       freeDownload.href = downloadUrl;
-      supportLink.href = dialog.dataset.supportUrl || DEFAULT_SUPPORT_URL;
+      supportLink.href = getSupportUrl();
 
       if (typeof dialog.showModal === "function") {
         dialog.showModal();

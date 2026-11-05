@@ -15,6 +15,7 @@ const fallback = readFileSync(resolve(root, "public/dd/index.html"), "utf8");
 const downloadGatePath = resolve(root, "js/components/DownloadGate.js");
 const fallbackModulePath = resolve(root, "public/dd/download.js");
 const typewriterPath = resolve(root, "js/components/Typewriter.js");
+const lightboxPath = resolve(root, "js/components/Lightbox.js");
 
 test("download service uses the single release manifest and edition hooks", () => {
   assert.match(service, /data\/releases\.json/);
@@ -74,20 +75,34 @@ test("the reliability quote can be activated without a mouse", async () => {
   assert.equal(activations, 1);
 });
 
+test("the gallery lightbox supports keyboard navigation and restores focus", () => {
+  const lightbox = readFileSync(lightboxPath, "utf8");
+
+  assert.match(lightbox, /event\.key === "Escape"/);
+  assert.match(lightbox, /event\.key === "ArrowLeft"/);
+  assert.match(lightbox, /event\.key === "ArrowRight"/);
+  assert.match(lightbox, /returnFocus\?\.focus\(\)/);
+  assert.match(lightbox, /event\.preventDefault\(\)/);
+  assert.doesNotMatch(lightbox, /lightbox-close/);
+});
+
 test("download gate keeps the selected ISO free while offering the project's support link", async () => {
   assert.ok(existsSync(downloadGatePath), "DownloadGate.js must exist");
   const { createDownloadGateController } = await import(
     pathToFileURL(downloadGatePath)
   );
   const dialog = {
-    dataset: {},
+    dataset: { supportUrl: "https://linktr.ee/nekovoidlinux" },
     opened: false,
     showModal() {
       this.opened = true;
     },
   };
   const freeDownload = { href: "" };
-  const supportLink = { href: "" };
+  const supportLink = {
+    href: "",
+    getAttribute: () => "https://linktr.ee/nekovoidlinux",
+  };
   const controller = createDownloadGateController({
     dialog,
     freeDownload,
@@ -97,6 +112,10 @@ test("download gate keeps the selected ISO free while offering the project's sup
   controller.open("https://downloads.example/neko.iso");
 
   assert.equal(freeDownload.href, "https://downloads.example/neko.iso");
-  assert.equal(supportLink.href, "https://linktr.ee/javiercplusx");
+  assert.equal(supportLink.href, "https://linktr.ee/nekovoidlinux");
   assert.equal(dialog.opened, true);
+
+  dialog.dataset = {};
+  controller.open("https://downloads.example/second.iso");
+  assert.equal(supportLink.href, "https://linktr.ee/nekovoidlinux");
 });

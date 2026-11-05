@@ -13,8 +13,8 @@
       "version": "2026.08.18",
       "architecture": "x86_64",
       "installer": "Kasha",
-      "sha256": "0568aabd44498502da8146a5606206bdd3fe26e9329878a2de0b9ce544543e20",
-      "url": "https://huggingface.co/arepaconcafe/neko-base/resolve/main/nekovoid-mate-20260818.iso"
+      "sha256": "9f98e7f7945f7794143049aa846926f706637ec1dc8cb46cd13850c1d9a30474",
+      "url": "https://huggingface.co/arepaconcafe/neko-base/resolve/main/nekovoid-mate-20261016.iso"
     },
     {
       "id": "mate-xlibre",
@@ -26,8 +26,8 @@
       "version": "2026.08.18",
       "architecture": "x86_64",
       "installer": "Kasha",
-      "sha256": "a650af9b5ac90fb6ac5ea1489e6f881dcc8f5fac136813bfd8f181df5543cfd6",
-      "url": "https://huggingface.co/arepaconcafe/neko-base/resolve/main/nekovoid-matelibre-20260818.iso"
+      "sha256": "b5032f32d509aa573424e7d2474e1f8ebf43bdcc38a852c2975eb897a99c13e3",
+      "url": "https://huggingface.co/arepaconcafe/neko-base/resolve/main/nekovoid-matelibre-20261016.iso"
     },
     {
       "id": "nvidia",
@@ -52,8 +52,8 @@
       "version": "2026.08.18",
       "architecture": "x86_64",
       "installer": "Kasha",
-      "sha256": "d66f80bb45d028e43d10ee14759acf7af87321d17fd8d47664d922c7b7ecd3b1",
-      "url": "https://huggingface.co/arepaconcafe/neko-base/resolve/main/nekovoid-xfce-20260818.iso"
+      "sha256": "1896c5641583f368373afdc8ecfb04685499ae30c53363ce0beb4acd143d98bd",
+      "url": "https://huggingface.co/buckets/arepaconcafe/neko-base-bucket/resolve/nekovoid-xfce-20260921.iso"
     },
     {
       "id": "kde",
@@ -65,21 +65,21 @@
       "version": "2026.08.18",
       "architecture": "x86_64",
       "installer": "Kasha",
-      "sha256": "4f6c80b39915c35ca9fa16c82f5c672860cdf837c38da9ae123d1f61ca6661d2",
-      "url": "https://huggingface.co/arepaconcafe/neko-base/resolve/main/nekovoid-kde-20260818.iso"
+      "sha256": "e68eb5658730ed6f44eb8587770b5dcee091bcd070235c9b8ab54f19f9a45564",
+      "url": "https://huggingface.co/buckets/arepaconcafe/neko-base-bucket/resolve/nekovoid-kde-20260921.iso"
     },
     {
-      "id": "sway-i3",
-      "name": "Sway & i3",
+      "id": "i3",
+      "name": "I3",
       "kind": "flavor",
-      "status": "development",
+      "status": "stable",
       "recommended": false,
       "description": "Una edición orientada a flujos de trabajo con tiling.",
-      "version": "2026.08.18",
+      "version": "2026.08.30",
       "architecture": "x86_64",
       "installer": "Kasha",
-      "sha256": null,
-      "url": null
+      "sha256": "4f304045e96ef3a0bc9c76f3db3a553ee1e9047ebf19b504ae0cf608c6086edb",
+      "url": "https://huggingface.co/buckets/arepaconcafe/neko-base-bucket/resolve/nekovoid-i3-20260830.iso"
     },
     {
       "id": "openbox",
@@ -104,8 +104,8 @@
       "version": "2026.08.18",
       "architecture": "x86_64",
       "installer": "Kasha",
-      "sha256": "fd07158e19c2d10eaea6556320df6c6136c3acd0eac8a0c0f8818d1c9d2c4982",
-      "url": "https://huggingface.co/arepaconcafe/neko-base/resolve/main/nekovoid-lxqt-20260818.iso"
+      "sha256": "7ab983d85531482731a76b5f760ef76f5e1b336bf3f1dbfc767fbed4753dd55c",
+      "url": "https://huggingface.co/buckets/arepaconcafe/neko-base-bucket/resolve/nekovoid-lxqt-20260921.iso"
     },
     {
       "id": "labwc",
@@ -114,11 +114,11 @@
       "status": "stable",
       "recommended": false,
       "description": "Un compositor Wayland ligero para quienes quieren experimentar.",
-      "version": "2026.08.18",
+      "version": "2026.08.26",
       "architecture": "x86_64",
       "installer": "Kasha",
-      "sha256": "87d617ed772e4ff42fb8488501b8636134292beea218eaddf99e0ef252c34e7e",
-      "url": "https://huggingface.co/arepaconcafe/neko-base/resolve/main/nekovoid-labwc-20260818.iso"
+      "sha256": "7abbb6ef3b84c552c491c6e744210bdedcdd29ed84d225e9a14a4b44ad946515",
+      "url": "https://huggingface.co/buckets/arepaconcafe/neko-base-bucket/resolve/nekovoid-labwc-20261011.iso?download=true"
     },
     {
       "id": "niri",
@@ -127,11 +127,11 @@
       "status": "stable",
       "recommended": false,
       "description": "Un flujo Wayland moderno para usuarios avanzados.",
-      "version": "2026.08.18",
+      "version": "2026.08.26",
       "architecture": "x86_64",
       "installer": "Kasha",
-      "sha256": "4f80c00a1d6a67efa9cbbd2842dc005f0618d7fd3ad69b938368e392aaac11f6",
-      "url": "https://huggingface.co/arepaconcafe/neko-base/resolve/main/nekovoid-niri-20260818.iso"
+      "sha256": "e5863fcea94a15dac78d4eea232d90656f3e43dec5ce4a4f05132ffdf5fba229",
+      "url": "https://huggingface.co/buckets/arepaconcafe/neko-base-bucket/resolve/nekovoid-niri-20261011.iso"
     },
     {
       "id": "icewm-jwm",
@@ -143,8 +143,8 @@
       "version": "2026.08.18",
       "architecture": "x86_64",
       "installer": "Kasha",
-      "sha256": "972d0fb33607a3898de40b78b960b0717317eb07f57b42772edfce35c5e12001",
-      "url": "https://huggingface.co/arepaconcafe/neko-base/resolve/main/nekovoid-lts-icejwm-20260818.iso"
+      "sha256": "7b6c15131c43d70e972c2e676a5409ebbd40225ab14c6cb6a6c00eaab9155200",
+      "url": "https://huggingface.co/buckets/arepaconcafe/neko-base-bucket/resolve/nekovoid-lts-icewm-20260921.iso"
     }
   ]
 }

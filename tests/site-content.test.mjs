@@ -3,11 +3,16 @@ import assert from "node:assert/strict";
 import { existsSync, readFileSync } from "node:fs";
 import { dirname, resolve } from "node:path";
 import { fileURLToPath } from "node:url";
+import {
+  assembleIndexHtml,
+  listPartialFiles,
+  MANIFEST_PATH,
+} from "../scripts/assemble-html.mjs";
 
 const root = resolve(dirname(fileURLToPath(import.meta.url)), "..");
-const index = readFileSync(resolve(root, "index.html"), "utf8");
+const index = assembleIndexHtml();
 const compactIndex = index.replace(/\s+/g, " ");
-const manifestPath = resolve(root, "public/data/releases.json");
+const manifestPath = MANIFEST_PATH;
 const manifest = existsSync(manifestPath)
   ? JSON.parse(readFileSync(manifestPath, "utf8"))
   : null;
@@ -50,19 +55,65 @@ test("every available edition has verifiable release metadata", () => {
   }
 });
 
-test("static edition cards keep direct download URLs and checksums in sync", () => {
+test("download URLs and checksums are generated from the manifest only", () => {
   assert.ok(manifest, "release manifest is required");
   for (const edition of manifest.editions.filter((item) => item.url)) {
     const card = getEditionBlock(edition.id);
     assert.ok(
       card.includes(`href="${edition.url}"`),
-      `${edition.id} has a stale static URL`,
+      `${edition.id} download button URL is not generated from the manifest`,
     );
     assert.ok(
       card.includes(`SHA256: ${edition.sha256}`),
-      `${edition.id} has no static checksum`,
+      `${edition.id} checksum is not generated from the manifest`,
     );
   }
+});
+
+test("download data is not duplicated in the HTML partials", () => {
+  assert.ok(manifest, "release manifest is required");
+  const partialFiles = listPartialFiles();
+  assert.ok(partialFiles.length > 0, "expected HTML partials to exist");
+  const sources = partialFiles.map((file) => readFileSync(file, "utf8"));
+
+  for (const edition of manifest.editions.filter((item) => item.url)) {
+    for (const source of sources) {
+      assert.ok(
+        !source.includes(edition.url),
+        `edition ${edition.id} URL is hardcoded in an HTML partial`,
+      );
+      assert.ok(
+        !source.includes(edition.sha256),
+        `edition ${edition.id} SHA256 is hardcoded in an HTML partial`,
+      );
+    }
+  }
+});
+
+test("edition cards derive their state from the manifest url", () => {
+  assert.ok(manifest, "release manifest is required");
+  for (const edition of manifest.editions) {
+    const card = getEditionBlock(edition.id);
+    if (edition.url) {
+      assert.match(card, /btn-primary/);
+      assert.doesNotMatch(card, /btn-disabled/);
+    } else {
+      assert.match(card, /btn-disabled/);
+      assert.doesNotMatch(card, /btn-primary|href="https?:\/\//);
+    }
+  }
+});
+
+test("the hero recommended download follows the manifest", () => {
+  assert.ok(manifest, "release manifest is required");
+  const recommended = manifest.editions.find((edition) => edition.recommended);
+  assert.ok(recommended, "release manifest must have a recommended edition");
+  const heroBlock = index.slice(
+    index.indexOf('class="hero-actions"'),
+    index.indexOf("hero-project-links"),
+  );
+  assert.match(heroBlock, new RegExp(`href="${recommended.url}"`));
+  assert.match(heroBlock, new RegExp(`data-edition-id="${recommended.id}"`));
 });
 
 test("the hero preserves the project identity and exposes the recommended path", () => {
@@ -178,6 +229,37 @@ test("Kyouko appears above the team without a role or description", () => {
   assert.doesNotMatch(queenBlock, /team-title|team-desc/i);
 });
 
+test("the gallery is backed by the Neko Void screenshots repository", () => {
+  const galleryStart = index.indexOf('<section id="gallery"');
+  const downloadsStart = index.indexOf('<section id="downloads"');
+  const gallery = index.slice(galleryStart, downloadsStart);
+  const screenshotBase =
+    "https://raw.githubusercontent.com/Neko-Void-Linux/screenshots/refs/heads/main/";
+
+  assert.notEqual(galleryStart, -1, "missing gallery section");
+  assert.ok(downloadsStart > galleryStart, "gallery section is malformed");
+  assert.match(gallery, /github\.com\/Neko-Void-Linux\/screenshots/i);
+  assert.doesNotMatch(gallery, /huggingface\.co/i);
+
+  for (const screenshot of [
+    "NekoVoid-Labwc.png",
+    "NekoVoid-Niri.png",
+    "NekoVoid-Mate.png",
+    "NekoVoid-KDE.png",
+    "NekoVoid-Lxqt.png",
+    "NekoVoid-Icewm-v2.png",
+    "NekoVoid-xfce.png",
+  ]) {
+    assert.ok(
+      gallery.includes(`${screenshotBase}${screenshot}`),
+      `missing ${screenshot}`,
+    );
+  }
+
+  assert.equal((gallery.match(/loading="lazy"/g) || []).length, 7);
+  assert.equal((gallery.match(/class="gallery-item"/g) || []).length, 7);
+});
+
 test("team credits preserve the requested project roles and buttons", () => {
   assert.match(compactIndex, /Mantenedor y Supervisor de la versión Musl/i);
   assert.match(
@@ -202,7 +284,7 @@ test("the legacy donation section moves into the optional download dialog", () =
   assert.doesNotMatch(index, /href="#donaciones"/i);
   assert.doesNotMatch(index, /id="donaciones"/i);
   assert.match(index, /id="download-support-dialog"/i);
-  assert.match(index, /href="https:\/\/linktr\.ee\/javiercplusx"/i);
+  assert.match(index, /href="https:\/\/linktr\.ee\/nekovoidlinux"/i);
   assert.match(index, /<span class="es">Donar<\/span\s*>/i);
   assert.match(
     compactIndex,
@@ -230,7 +312,8 @@ test("the footer exposes the restored project buttons", () => {
     assert.match(index, new RegExp(`>${label}<`, "i"));
   }
   assert.match(index, /distrowatch\.com\/table\.php\?distribution=nekovoid/i);
-  assert.match(index, /sourceforge\.net\/projects\/neko-void\/files\/repo/i);
+  assert.match(index, /sourceforge\.net\/projects\/neko-void\//i);
+  assert.match(index, /gitlab\.com\/javiercplus\/kasha-installer/i);
 });
 
 test("SourceForge recognitions load all dark badges with one script", () => {

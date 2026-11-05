@@ -65,13 +65,29 @@ nk-web/
 │   ├── components/     # Reusable UI styles: cards, gallery, and terminal
 │   └── styles.css      # CSS entry point importing all modules
 ├── js/
-│   ├── services/       # Functional logic (timezone language detection)
-│   ├── components/     # UI component behavior (typewriter, gallery lightbox)
+│   ├── services/       # Functional logic (release manifest, language detection)
+│   ├── components/     # UI component behavior (typewriter, download gate, lightbox)
 │   ├── ui/             # Page state controller (tabs and dropdowns)
 │   └── app.js          # JavaScript entry point
-├── index.html          # HTML5 layout
-└── vite.config.js      # Vite bundler configurations
+├── html/               # index.html split into reusable partials
+│   ├── head.html       # <head> metadata
+│   ├── header.html     # Navbar
+│   ├── sections/       # hero, details, gallery, downloads, team
+│   └── dialog.html     # Optional support / download dialog
+├── public/
+│   └── data/
+│       └── releases.json   # Single source of truth for edition downloads
+├── scripts/
+│   └── assemble-html.mjs   # Assembles index.html from partials + releases.json
+├── index.html          # HTML template (assembled by the Vite plugin)
+├── vite.config.js      # Vite bundler config (includes the HTML assembly plugin)
+└── tests/              # node --test suite (validates the assembled page)
 ```
+
+`index.html` is a small template: a Vite plugin (`vite.config.js`) calls
+`scripts/assemble-html.mjs` on every dev/build to splice the `html/` partials
+and render the download cards and hero button from
+`public/data/releases.json` (see `download.md`).
 
 ## Contributing
 

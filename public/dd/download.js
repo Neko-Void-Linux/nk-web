@@ -2,6 +2,7 @@ const RELEASES_URL = "../data/releases.json";
 
 const HASH_TO_EDITION = Object.freeze({
   "#icejwm": "icewm-jwm",
+  "#i3": "i3",
   "#kde": "kde",
   "#labwc": "labwc",
   "#lxqt": "lxqt",
@@ -36,7 +37,7 @@ export async function startDownload({
     const url = resolveEditionUrl(manifest.editions, location.hash);
     if (!url) {
       status.textContent = "No se encontró esa edición";
-      manual.href = "../#descargas";
+      manual.href = "../#downloads";
       manual.textContent = "Volver a descargas";
       manual.removeAttribute("download");
       manual.hidden = false;
@@ -51,7 +52,7 @@ export async function startDownload({
   } catch (error) {
     console.error("No se pudo cargar el manifiesto de descargas:", error);
     status.textContent = "No se pudo preparar la descarga";
-    manual.href = "../#descargas";
+    manual.href = "../#downloads";
     manual.textContent = "Volver a descargas";
     manual.removeAttribute("download");
     manual.hidden = false;

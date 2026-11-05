@@ -148,7 +148,7 @@ export const UIManager = {
       section.style.display = section === targetSec ? "block" : "none";
     });
 
-    if (targetId === "inicio") targetSec.style.display = "flex";
+    if (targetId === "home") targetSec.style.display = "flex";
     targetSec.scrollTop = 0;
 
     document.querySelectorAll(".nav-link").forEach((link) => {
@@ -163,8 +163,8 @@ export const UIManager = {
   },
 
   restoreSectionFromHash() {
-    const targetId = window.location.hash.replace(/^#/, "") || "inicio";
-    this.showSection(targetId) || this.showSection("inicio");
+    const targetId = window.location.hash.replace(/^#/, "") || "home";
+    this.showSection(targetId) || this.showSection("home");
     window.addEventListener(
       "load",
       () => {
@@ -174,8 +174,8 @@ export const UIManager = {
       { once: true },
     );
     window.addEventListener("popstate", () => {
-      const nextTarget = window.location.hash.replace(/^#/, "") || "inicio";
-      this.showSection(nextTarget) || this.showSection("inicio");
+      const nextTarget = window.location.hash.replace(/^#/, "") || "home";
+      this.showSection(nextTarget) || this.showSection("home");
     });
   },
 
