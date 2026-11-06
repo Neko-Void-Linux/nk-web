@@ -36,11 +36,11 @@
       "status": "beta",
       "recommended": false,
       "description": "Edición con soporte beta para controladores propietarios NVIDIA.",
-      "version": "2026.08.18",
+      "version": "2026.08.2",
       "architecture": "x86_64",
       "installer": "Kasha",
-      "sha256": null,
-      "url": null
+      "sha256": "Generando",
+      "url": "https://drive.google.com/file/d/1xxe9ZrLCdBwLWXLPjKPLJGIcb4tUqm9e/view "
     },
     {
       "id": "xfce",
