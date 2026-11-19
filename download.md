@@ -39,14 +39,14 @@ the cards at runtime as a safety net (e.g. copy-to-clipboard on the checksum).
 | `mate-xorg`   | `[data-edition-id="mate-xorg"]`   | `stable`   | yes |
 | `mate-xlibre` | `[data-edition-id="mate-xlibre"]` | `stable`   | yes |
 | `nvidia`      | `[data-edition-id="nvidia"]`      | `beta`     | no  |
-| `xfce`        | `[data-edition-id="xfce"]`        | `stable`   | yes |
+| `jwm`         | `[data-edition-id="jwm"]`         | `stable`   | yes |
 | `kde`         | `[data-edition-id="kde"]`         | `stable`   | yes |
 | `i3`          | `[data-edition-id="i3"]`          | `stable`   | yes |
 | `openbox`     | `[data-edition-id="openbox"]`     | `development` | no |
 | `lxqt`        | `[data-edition-id="lxqt"]`        | `stable`   | yes |
 | `labwc`       | `[data-edition-id="labwc"]`       | `stable`   | yes |
 | `niri`        | `[data-edition-id="niri"]`        | `stable`   | yes |
-| `icewm-jwm`   | `[data-edition-id="icewm-jwm"]`   | `stable`   | yes |
+| `icewm`       | `[data-edition-id="icewm"]`       | `stable`   | yes |
 
 ## Where to edit
 

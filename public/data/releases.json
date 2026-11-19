@@ -43,19 +43,6 @@
       "url": "https://drive.google.com/file/d/1xxe9ZrLCdBwLWXLPjKPLJGIcb4tUqm9e/view "
     },
     {
-      "id": "xfce",
-      "name": "XFCE",
-      "kind": "flavor",
-      "status": "stable",
-      "recommended": false,
-      "description": "Un escritorio ligero y familiar para equilibrar consumo y comodidad.",
-      "version": "2026.08.18",
-      "architecture": "x86_64",
-      "installer": "Kasha",
-      "sha256": "31d56b1f461db11ef7b4f1d9b149d8800c0b137d9e4b36d1e22a5e161face26a",
-      "url": "https://huggingface.co/buckets/arepaconcafe/neko-base-bucket/resolve/nekovoid-xfce-20261101.iso"
-    },
-    {
       "id": "kde",
       "name": "KDE",
       "kind": "flavor",
