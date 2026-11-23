@@ -53,7 +53,7 @@
       "architecture": "x86_64",
       "installer": "Kasha",
       "sha256": "4a1cd08c0141219fcb3ff47b6d206b222e5633de53ad93a96fedfea80612036d",
-      "url": "https://huggingface.co/buckets/arepaconcafe/neko-base-bucket/resolve/nekovoid-kde-20261101.iso"
+      "url": "https://huggingface.co/arepaconcafe/neko-base/resolve/main/nekovoid-kde-20261101.iso"
     },
     {
       "id": "i3",
@@ -66,7 +66,7 @@
       "architecture": "x86_64",
       "installer": "Kasha",
       "sha256": "60e2c3097d377abfb7c0704912d05e58025a6bc35b2480a7ea8255cfa9a2813d",
-      "url": "https://huggingface.co/buckets/arepaconcafe/neko-base-bucket/resolve/nekovoid-i3-20261101.iso"
+      "url": "https://huggingface.co/arepaconcafe/neko-base/resolve/main/nekovoid-i3-20261101.iso"
     },
     {
       "id": "openbox",
@@ -92,7 +92,7 @@
       "architecture": "x86_64",
       "installer": "Kasha",
       "sha256": "f83e520611f7355b80179487f6fe4632581966dcf1313f4322acb81e7cefb0ab",
-      "url": "https://huggingface.co/buckets/arepaconcafe/neko-base-bucket/resolve/nekovoid-lxqt-20261101.iso"
+      "url": "https://huggingface.co/arepaconcafe/neko-base/resolve/main/nekovoid-lxqt-20261101.iso"
     },
     {
       "id": "labwc",
@@ -105,7 +105,7 @@
       "architecture": "x86_64",
       "installer": "Kasha",
       "sha256": "3554873e8452efbfd2ebcd4afdb6d5bc229bee1b8647b0109d68b23085d5702b",
-      "url": "https://huggingface.co/buckets/arepaconcafe/neko-base-bucket/resolve/nekovoid-labwc-20261011.iso?download=true"
+      "url": "https://huggingface.co/arepaconcafe/neko-base/resolve/main/nekovoid-labwc-20261011.iso?download=true"
     },
     {
       "id": "niri",
@@ -118,7 +118,7 @@
       "architecture": "x86_64",
       "installer": "Kasha",
       "sha256": "0f3639197183e4775967898d766b490946b4e0e55e963cbb326bd376d66feebc",
-      "url": "https://huggingface.co/buckets/arepaconcafe/neko-base-bucket/resolve/nekovoid-niri-20261011.iso"
+      "url": "https://huggingface.co/arepaconcafe/neko-base/resolve/main/nekovoid-niri-20261011.iso"
     },
     {
       "id": "icewm",
@@ -131,7 +131,7 @@
       "architecture": "x86_64",
       "installer": "Kasha",
       "sha256": "8eb726e944e264bb557cdf18c62539af6281de10d90beb856e93825a82f3f228",
-      "url": "https://huggingface.co/buckets/arepaconcafe/neko-base-bucket/resolve/nekovoid-lts-icewm-20261101.iso"
+      "url": "https://huggingface.co/arepaconcafe/neko-base/resolve/main/nekovoid-lts-icewm-20261101.iso"
     },
      {
       "id": "jwm",
@@ -144,7 +144,7 @@
       "architecture": "x86_64",
       "installer": "Kasha",
       "sha256": "b465e177b4c0ade0f70148a33b40d919405279655cd51befda1bd421a2eeb674",
-      "url": "https://huggingface.co/buckets/arepaconcafe/neko-base-bucket/resolve/nekovoid-lts-jwm-20261101.iso"
+      "url": "https://huggingface.co/arepaconcafe/neko-base/resolve/main/nekovoid-lts-jwm-20261101.iso"
     }
   ]
 }
