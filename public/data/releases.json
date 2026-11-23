@@ -105,7 +105,7 @@
       "architecture": "x86_64",
       "installer": "Kasha",
       "sha256": "3554873e8452efbfd2ebcd4afdb6d5bc229bee1b8647b0109d68b23085d5702b",
-      "url": "https://huggingface.co/arepaconcafe/neko-base/resolve/main/nekovoid-labwc-20261011.iso?download=true"
+      "url": "https://huggingface.co/arepaconcafe/neko-base/resolve/main/nekovoid-labwc-20261101.iso?download=true"
     },
     {
       "id": "niri",
@@ -118,7 +118,7 @@
       "architecture": "x86_64",
       "installer": "Kasha",
       "sha256": "0f3639197183e4775967898d766b490946b4e0e55e963cbb326bd376d66feebc",
-      "url": "https://huggingface.co/arepaconcafe/neko-base/resolve/main/nekovoid-niri-20261011.iso"
+      "url": "https://huggingface.co/arepaconcafe/neko-base/resolve/main/nekovoid-niri-20261101.iso"
     },
     {
       "id": "icewm",
